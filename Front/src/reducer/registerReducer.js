@@ -1,8 +1,11 @@
-const initialState = {};
+const initialState = {
+  isLogin: false,
+  token : ''
+};
 
   const registerReducer = (state = initialState, action)=>{
     switch (action.type) {
-        case "PWD":
+        case "TOKEN":
             return {
                 ...state}
         default:
