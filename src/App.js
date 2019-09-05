@@ -1,26 +1,43 @@
+import './mainCss.css'
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route, Redirect, withRouter ,Link} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-function App() {
+//components
+import ButtonAppBar from './components/NavigateBar';
+import TypeOfBike from './components/TypeOfBike';
+import Acceuil from './components/Acceuil';
+import LoginPage from './components/LoginPage';
+
+//material
+import Button from '@material-ui/core/Button';
+
+//img
+import cyclist from './gallerie/roadbikes.jpg';
+import famille from './gallerie/family.jpeg';
+
+
+function App(props) {
+  const type = useSelector((state) => state.listBike.type)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <React.Fragment>
+      <header>
+        <img src={cyclist} alt=" road bike"/>
+        <img src={famille} alt=" family with bike" />
+        <ButtonAppBar  {...props} />
+        <Link to='home' className="logo">
+          <Button   variant="contained" color="inherit" >ALL BIKES</Button>
+        </Link>
       </header>
-    </div>
+      <Switch>
+        <Route path='/home' component={Acceuil} />
+        <Route exact path="/mon-compte" component={LoginPage} />
+        <Route exact path={`/${type}`} component={TypeOfBike} />
+        <Redirect to="/home" />
+      </Switch>
+    </React.Fragment>
   );
 }
 
-export default App;
+export default withRouter(App);
