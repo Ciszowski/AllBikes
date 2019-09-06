@@ -2,7 +2,9 @@
 
 # dependencies
 /Front/node_modules
+/Back/node_modules
 /Front/.pnp
+/Back/.pnp
 .pnp.js
 
 # testing

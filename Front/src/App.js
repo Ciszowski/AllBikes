@@ -26,7 +26,7 @@ function App(props) {
         <img src={cyclist} alt=" road bike"/>
         <img src={famille} alt=" family with bike" />
         <ButtonAppBar  {...props} />
-        <Link to='home' className="logo">
+        <Link to='/home' className="logo">
           <Button   variant="contained" color="inherit" >ALL BIKES</Button>
         </Link>
       </header>
