@@ -9,55 +9,62 @@ const mdpProvisoire = 'secretttsss'
 const mdpToken = "chéééééé mooonnn ppppprééééccciiiieeeuuuuxxxxx !!!!!!!"
 
 
-router.get('/loginIn', (req, res) => {
-    const name = "lunita"
+router.post('/loginIn', (req, res) => {
+    const { email, password } = req.body.value
     let checkPass;
-    const logData = `SELECT * from test where name= (`+mysql.escape(name)+`)`
+    const logData = `SELECT * from user where email= (`+mysql.escape(email)+`)`
     
     connection.query(logData, (err, results) => {
         if (err)
-            throw new Error(err)
-        
-        new Promise((resolve, reject) => {    
-            bcrypt.compare(mdpProvisoire, results[0].PASSWORD,
-                //mot de passe rentré <= VS => le haché ds la db
-                (err, res) => {
-                    if (err)
-                    reject(err)
-                    checkPass = res
-                    resolve(res)
-                })
-            }).then(() => {
-                const { name, surname } = results[0];
-                const payload = {name};
-                const token = jwt.sign( payload, mdpToken, {expiresIn: '1h'})
-                if (checkPass) {
-                   return res.status(200).json                    
-                        ({
-                            'name': name, 'surname': surname,
-                            'checkPass': checkPass, 'token': 'erzr'
+            return err
+        else if(!results.length){
+            return res.status(500).json({ message: 'user or password incorrect' })
+        }else {            
+            return new Promise((resolve, reject) => {    
+                bcrypt.compare(password, results[0].password,
+                    //mot de passe rentré <= VS => le haché ds la db
+                    (err, res) => {
+                        if (err){
+                            reject(err)
+                        }
+                            checkPass = res
+                            resolve(res)
                         })
-                }
-                res.status(500).send('Identifiant ou mot de passe incorrect')
-            })
+                    }).then(() => {
+                        console.log('email correct',checkPass, results)
+                    const { name, surname, email, privilege } = results[0];
+                    const payload = {email};
+                    const token= jwt.sign( payload, mdpToken, {expiresIn: '2h'})
+                    if (checkPass) {
+                       return res.status(200).json                    
+                            ({
+                                'name': name, 'surname': surname,
+                                'token': token,'privilege': privilege
+                            })
+                    }
+                    return res.status(500).json({message: 'password incorrect'})
+                })
+        }
     })
 })
 
 
-router.get('/signIn', (req, res) => {
-    const name = "lunita"
-    const surname = "cocotte"
-    const crypt = bcrypt.hashSync(mdpProvisoire, 10);
+router.post('/signIn', (req, res) => {
 
-    const sendData = `INSERT INTO test(name,surname,password) VALUES (
-        `+ mysql.escape(name) + `, ` + mysql.escape(surname) + `, 
-                `+ mysql.escape(crypt) + `)`;
+    const { name, surname, email, password } = req.body.value
+    const crypt = bcrypt.hashSync(password, 10);
+
+    const sendData = `INSERT INTO user(email,password,name,surname) VALUES (
+       `+ mysql.escape(email) + `, ` + mysql.escape(crypt) + `,
+       `+ mysql.escape(name) + `, ` + mysql.escape(surname) + `)`;
     
     connection.query(sendData, (err, results) => {
-        if (err)
-            throw new Error(err)
-        res.status(200).json({message : 'user has been registered !'})
+        console.log('results', results)
+        if (err) {
+            return res.status(500).json({ message: err.sqlMessage })
+        }
+        return res.status(200).json({ message: 'user has been registered !'})
     })
-})
+});
 
 module.exports = router;

@@ -1,9 +1,17 @@
 const express = require('express');
 const app = express();
+
+const bodyParser = require('body-parser')
 const cors = require('cors');
 const authRoute = require('./routes/register/auth');
 const connection = require('./database/mysql');
+
 const port = 5000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended : true
+}));
 
 app.use('/auth',authRoute);
 app.use(cors());
@@ -22,5 +30,5 @@ app.listen(port, (err) => {
     if (err)
         throw new Error(err)
     console.log(`port is listening on ${port}`)
-})
+});
 

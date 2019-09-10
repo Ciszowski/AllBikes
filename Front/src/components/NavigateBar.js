@@ -43,14 +43,13 @@ export default function ButtonAppBar(props) {
         }
     })
     function handleOver(ev) {
-        console.log('open', Boolean(open))
         setOpen(ev.currentTarget);
-        console.log('open', Boolean(open))
+
     }
 
-    function handleClose() {
-        setOpen(null)
-    }
+    // function handleClose() {
+    //     setOpen(null)
+    // }
 
     return (
         <div className={classes.root} >

@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux';
 //components
 import ButtonAppBar from './components/NavigateBar';
 import TypeOfBike from './components/TypeOfBike';
+import WithNoAuth from './fcRouter/WithNoAuth'
 import Acceuil from './components/Acceuil';
-import LoginPage from './components/LoginPage';
 
 //material
 import Button from '@material-ui/core/Button';
@@ -32,7 +32,7 @@ function App(props) {
       </header>
       <Switch>
         <Route path='/home' component={Acceuil} />
-        <Route exact path="/mon-compte" component={LoginPage} />
+        <Route exact path="/mon-compte" component={WithNoAuth} />
         <Route exact path={`/${type}`} component={TypeOfBike} />
         <Redirect to="/home" />
       </Switch>

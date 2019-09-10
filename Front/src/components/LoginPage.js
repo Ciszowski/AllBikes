@@ -5,7 +5,8 @@ import {
     Card,
     TextField,
     Button,
-    CardHeader
+    CardHeader,
+    Snackbar,
 } from '@material-ui/core';
 
 const ValidationTextField = withStyles({
@@ -61,7 +62,7 @@ const useStyles = makeStyles(theme => ({
     },
     cardActions: {
         alignSelf: 'flex-end',
-        margin: theme.spacing.unit * 1
+        margin: theme.spacing(1)
     },
     input: {
         width: 350,
@@ -69,34 +70,82 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function LoginPage() {
+export default function LoginPage(props) {
     const classes = useStyles();
-    const login = useSelector((state) => ({
+    const dispatch = useDispatch();
+    const login = useSelector((state) => (
+        {
             isLogin: state.register.isLogin,
-        token: state.register.token
-    }))
+        }))
+    const [msgServer, setMessage] = useState({
+        msg: '',
+        bool: false
+    })
     const [value, setValue] = useState({
-        nam: '',
+        name: '',
         surname: '',
         email: '',
         password: '',
         confirmPass: '',
         isOpen: false
     })
+    
     const handleChange = props => (e) => {
         setValue({ ...value, [props]: e.target.value })
     }
-    useEffect(() => {
-        console.log('redux login ',login)
-    })
+
     function loginIn(e) {
         e.preventDefault()
-        console.log("jarrive ici", value)
-    }
-    function SignIn(e) {
-        e.preventDefault();
+        console.log('je rentre ici')
+        fetch('/auth/loginIn', {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json' 
+            }),
+            body: JSON.stringify({ value }), 
+        })
+            .then((res) => {
+                console.log('res', res)
+                if (!res.ok) {
+                    setMessage({ bool: true, msg: res.statusText});
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                }
+                return res.json()
+            })
+            .then((data, error) => {
+                if (error) {
+                    console.log('error', error)
+                }
+                dispatch({type: 'REGISTER', payload: data})
+            })
     }
 
+
+    function SignIn(e) {
+        e.preventDefault();
+        fetch('/auth/signIn', {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json' 
+            }),
+            body: JSON.stringify({ value }), 
+        })
+            .then((res) => res.json())
+            .then((resFin, error) => {
+                if (error) {
+                    console.log('error', error)
+                }
+                setMessage({ bool: true, msg:resFin.message});
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            })
+    }
+    useEffect(() => {
+        console.log(login.isLogin)
+    })
     const isDisabled = value.email.length
                             && value.password.length ? true : false
     const isDisabledIn =
@@ -104,7 +153,6 @@ export default function LoginPage() {
                             && value.password.length ? true : false 
     return (
         <div className={classes.root}>
-
            {value.isOpen && (
                 <Button variant="contained"
                     color="primary"
@@ -168,15 +216,17 @@ export default function LoginPage() {
                 <form className={classes.textfield} onSubmit={SignIn}>
                     <ValidationTextField
                         className={classes.input}
-                        value={value.name}
+                        value={value.name }
                         label="name"
+                        type="text"
                         InputLabelProps={{ required: false }}
                         onChange={handleChange("name")}
                         variant="outlined" />
                     <ValidationTextField
                         className={classes.input}
                         value={value.surname}
-                        label="surname"dfg
+                        type="text"
+                        label="surname"
                         InputLabelProps={{ required: false }}
                         onChange={handleChange("surname")}
                         variant="outlined" />
@@ -217,7 +267,16 @@ export default function LoginPage() {
                         s'enregistrer'
                    </Button>
                 </form>
-            </Card>)}
+                </Card>)}
+            {msgServer && (<Snackbar
+                    open={msgServer.bool}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'center'
+                    }}
+                    autoHideDuration={3000}
+                    message={<span>`{msgServer.msg}`</span>}
+                />)}
         </div>
     );
 }
