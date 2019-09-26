@@ -4,8 +4,8 @@
   "proxy": "http://localhost:5000",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.4.0",
-    "@material-ui/icons": "^4.2.1",
+    "@material-ui/core": "^4.4.1",
+    "@material-ui/icons": "^4.4.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-navigation-hooks": "^1.0.3",

@@ -23,11 +23,11 @@ function App(props) {
   return (
     <React.Fragment>
       <header>
-        <img src={cyclist} alt=" road bike"/>
-        <img src={famille} alt=" family with bike" />
+        <img src={cyclist} height="150px" width="50%" alt=" road bike"/>
+        <img src={famille} height="150px" width="50%" alt=" family with bike" />
         <ButtonAppBar  {...props} />
         <Link to='/home' className="logo">
-          <Button   variant="contained" color="inherit" >ALL BIKES</Button>
+          <Button variant="contained" color="inherit" >ALL BIKES</Button>
         </Link>
       </header>
       <Switch>

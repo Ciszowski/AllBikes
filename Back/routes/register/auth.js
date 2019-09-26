@@ -38,7 +38,7 @@ router.post('/loginIn', (req, res) => {
                     if (checkPass) {
                        return res.status(200).json                    
                             ({
-                                'name': name, 'surname': surname,
+                                'name': name, 'surname': surname, 'email': email,
                                 'token': token,'privilege': privilege
                             })
                     }
@@ -50,10 +50,8 @@ router.post('/loginIn', (req, res) => {
 
 
 router.post('/signIn', (req, res) => {
-
     const { name, surname, email, password } = req.body.value
     const crypt = bcrypt.hashSync(password, 10);
-
     const sendData = `INSERT INTO user(email,password,name,surname) VALUES (
        `+ mysql.escape(email) + `, ` + mysql.escape(crypt) + `,
        `+ mysql.escape(name) + `, ` + mysql.escape(surname) + `)`;
@@ -66,5 +64,24 @@ router.post('/signIn', (req, res) => {
         return res.status(200).json({ message: 'user has been registered !'})
     })
 });
+
+
+router.post('/updateProfile', (req, res)=>{
+    const {name,surname, email}= req.body.value;
+    const { oldEmail } = req.body;
+
+    const updateData = `UPDATE user SET name='${name}', surname='${surname}', email='${email}' WHERE email='${oldEmail}'`;
+    const recupData = `SELECT * from user WHERE email='${email}'`;
+
+    connection.query(updateData, (err)=>{
+        if(err){ throw new Error(err)}
+        connection.query(recupData, (er, resultat)=>{
+            console.log('result',resultat)
+          return  res.status(200).json({resultat})
+        })
+    })
+
+})
+
 
 module.exports = router;

@@ -1,15 +1,15 @@
+html, body{
+    margin: 0;
+}
+
 header{
     width: 100%;
     display: inline-flex;
     flex-flow: row wrap;
-    margin-bottom: 1em;
 }
 
-img{
-    width: 50%;
-    height: 5rem;
-    max-height: 5rem ;
-}
+/* img{
+} */
 .logo{
     position: absolute;
     margin: 2% 45%;

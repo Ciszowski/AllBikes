@@ -17,7 +17,7 @@ const ValidationTextField = withStyles({
         },
         '& input:valid:focus + fieldset': {
             borderLeftWidth: 6,
-            padding: '4px !important', // override inline-style
+            padding: '4px !important',
         },
     },
 })(TextField);
@@ -96,7 +96,6 @@ export default function LoginPage(props) {
 
     function loginIn(e) {
         e.preventDefault()
-        console.log('je rentre ici')
         fetch('/auth/loginIn', {
             method: 'POST',
             headers: new Headers({
@@ -105,7 +104,6 @@ export default function LoginPage(props) {
             body: JSON.stringify({ value }), 
         })
             .then((res) => {
-                console.log('res', res)
                 if (!res.ok) {
                     setMessage({ bool: true, msg: res.statusText});
                     setTimeout(() => {
@@ -121,7 +119,6 @@ export default function LoginPage(props) {
                 dispatch({type: 'REGISTER', payload: data})
             })
     }
-
 
     function SignIn(e) {
         e.preventDefault();
@@ -143,9 +140,6 @@ export default function LoginPage(props) {
                 }, 2000);
             })
     }
-    useEffect(() => {
-        console.log(login.isLogin)
-    })
     const isDisabled = value.email.length
                             && value.password.length ? true : false
     const isDisabledIn =

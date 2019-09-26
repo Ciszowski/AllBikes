@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import MyProfile from '../components/MyProfile';
-import LoginPage from '../components/LoginPage';
+import MyProfile from '../components/profileComponents/MyProfile';
+import LoginPage from '../components/profileComponents/LoginPage';
 
 export default function WithNoAuth() {
     const login = useSelector((state) => ({

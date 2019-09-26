@@ -14,8 +14,6 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexFlow: 'column wrap',
         alignItems: 'center'
-
-
     },
     appBar:{
         maxHeight: 40,
