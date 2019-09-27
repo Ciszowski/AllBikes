@@ -8,13 +8,15 @@ import {
     Card,
     Button,
     CardContent,
-    CardHeader
+    CardHeader,
+    CardActions
 } from '@material-ui/core';
 
 
 const ValidationTextField = withStyles({
     root: {
         width: '20em',
+        backgroundColor: "white",
         '& input:valid + fieldset': {
             borderColor: 'green',
             borderWidth: 2,
@@ -28,34 +30,44 @@ const ValidationTextField = withStyles({
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        margin: '0 30%',
         height: '500px',
         width: '600px',
+        margin: '0 30%',
+    },
+    card: {
+        height: '100%',
+        width: '100%',
         display: 'flex',
-        flexFlow: 'column nowrap',
-        justifyContent: 'space-around',
+        flexDirection: 'column',
+        justifyContent: "space-around",
+        backgroundColor: '#dbdbdb',
     },
     cardHead: {
         color: 'white',
-        fontWeight: "bolder",
-        backgroundColor: '#3f51b5'
-    },
-    card: {
-        padding: '5px 0',
+        textAlign: 'center',
         display: 'flex',
-        justifyContent: 'center'
+        alignSelf: 'center',
+        fontWeight: "bolder",
+        backgroundColor: '#3f51b5',
+    },
+    cardContent: {
+        height: '30%',
+        display: 'flex',
+        flexFlow: 'column nowrap',
+        justifyContent: 'space-around',
+        alignItems: 'center'
     },
     button: {
         display: 'flex',
-        alignSelf: 'flex-end'
+        justifyContent: 'flex-end'
     },
 }))
 
 
 
-export default function ChangePass() {
+export default function ChangePass(props) {
     const classes = useStyles();
-
+    const dispatch = useDispatch();
     const [valuePass, setValuePass] = useState({
         password: '',
         confirmPass: '',
@@ -64,40 +76,54 @@ export default function ChangePass() {
     const handleChange = props => (ev) => {
         setValuePass({ ...valuePass, [props]: ev.target.value })
     }
-    function onSaveModif() {
-
+    function onSaveModif(){
+        console.log('save modif')
+        fetch('/auth/modifPass',{
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type':'application/json'
+            }),
+            body: JSON.stringify({password: valuePass.password, email: props.email})
+        })
+        .then((res)=>res.json())
+          .then((resData)=>{
+              console.log('resData', resData)
+              dispatch({type:'DEFAULTVALUE'})
+          })
     }
-
+    const isDisabled = (valuePass.password === valuePass.confirmPass) && valuePass.password.length ? true : false
     return (
         <React.Fragment>
             <Container className={classes.root}>
                 <Card color='primary' className={classes.card}>
                     <CardHeader
                         className={classes.cardHead}
-                        title='Modification de votre profil' />
-                </Card>
-                <Card className={classes.card}>
-                    <ValidationTextField
-                        className={classes.input}
-                        value={valuePass.password}
-                        required
-                        label="password"
-                        type="password"
-                        onChange={handleChange("password")}
-                        InputLabelProps={{ required: false }}
-                        variant="outlined" />
-                    <ValidationTextField
-                        className={classes.input}
-                        value={valuePass.confirmPass}
-                        required
-                        label="confirmer le password"
-                        type="password"
-                        onChange={handleChange("confirmPass")}
-                        InputLabelProps={{ required: false }}
-                        variant="outlined" />
-                </Card>
-                <Card className={classes.button}>
-                    <Button className={classes.button} variant="contained" color="primary" onClick={onSaveModif}> Sauvegarder Modification </Button>
+                        title='Modification de votre mot de passe'/>
+                    <CardContent className={classes.cardContent}>
+                        <ValidationTextField
+                            className={classes.input}
+                            value={valuePass.password}
+                            required
+                            label="password"
+                            type="password"
+                            onChange={handleChange("password")}
+                            variant="outlined" />
+                        <ValidationTextField
+                            className={classes.input}
+                            value={valuePass.confirmPass}
+                            required
+                            label="confirmer le password"
+                            type="password"
+                            onChange={handleChange("confirmPass")}
+                            variant="outlined" />
+                    </CardContent>
+                    <CardActions className={classes.button}>
+                        <Button className={classes.button} 
+                                variant="contained" 
+                                color="primary"
+                                disabled={!isDisabled}
+                                onClick={onSaveModif}> Enregister mot de passe  </Button>
+                    </CardActions>
                 </Card>
             </Container>
         </React.Fragment>

@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
         flex: '1 1 20rem'
     },
 }));
-const allTypesOfBikes = ['Course','Triathlon', 'VTT', 'velo-de-ville','VAE']
+const allTypesOfBikes = ['Course','Trekking', 'VTT', 'velo-de-ville','VAE']
 
 
 export default function ButtonAppBar(props) {

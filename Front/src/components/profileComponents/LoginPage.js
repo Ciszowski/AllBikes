@@ -7,6 +7,7 @@ import {
     Button,
     CardHeader,
     Snackbar,
+    Container
 } from '@material-ui/core';
 
 const ValidationTextField = withStyles({
@@ -25,6 +26,7 @@ const ValidationTextField = withStyles({
 
 const useStyles = makeStyles(theme => ({
     root: {
+        margin: '5% auto',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: "space-around"
@@ -35,7 +37,6 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: '#dbdbdb',
-
     },
     cardIn: {
         width: 400,
@@ -140,13 +141,12 @@ export default function LoginPage(props) {
                 }, 2000);
             })
     }
-    const isDisabled = value.email.length
-                            && value.password.length ? true : false
-    const isDisabledIn =
-                    (value.password === value.confirmPass && value.email.length)
-                            && value.password.length ? true : false 
-    return (
-        <div className={classes.root}>
+
+    const isDisabled = value.email.length && value.password.length ? true : false;
+    const isDisabledIn = (value.password === value.confirmPass && value.email.length)
+                            && value.password.length ? true : false;
+    return(
+        <Container className={classes.root}>
            {value.isOpen && (
                 <Button variant="contained"
                     color="primary"
@@ -271,7 +271,7 @@ export default function LoginPage(props) {
                     autoHideDuration={3000}
                     message={<span>`{msgServer.msg}`</span>}
                 />)}
-        </div>
+        </Container>
     );
 }
 

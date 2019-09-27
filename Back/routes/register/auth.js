@@ -67,6 +67,7 @@ router.post('/signIn', (req, res) => {
 
 
 router.post('/updateProfile', (req, res)=>{
+    console.log('je suis la ')
     const {name,surname, email}= req.body.value;
     const { oldEmail } = req.body;
 
@@ -76,11 +77,21 @@ router.post('/updateProfile', (req, res)=>{
     connection.query(updateData, (err)=>{
         if(err){ throw new Error(err)}
         connection.query(recupData, (er, resultat)=>{
-            console.log('result',resultat)
           return  res.status(200).json({resultat})
         })
     })
+})
 
+router.post('/modifPass', (req, res)=>{
+    const { password ,email} = req.body;
+    const crypt = bcrypt.hashSync(password, 10);
+    const sendData = `UPDATE user SET password='${crypt}' WHERE email='${email}'`
+
+    connection.query(sendData, (err)=>{
+        if(err)
+            throw new Error(err)
+        return res.status(200).json({message: 'Modification du mot de passe effectué'})
+    })
 })
 
 

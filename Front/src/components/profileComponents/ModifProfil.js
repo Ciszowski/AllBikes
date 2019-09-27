@@ -8,13 +8,15 @@ import {
     Card,
     Button,
     CardContent,
-    CardHeader
+    CardHeader,
+    CardActions
 } from '@material-ui/core';
 
 
 const ValidationTextField = withStyles({
     root: {
         width: '20em',
+        backgroundColor: 'white',
         '& input:valid + fieldset': {
             borderColor: 'green',
             borderWidth: 2,
@@ -28,30 +30,40 @@ const ValidationTextField = withStyles({
 
 const useStyles = makeStyles((theme) => ({
     root:{
-        margin: '0 30%',
         height: '500px',
         width: '600px',
+        margin: '0  30%',
+    },
+    card : {
+        height: '100%',
+        width: '100%',
         display: 'flex',
-        flexFlow: 'column nowrap',
-        justifyContent: 'space-around',
+        flexDirection: 'column',
+        justifyContent: "space-around",
+        backgroundColor: '#dbdbdb',
     },
     cardHead:{
         color :'white',
+        textAlign: 'center',
+        display: 'flex',
+        alignSelf: 'center',
         fontWeight: "bolder",
-        backgroundColor: '#3f51b5'
+        backgroundColor: '#3f51b5',
     },
-    card:{
-        padding: '5px 0',
-        display:'flex',
-        justifyContent: 'center'
+    cardContent:{
+        height: '50%',
+        display: 'flex',
+        flexFlow: 'column nowrap',
+        justifyContent: 'space-around',
+        alignItems: 'center'
     },
     button:{
         display:'flex',
-        alignSelf: 'flex-end'
+        justifyContent: 'flex-end'
     },
 }))
 
-export default function ModifProfile(props) {
+export default function ModifProfile() {
 
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -94,9 +106,7 @@ export default function ModifProfile(props) {
                     <CardHeader
                         className={classes.cardHead}
                         title='Modification de votre profil'/>
-                </Card>
-                <Card className={classes.card}>
-                    <CardContent>
+                    <CardContent className={classes.cardContent}>
                         <ValidationTextField
                             className={classes.input}
                             required
@@ -107,10 +117,6 @@ export default function ModifProfile(props) {
                             InputLabelProps={{ required: false }}
                             onChange={handleChange("name")}
                             variant="outlined" />
-                    </CardContent>
-                </Card>
-                <Card className={classes.card}>
-                    <CardContent>
                         <ValidationTextField
                             className={classes.input}
                             required
@@ -121,10 +127,6 @@ export default function ModifProfile(props) {
                             InputLabelProps={{ required: false }}
                             onChange={handleChange("surname")}
                             variant="outlined" />
-                    </CardContent>
-                </Card>
-                <Card className={classes.card}>
-                    <CardContent>
                         <ValidationTextField
                             className={classes.input}
                             required
@@ -136,9 +138,9 @@ export default function ModifProfile(props) {
                             onChange={handleChange("email")}
                             variant="outlined" />
                     </CardContent>
-                </Card>
-                <Card className={classes.button}>
-                    <Button className={classes.button} variant="contained" color="primary" onClick={onSaveModif}> Sauvegarder Modification </Button>
+                    <CardActions className={classes.button}>
+                            <Button  variant="contained" color="primary" onClick={onSaveModif}> Sauvegarder Modification</Button>
+                    </CardActions>
                 </Card>
             </Container>
         </React.Fragment>

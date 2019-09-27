@@ -31,6 +31,7 @@ import {
 
 const useStyle = makeStyles((theme) => ({
     root: {
+        margin: '2% auto',
         display: 'flex',
         justifyContent: 'center',
         flexFlow: 'row wrap',
@@ -63,12 +64,6 @@ const useStyle = makeStyles((theme) => ({
     },
 }))
 
-const objProfile = {
-    favoris: <MyFavoris />,
-    profil: <ModifProfile />,
-    password: <ChangePass />,
-    admin: <Admin />
-}
 
 const objCard = [
     { value: 'favoris', typo: 'Mes favoris', image: favoris },
@@ -91,6 +86,12 @@ export default function MyProfile(props) {
             privilege: state.register.privilege,
             value : state.register.value
         }))
+    const objProfile = {
+        favoris: <MyFavoris />,
+        profil: <ModifProfile />,
+        password: <ChangePass email={data.email}/>,
+        admin: <Admin />
+    }
 
     function handleButtonProfile(ev){
         const valueProfile = ev.target.value ? ev.target.value : ev.target.title
@@ -118,11 +119,11 @@ export default function MyProfile(props) {
                     <Container fixed className={classes.root}>
                         <Card className={classes.cardHeader}>
                             <CardHeader
+                                className={classes.style}
                                 avatar={
                                     <Avatar className={classes.avatar} >
                                         <img src={avatar} alt='avatar' className={classes.avatar} />
-                                    </Avatar>
-                                }
+                                    </Avatar>}
                                 title={data.name + ' ' + data.surname}
                                 subheader={data.email}
                             />
