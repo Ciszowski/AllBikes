@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     Container,
@@ -74,6 +74,7 @@ export default function ChangePass(props) {
     })
 
     const handleChange = props => (ev) => {
+
         setValuePass({ ...valuePass, [props]: ev.target.value })
     }
     function onSaveModif(){
@@ -87,8 +88,7 @@ export default function ChangePass(props) {
         })
         .then((res)=>res.json())
           .then((resData)=>{
-              console.log('resData', resData)
-              dispatch({type:'DEFAULTVALUE'})
+              dispatch({type:'VALUE&LINK'})
           })
     }
     const isDisabled = (valuePass.password === valuePass.confirmPass) && valuePass.password.length ? true : false

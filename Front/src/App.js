@@ -18,7 +18,7 @@ import famille from './gallerie/family.jpeg';
 
 
 function App(props) {
-  const type = useSelector((state) => state.listBike.type)
+  const link = useSelector((state) => state.register.link)
   
   return (
     <React.Fragment>
@@ -33,7 +33,7 @@ function App(props) {
       <Switch>
         <Route path='/home' component={Acceuil} />
         <Route exact path="/mon-compte" component={WithNoAuth} />
-        <Route exact path={`/${type}`} component={TypeOfBike} />
+        <Route exact path={`/${link}`} component={TypeOfBike} />
         <Redirect to="/home" />
       </Switch>
     </React.Fragment>

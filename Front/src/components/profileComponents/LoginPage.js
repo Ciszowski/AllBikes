@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import {
     Card,
@@ -74,10 +74,10 @@ const useStyles = makeStyles(theme => ({
 export default function LoginPage(props) {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const login = useSelector((state) => (
-        {
-            isLogin: state.register.isLogin,
-        }))
+    // const login = useSelector((state) => (
+    //     {
+    //         isLogin: state.register.isLogin,
+    //     }))
     const [msgServer, setMessage] = useState({
         msg: '',
         bool: false

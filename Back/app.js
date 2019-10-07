@@ -5,14 +5,14 @@ const bodyParser = require('body-parser')
 const cors = require('cors');
 const authRoute = require('./routes/register/auth');
 const connection = require('./database/mysql');
-
+const bikeRoute = require('./routes/bikes/dataBicycle')
 const port = 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended : true
 }));
-
+app.use('/dataBike', bikeRoute);
 app.use('/auth',authRoute);
 app.use(cors());
 

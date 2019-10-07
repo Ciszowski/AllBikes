@@ -5,13 +5,13 @@ const initialState = {
   privilege: false,
   token: '',
   isLogin: false,
-  value: null
+  value: null,
+  link: ''
 };
 
 const registerReducer = (state = initialState, action) => {
   switch (action.type) {
     case "REGISTER":
-      console.log('payload', action)
       let { name, surname, email, token, privilege } = action.payload
       return {
         ...state,
@@ -24,14 +24,14 @@ const registerReducer = (state = initialState, action) => {
         value: null
       }
     case "SETVALUE":
-      console.log('je fais un set value',action)
       return {
         ...state,
         value: action.value
       }
-    case "DEFAULTVALUE":
+    case "VALUE&LINK":
       return {
         ...state,
+        link: action.payload,
         value: null
       }
     default:

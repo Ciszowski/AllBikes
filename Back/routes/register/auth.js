@@ -5,9 +5,7 @@ const connection = require('../../database/mysql');
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt');
 
-const mdpProvisoire = 'secretttsss'
 const mdpToken = "chéééééé mooonnn ppppprééééccciiiieeeuuuuxxxxx !!!!!!!"
-
 
 router.post('/loginIn', (req, res) => {
     const { email, password } = req.body.value
@@ -31,7 +29,6 @@ router.post('/loginIn', (req, res) => {
                             resolve(res)
                         })
                     }).then(() => {
-                        console.log('email correct',checkPass, results)
                     const { name, surname, email, privilege } = results[0];
                     const payload = {email};
                     const token= jwt.sign( payload, mdpToken, {expiresIn: '2h'})
@@ -57,7 +54,6 @@ router.post('/signIn', (req, res) => {
        `+ mysql.escape(name) + `, ` + mysql.escape(surname) + `)`;
     
     connection.query(sendData, (err, results) => {
-        console.log('results', results)
         if (err) {
             return res.status(500).json({ message: err.sqlMessage })
         }
