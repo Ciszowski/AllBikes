@@ -11,6 +11,12 @@ export const NavData= {
         Voyage:'',
         Cyclocross:'',
     },
+    VTT:{
+        Descente:'',
+        Loisirs:'',
+        CrossCountry:'',
+        BMX:''
+    },
     Ville:{
         Urbain:'',
         Hollandais:'',
