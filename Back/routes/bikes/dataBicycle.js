@@ -32,7 +32,7 @@ async function downloadImg(url, model) {
 }
 
 router.post('/addNewBike', (req, res) => {
-
+    console.log('req.body', req.body)
     const { categoryBike, typeOfBike, model, img, year, price, material, brand, size, description } = req.body;
     console.log('req body', req.body)
     downloadImg(img, model).then((data) => {
@@ -48,15 +48,16 @@ router.post('/addNewBike', (req, res) => {
             details: description,
         }
         objBike[categoryBike][typeOfBike].push(dataJson)
-        console.log('objBike', objBike)
         fs.writeFileSync(jsonBikes, JSON.stringify(objBike), (err) => {
             if (err)
                 throw new Error(err);
             })
-        console.log('json modified')
-        return res.status(200).json({message : 'Vélo ajouté'})
+            console.log('json modified')
+            return res.status(200).json({message : 'Vélo ajouté'})
+        })
+        
     })
-
-})
+    
+console.log('objBike', objBike)
 
 module.exports = router;
