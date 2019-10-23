@@ -1,8 +1,15 @@
-export const initialState = {};
+export const initialState = {
+   data: []
+};
 
- export const bikeReducer = (state = initialState, action)=>{
-    switch (action.type) {
-        default:
-           return state
-    }
-  }
+export const bikeReducer = (state = initialState, action) => {
+   switch (action.type) {
+      case "LOADBIKE":
+         return {
+            ...state,
+            data: action.payload
+         }
+      default:
+         return state
+   }
+}

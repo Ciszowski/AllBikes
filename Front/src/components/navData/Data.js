@@ -40,3 +40,4 @@ export const characteristic = {
     tempSize : 0,
     description: ''
 }
+

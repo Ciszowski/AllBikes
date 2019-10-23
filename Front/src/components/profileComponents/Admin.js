@@ -17,8 +17,6 @@ import {
     Snackbar
 } from '@material-ui/core';
 
-
-
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: '0 10%',
@@ -37,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignSelf: 'center',
         fontWeight: "bolder",
-        backgroundColor: '#3f51b5',
+        backgroundColor: '#39CCCC',
     },
     cardContent: {
         height: '40%',
@@ -47,7 +45,8 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         display: 'flex',
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
+        color:"#39CCCC"
     },
     contain:{
         display:'inline-flex',
@@ -59,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
         right: '0px'
     },
     icon:{
+        color:"#39CCCC",
         fontSize: '40px'
     },
     textField: {
@@ -105,10 +105,10 @@ export default function Admin() {
         }
     }
     function addSize() {
-        data.size.push(data.tempSize)
         setData({...data, tempSize: ''})
     }
     function onRegisterBike(){
+        data.size.push(data.tempSize)
         fetch('/dataBike/addNewBike',{
             method:"POST",
             headers: new Headers({
@@ -203,7 +203,6 @@ export default function Admin() {
 
                         <Button className={classes.button}
                             variant="contained"
-                            color="primary"
                             disabled={!isDisabled}
                             onClick={onRegisterBike}> Enregister nouveau vélo </Button>
                     </CardActions>

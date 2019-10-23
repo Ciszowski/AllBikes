@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -13,42 +13,33 @@ const useStyles = makeStyles(theme => ({
     toolbar: {
         display: 'flex',
         flexFlow: 'column wrap',
-        alignItems: 'center'
+        alignItems: 'center',
+        
     },
     appBar:{
+        backgroundColor: '#39CCCC',
         maxHeight: 40,
     },
     space: {
         flex: '1 1 20rem'
     },
 }));
-const allTypesOfBikes = ['Course','Trekking', 'VTT', 'velo-de-ville','VAE']
+const allTypesOfBikes = ['Course','Trekking', 'VTT', 'Ville','VAE']
 
 
 export default function ButtonAppBar(props) {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const [open, setOpen]= useState(null)
 
-
-    function handleOver(ev) {
-        setOpen(ev.currentTarget);
-
-    }
-    function onNavigate(ev){
+    function onNavigate(value){
         async function asyncall(){
             await new Promise((resolve)=>{ 
-                dispatch({type:'VALUE&LINK', payload: ev.target.value})
-                console.log('ev.target', ev.target.value)
-                resolve(props.history.push(ev.target.value))
+                dispatch({type:'VALUE&LINK', payload: value})
+                resolve(props.history.push(`/${value}`));
             }) 
         }
         asyncall()
     }
-
-    // function handleClose() {
-    //     setOpen(null)
-    // }
 
     return (
         <div className={classes.root} >
@@ -58,7 +49,11 @@ export default function ButtonAppBar(props) {
                         return (
                             <Button className={classes.menuButton}
                                 value={el}
-                                key={idx} color="inherit" onClick={onNavigate} onMouseOver={handleOver}>{el}</Button>
+                                color="primary"
+                                key={idx} 
+                                onClick={()=>onNavigate(el)}>
+                                    {el}
+                            </Button>
                         )
                     })}
   
@@ -66,9 +61,9 @@ export default function ButtonAppBar(props) {
                     <span className={classes.space}></span>
                     <span className={classes.space}></span>
 
-                        <Button variant="contained" color="primary"
+                        <Button color="primary"
                             value="mon-compte"
-                        onClick={onNavigate}>Mon Compte</Button>
+                        onClick={()=> onNavigate('mon-compte')}>Mon Compte</Button>
                 </Toolbar>
             </AppBar>
         </div>

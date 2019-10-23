@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignSelf: 'center',
         fontWeight: "bolder",
-        backgroundColor: '#3f51b5',
+        backgroundColor: '#39CCCC',
     },
     cardContent: {
         height: '30%',

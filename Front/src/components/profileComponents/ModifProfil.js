@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     root:{
         height: '500px',
         width: '600px',
-        margin: '0  30%',
+        margin: '0 30%',
     },
     card : {
         height: '100%',
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignSelf: 'center',
         fontWeight: "bolder",
-        backgroundColor: '#3f51b5',
+        backgroundColor: '#39CCCC',
     },
     cardContent:{
         height: '50%',
@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     },
     button:{
         display:'flex',
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
     },
 }))
 
@@ -139,7 +139,7 @@ export default function ModifProfile() {
                             variant="outlined" />
                     </CardContent>
                     <CardActions className={classes.button}>
-                            <Button  variant="contained" color="primary" onClick={onSaveModif}> Sauvegarder Modification</Button>
+                            <Button style={{backgroundColor: '#39CCCC', color:'white'}}  variant="contained" onClick={onSaveModif}> Sauvegarder Modification</Button>
                     </CardActions>
                 </Card>
             </Container>

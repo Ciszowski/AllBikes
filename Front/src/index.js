@@ -12,7 +12,7 @@ import * as serviceWorker from './serviceWorker';
 const reducer = combineReducers({
     listBike: bikeReducer,
     register: registerReducer
-})
+});
 
 export const store = createStore(
     reducer,

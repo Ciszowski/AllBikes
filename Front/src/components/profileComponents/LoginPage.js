@@ -50,8 +50,8 @@ const useStyles = makeStyles(theme => ({
         maxHeight: 50,
     },
     cardHeader: {
-        backgroundColor: '#3f51b5',
-        color: 'white',
+        backgroundColor: '#39CCCC',
+        color: 'grey',
         textAlign: 'center',
     },
     textfield: {
@@ -63,7 +63,9 @@ const useStyles = makeStyles(theme => ({
     },
     cardActions: {
         alignSelf: 'flex-end',
-        margin: theme.spacing(1)
+        margin: theme.spacing(1),
+        backgroundColor: '#39CCCC',
+        color: 'white'
     },
     input: {
         width: 350,
@@ -74,10 +76,6 @@ const useStyles = makeStyles(theme => ({
 export default function LoginPage(props) {
     const classes = useStyles();
     const dispatch = useDispatch();
-    // const login = useSelector((state) => (
-    //     {
-    //         isLogin: state.register.isLogin,
-    //     }))
     const [msgServer, setMessage] = useState({
         msg: '',
         bool: false
@@ -149,7 +147,6 @@ export default function LoginPage(props) {
         <Container className={classes.root}>
            {value.isOpen && (
                 <Button variant="contained"
-                    color="primary"
                     className={classes.buttonInscription}
                     onClick={() => setValue({ ...value, isOpen: false })}>
                         déjà inscrit ?
@@ -188,14 +185,13 @@ export default function LoginPage(props) {
                             variant="contained"
                             disabled={!isDisabled}
                             type="submit"
-                            color="primary">
+                            >
                             se connecter
                 </Button>
                     </form>
             </Card>)}
             {!value.isOpen && (
                 <Button variant="contained"
-                color="primary"
                 className={classes.buttonInscription}
                 onClick={() => setValue({ ...value, isOpen: true })}>
                     Pas de compte ?
@@ -210,16 +206,14 @@ export default function LoginPage(props) {
                 <form className={classes.textfield} onSubmit={SignIn}>
                     <ValidationTextField
                         className={classes.input}
-                        value={value.name }
+                        value={value.name}
                         label="name"
-                        type="text"
                         InputLabelProps={{ required: false }}
                         onChange={handleChange("name")}
                         variant="outlined" />
                     <ValidationTextField
                         className={classes.input}
                         value={value.surname}
-                        type="text"
                         label="surname"
                         InputLabelProps={{ required: false }}
                         onChange={handleChange("surname")}
@@ -257,7 +251,7 @@ export default function LoginPage(props) {
                         variant="contained"
                         disabled={!isDisabledIn}
                         type="submit"
-                        color="primary">
+                        >
                         s'enregistrer'
                    </Button>
                 </form>

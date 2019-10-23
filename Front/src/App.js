@@ -1,13 +1,15 @@
 import './mainCss.css'
 import React from 'react';
 import { Switch, Route, Redirect, withRouter ,Link} from 'react-router-dom';
+
 import { useSelector } from 'react-redux';
 
 //components
 import ButtonAppBar from './components/NavigateBar';
-import TypeOfBike from './components/TypeOfBike';
+import AllBikes from './components/AllBikes';
 import WithNoAuth from './fcRouter/WithNoAuth'
 import Acceuil from './components/Acceuil';
+import SingleBike from './components/SingleBike';
 
 //material
 import Button from '@material-ui/core/Button';
@@ -19,7 +21,6 @@ import famille from './gallerie/family.jpeg';
 
 function App(props) {
   const link = useSelector((state) => state.register.link)
-  
   return (
     <React.Fragment>
       <header>
@@ -33,7 +34,8 @@ function App(props) {
       <Switch>
         <Route path='/home' component={Acceuil} />
         <Route exact path="/mon-compte" component={WithNoAuth} />
-        <Route exact path={`/${link}`} component={TypeOfBike} />
+        <Route exact path={'/'+link} component={AllBikes}/>
+        <Route exact path={'/'+link +'/:name'} component={SingleBike}/>
         <Redirect to="/home" />
       </Switch>
     </React.Fragment>

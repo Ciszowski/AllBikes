@@ -1,5 +1,9 @@
 html, body{
     margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
 }
 
 header{
@@ -8,8 +12,6 @@ header{
     flex-flow: row wrap;
 }
 
-/* img{
-} */
 .logo{
     position: absolute;
     margin: 2% 45%;
