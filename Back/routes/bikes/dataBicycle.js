@@ -1,43 +1,27 @@
 const express = require('express');
-const router = express.Router()
+const router = express.Router();
 const jsonBikes = __dirname + '/bikes.json';
 const objBike = require(jsonBikes);
-
+const tools = require('./tools')
 const fs = require('fs');
-const request = require('request');
 
-function getFileType(string) {
-    const ext = string.replace(/[a-zA-Z]+\//gi, '.')
-    console.log('getfiletype', ext, string)
-    return ext
-}
-
-
-async function downloadImg(url, model) {
-    console.log('download function', url, model)
-    return await new Promise((resolve, reject) => {
-        request(url).on('response', (res, req) => {
-            const ext = getFileType(res.headers['content-type'])
-            const filename = __dirname + '/imagesBikes/' + model.replace(/[' ']/gi, '_') + ext; //create a file (= name)
-            const stream = fs.createWriteStream(filename) //write to specific file)
-            console.log('image has been saved')
-            res.pipe(stream).on('close', () => {
-                console.log('réponse end', res.complete)
-                resolve(stream)
-            })
-        })
-    }).catch((err) => {
-        console.log('error occured' + err)
-    })
-}
+router.get("/loadBikes/:name",(req,res)=>{
+    const {name} = req.params;
+    return res.json(objBike.filter((el)=> el.categorie == name));
+})
+router.get("/getSingleBike/:name", (req,res)=>{
+    const { name } = req.params;
+    const modele = name.replace(/[_]+/gi, ' ')
+    return res.status(200).json(objBike.filter((el)=> el.model == `${modele}`))
+})
 
 router.post('/addNewBike', (req, res) => {
-    console.log('req.body', req.body)
-    const { categoryBike, typeOfBike, model, img, year, price, material, brand, size, description } = req.body;
-    console.log('req body', req.body)
-    downloadImg(img, model).then((data) => {
+    const{categoryBike,typeOfBike,model,img,year,price,material,brand,size,description}= req.body;
+    tools.downloadImg(img, model).then((data) => {
         var imagePath = data.path
         const dataJson = {
+            categorie: categoryBike,
+            subCategories: typeOfBike,
             model: model,
             brand: brand,
             image: imagePath,
@@ -47,17 +31,22 @@ router.post('/addNewBike', (req, res) => {
             size: size,
             details: description,
         }
-        objBike[categoryBike][typeOfBike].push(dataJson)
-        fs.writeFileSync(jsonBikes, JSON.stringify(objBike), (err) => {
-            if (err)
-                throw new Error(err);
-            })
-            console.log('json modified')
-            return res.status(200).json({message : 'Vélo ajouté'})
-        })
-        
+        objBike.push(dataJson)
+        fs.writeFileSync(jsonBikes, JSON.stringify(objBike))
+        return res.status(200).json({ message: 'Vélo ajouté' })
     })
-    
-console.log('objBike', objBike)
+})
 
+router.get('/getFavori/:id', (req, res)=>{
+    const { id } = req.params;
+    const request = `SELECT * from favori WHERE  id_user=${id}`;
+
+    connection.query(request, (err, results)=>{
+        try{
+            console.log('resultats',results)
+        }catch(err){
+            console.log('Some Error occured', err)
+        }
+    })
+});
 module.exports = router;

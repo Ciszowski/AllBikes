@@ -2,7 +2,7 @@
     {
         "model": "Infinito CV",
         "brand": "Bianchi",
-        "image": "/Infinito_CV.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Infinito_CV.jpeg",
         "material": "Carbone",
         "year": "2014",
         "price": 4000,
@@ -17,7 +17,7 @@
     {
         "model": "Intenso",
         "brand": "Bianchi",
-        "image": "/Intenso.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Intenso.jpeg",
         "material": "Carbone",
         "year": "2013",
         "price": 2499,
@@ -34,7 +34,7 @@
     {
         "model": "Via nirone 7",
         "brand": "Bianchi",
-        "image": "/Via_nirone_7.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Via_nirone_7.jpeg",
         "material": "Aluminium",
         "year": "1998",
         "price": 1299,
@@ -51,7 +51,7 @@
     {
         "model": "Aria",
         "brand": "Bianchi",
-        "image": "/Aria.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Aria.jpeg",
         "material": "Carbone",
         "year": "2015",
         "price": 3000,
@@ -66,7 +66,7 @@
     {
         "model": "Impulso",
         "brand": "Bianchi",
-        "image": "/Impulso.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Impulso.jpeg",
         "material": "Aluminium",
         "year": "2005",
         "price": 1449,
@@ -84,7 +84,7 @@
     {
         "model": "Optimum",
         "brand": "Look",
-        "image": "/Optimum.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Optimum.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 2499,
@@ -101,7 +101,7 @@
     {
         "model": "Bond",
         "brand": "Cipollini",
-        "image": "/Bond.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Bond.jpeg",
         "material": "Carbone",
         "year": "2015",
         "price": 1999,
@@ -116,7 +116,7 @@
     {
         "model": "Dogma fS",
         "brand": "Pinarello",
-        "image": "/Dogma_fS.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Dogma_fS.png",
         "material": "Carbone",
         "year": "2015",
         "price": 5000,
@@ -131,7 +131,7 @@
     {
         "model": "Prince",
         "brand": "Pinarello",
-        "image": "/Prince.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Prince.jpeg",
         "material": "Carbone",
         "year": "2017",
         "price": 3800,
@@ -147,7 +147,7 @@
     {
         "model": "RAZHA",
         "brand": "Pinarello",
-        "image": "/RAZHA.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/RAZHA.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 1499,
@@ -162,7 +162,7 @@
     {
         "model": "R5 Classic Road",
         "brand": "Cervelo",
-        "image": "/R5_Classic_Road.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/R5_Classic_Road.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 8199,
@@ -177,7 +177,7 @@
     {
         "model": "R2 Classic road",
         "brand": "Cervelo",
-        "image": "/R2_Classic_road.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/R2_Classic_road.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 2500,
@@ -192,7 +192,7 @@
     {
         "model": "C3 endurance road ",
         "brand": "Cervelo",
-        "image": "/C3_endurance_road_.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/C3_endurance_road_.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 4429,
@@ -207,7 +207,7 @@
     {
         "model": "Endurace AL 6.0",
         "brand": "Canyon",
-        "image": "/Endurace_AL_6.0.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Endurace_AL_6.0.png",
         "material": "Aluminium",
         "year": "2015",
         "price": 899,
@@ -224,7 +224,7 @@
     {
         "model": "Endurace CF SLX Disc",
         "brand": "Canyon",
-        "image": "/Endurace_CF_SLX_Disc.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Endurace_CF_SLX_Disc.png",
         "material": "Carbone",
         "year": "2015",
         "price": 6999,
@@ -240,7 +240,7 @@
     {
         "model": "TCR advanced",
         "brand": "Giant",
-        "image": "/TCR_advanced.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/TCR_advanced.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 3000,
@@ -256,7 +256,7 @@
     {
         "model": "Defy Advanced",
         "brand": "Giant",
-        "image": "/Defy_Advanced.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Defy_Advanced.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 2000,
@@ -272,7 +272,7 @@
     {
         "model": "Domane SL 6",
         "brand": "Trek",
-        "image": "/Domane_SL_6.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Domane_SL_6.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 3599,
@@ -287,7 +287,7 @@
     {
         "model": "Émonda SL 5 Disque",
         "brand": "Trek",
-        "image": "/Émonda_SL_5_Disque.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Émonda_SL_5_Disque.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 2249,
@@ -302,7 +302,7 @@
     {
         "model": "Aquila cv",
         "brand": "Bianchi",
-        "image": "/Aquila_cv.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Aquila_cv.jpeg",
         "material": "Carbone",
         "year": "2015",
         "price": 6299,
@@ -319,7 +319,7 @@
     {
         "model": "Monoblade RS",
         "brand": "Look",
-        "image": "/Monoblade_RS.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Monoblade_RS.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 9490,
@@ -335,7 +335,7 @@
     {
         "model": "NKTT",
         "brand": "Cipollini",
-        "image": "/NKTT.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/NKTT.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 7890,
@@ -353,7 +353,7 @@
     {
         "model": "Bolide TT",
         "brand": "Pinarello",
-        "image": "/Bolide_TT.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Bolide_TT.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 14450,
@@ -369,7 +369,7 @@
     {
         "model": "P3x ",
         "brand": "Cervelo",
-        "image": "/P3x_.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/P3x_.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 10000,
@@ -385,7 +385,7 @@
     {
         "model": "P5 ",
         "brand": "Cervelo",
-        "image": "/P5_.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/P5_.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 5500,
@@ -401,7 +401,7 @@
     {
         "model": "PX-Series",
         "brand": "Cervelo",
-        "image": "/PX-Series.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/PX-Series.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 15500,
@@ -417,7 +417,7 @@
     {
         "model": "Speedmax WMN ",
         "brand": "Canyon",
-        "image": "/Speedmax_WMN_.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Speedmax_WMN_.png",
         "material": "Carbone",
         "year": "2019",
         "price": 6899,
@@ -433,7 +433,7 @@
     {
         "model": "Ordu",
         "brand": "Orbea",
-        "image": "/Ordu.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Ordu.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 8999,
@@ -449,7 +449,7 @@
     {
         "model": "Trinity Advanced Pro",
         "brand": "Giant",
-        "image": "/Trinity_Advanced_Pro.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Trinity_Advanced_Pro.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 5500,
@@ -465,7 +465,7 @@
     {
         "model": "Speed Concept ",
         "brand": "Trek",
-        "image": "/Speed_Concept_.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Speed_Concept_.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 4499,
@@ -484,7 +484,7 @@
     {
         "model": "R96",
         "brand": "Look",
-        "image": "/R96.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/R96.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 6999,
@@ -500,7 +500,7 @@
     {
         "model": "Speed",
         "brand": "Cipollini",
-        "image": "/Speed.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Speed.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 5500,
@@ -515,7 +515,7 @@
     {
         "model": "Bolide HR",
         "brand": "Pinarello",
-        "image": "/Bolide_HR.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Bolide_HR.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 10100,
@@ -530,7 +530,7 @@
     {
         "model": "T4",
         "brand": "Cervelo",
-        "image": "/T4.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/T4.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 6500,
@@ -544,7 +544,7 @@
     {
         "model": "Fuji Track Elite",
         "brand": "Fuji",
-        "image": "/Fuji_Track_Elite.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Fuji_Track_Elite.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 4199,
@@ -558,7 +558,7 @@
     {
         "model": "Oltre xr4",
         "brand": "Bianchi",
-        "image": "/Oltre_xr4.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Oltre_xr4.png",
         "material": "Carbone",
         "year": "2020",
         "price": 5590,
@@ -575,7 +575,7 @@
     {
         "model": "Oltre xr3",
         "brand": "Bianchi",
-        "image": "/Oltre_xr3.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Oltre_xr3.jpeg",
         "material": "Carbone",
         "year": "2017",
         "price": 4000,
@@ -590,7 +590,7 @@
     {
         "model": "Specialissima",
         "brand": "Bianchi",
-        "image": "/Specialissima.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Specialissima.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 4900,
@@ -606,7 +606,7 @@
     {
         "model": "SF01",
         "brand": "Bianchi",
-        "image": "/SF01.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/SF01.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 15500,
@@ -620,7 +620,7 @@
     {
         "model": "Specialissima 2019 - Marco Pantani Frameset ",
         "brand": "Bianchi",
-        "image": "/Specialissima_2019_-_Marco_Pantani_Frameset_.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Specialissima_2019_-_Marco_Pantani_Frameset_.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 4699,
@@ -634,7 +634,7 @@
     {
         "model": " 795 BLADE RS",
         "brand": "Look",
-        "image": "/795_BLADE_RS.jpg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/795_BLADE_RS.jpg",
         "material": "Carbone",
         "year": "2019",
         "price": 6799,
@@ -650,7 +650,7 @@
     {
         "model": "795 Light Rs",
         "brand": "Look",
-        "image": "/795_Light_Rs.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/795_Light_Rs.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 5999,
@@ -667,7 +667,7 @@
     {
         "model": "RB1K the one",
         "brand": "Cipollini",
-        "image": "/RB1K_the_one.jpg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/RB1K_the_one.jpg",
         "material": "Carbone",
         "year": "2019",
         "price": 6000,
@@ -684,7 +684,7 @@
     {
         "model": "Dogma f10 Team Sky",
         "brand": "Pinarello",
-        "image": "/Dogma_f10_Team_Sky.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Dogma_f10_Team_Sky.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 10500,
@@ -699,7 +699,7 @@
     {
         "model": "Dogma f10",
         "brand": "Pinarello",
-        "image": "/Dogma_f10.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Dogma_f10.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 9100,
@@ -714,7 +714,7 @@
     {
         "model": "S5 aero road",
         "brand": "Cervelo",
-        "image": "/S5_aero_road.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/S5_aero_road.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 6999,
@@ -729,7 +729,7 @@
     {
         "model": "S-Series Aero road",
         "brand": "Cervelo",
-        "image": "/S-Series_Aero_road.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/S-Series_Aero_road.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 7999,
@@ -744,7 +744,7 @@
     {
         "model": "Ultimate CF evo 10.0 LTD ",
         "brand": "Canyon",
-        "image": "/Ultimate_CF_evo_10.0_LTD_.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Ultimate_CF_evo_10.0_LTD_.png",
         "material": "Carbone",
         "year": "2020",
         "price": 10000,
@@ -763,7 +763,7 @@
     {
         "model": "Avant M30Team-D",
         "brand": "Orbea",
-        "image": "/Avant_M30Team-D.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Avant_M30Team-D.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 2249,
@@ -781,7 +781,7 @@
     {
         "model": "ORCA M11eLTD-D",
         "brand": "Orbea",
-        "image": "/ORCA_M11eLTD-D.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/ORCA_M11eLTD-D.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 8499,
@@ -799,7 +799,7 @@
     {
         "model": "ORCA AERO M11eTEAM-D",
         "brand": "Orbea",
-        "image": "/ORCA_AERO_M11eTEAM-D.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/ORCA_AERO_M11eTEAM-D.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 8599,
@@ -817,7 +817,7 @@
     {
         "model": "Propel Advanced Pro",
         "brand": "Giant",
-        "image": "/Propel_Advanced_Pro.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Propel_Advanced_Pro.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 3599,
@@ -833,7 +833,7 @@
     {
         "model": "Madone SL 6 Disque",
         "brand": "Trek",
-        "image": "/Madone_SL_6_Disque.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Madone_SL_6_Disque.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 4499,
@@ -851,7 +851,7 @@
     {
         "model": "520 Disc",
         "brand": "Trek",
-        "image": "/520_Disc.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/520_Disc.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 1399,
@@ -865,7 +865,7 @@
     {
         "model": "920",
         "brand": "Trek",
-        "image": "/920.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/920.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 1899,
@@ -879,7 +879,7 @@
     {
         "model": "1120",
         "brand": "Trek",
-        "image": "/1120.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/1120.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 2799,
@@ -893,7 +893,7 @@
     {
         "model": "ACTIVA PRO ROHLOFF",
         "brand": "Rose",
-        "image": "/ACTIVA_PRO_ROHLOFF.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/ACTIVA_PRO_ROHLOFF.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 3427,
@@ -907,7 +907,7 @@
     {
         "model": "OPAL HIGH 28",
         "brand": "Amsterdamair",
-        "image": "/OPAL_HIGH_28.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/OPAL_HIGH_28.jpeg",
         "material": "Aluminium",
         "year": "2010",
         "price": 1790,
@@ -921,7 +921,7 @@
     {
         "model": "Impulso All Road",
         "brand": "Bianchi",
-        "image": "/Impulso_All_Road.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Impulso_All_Road.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 2199,
@@ -938,7 +938,7 @@
     {
         "model": "765 Gravel RS",
         "brand": "Look",
-        "image": "/765_Gravel_RS.jpg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/765_Gravel_RS.jpg",
         "material": "Aluminium",
         "year": "2019",
         "price": 4499,
@@ -955,7 +955,7 @@
     {
         "model": "Grevil+",
         "brand": "Pinarello",
-        "image": "/Grevil+.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Grevil+.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 5270,
@@ -970,7 +970,7 @@
     {
         "model": "Aspero",
         "brand": "Cervelo",
-        "image": "/Aspero.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Aspero.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 2999,
@@ -988,7 +988,7 @@
     {
         "model": "Grail CF SLX 8.0 ETAP",
         "brand": "Canyon",
-        "image": "/Grail_CF_SLX_8.0_ETAP.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Grail_CF_SLX_8.0_ETAP.png",
         "material": "Carbone",
         "year": "2018",
         "price": 4899,
@@ -1005,7 +1005,7 @@
     {
         "model": "Grail AL 6.0",
         "brand": "Canyon",
-        "image": "/Grail_AL_6.0.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Grail_AL_6.0.png",
         "material": "Aluminium",
         "year": "2014",
         "price": 1199,
@@ -1021,7 +1021,7 @@
     {
         "model": "ToughRoad SLR GX",
         "brand": "Giant",
-        "image": "/ToughRoad_SLR_GX.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/ToughRoad_SLR_GX.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 1100,
@@ -1037,7 +1037,7 @@
     {
         "model": "Revolt Advanced",
         "brand": "Giant",
-        "image": "/Revolt_Advanced.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Revolt_Advanced.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 2100,
@@ -1053,7 +1053,7 @@
     {
         "model": "Checkpoint SL 7",
         "brand": "Trek",
-        "image": "/Checkpoint_SL_7.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Checkpoint_SL_7.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 5499,
@@ -1071,7 +1071,7 @@
     {
         "model": "Dude CF 9.0 Trail ",
         "brand": "Canyon",
-        "image": "/Dude_CF_9.0_Trail_.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Dude_CF_9.0_Trail_.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 2999,
@@ -1085,7 +1085,7 @@
     {
         "model": "Dude CF 8.0",
         "brand": "Canyon",
-        "image": "/Dude_CF_8.0.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Dude_CF_8.0.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 1999,
@@ -1099,7 +1099,7 @@
     {
         "model": "Farley 5",
         "brand": "Trek",
-        "image": "/Farley_5.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Farley_5.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 1699,
@@ -1113,7 +1113,7 @@
     {
         "model": "Farley 9.6",
         "brand": "Trek",
-        "image": "/Farley_9.6.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Farley_9.6.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 2599,
@@ -1127,7 +1127,7 @@
     {
         "model": "Trail Tracker ",
         "brand": "Pedego",
-        "image": "/Trail_Tracker_.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Trail_Tracker_.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 2695,
@@ -1141,7 +1141,7 @@
     {
         "model": "Crossista +",
         "brand": "Pinarello",
-        "image": "/Crossista_+.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Crossista_+.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 3500,
@@ -1157,7 +1157,7 @@
     {
         "model": "Inflite CF SLX 9.0",
         "brand": "Canyon",
-        "image": "/Inflite_CF_SLX_9.0.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Inflite_CF_SLX_9.0.png",
         "material": "Carbone",
         "year": "2018",
         "price": 4399,
@@ -1172,7 +1172,7 @@
     {
         "model": "Inflite AL SLX 5.0",
         "brand": "Canyon",
-        "image": "/Inflite_AL_SLX_5.0.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Inflite_AL_SLX_5.0.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 1599,
@@ -1187,7 +1187,7 @@
     {
         "model": "Terra m20",
         "brand": "Orbea",
-        "image": "/Terra_m20.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Terra_m20.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 2599,
@@ -1205,7 +1205,7 @@
     {
         "model": "ALMA M-TEAM",
         "brand": "Orbea",
-        "image": "/ALMA_M-TEAM.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/ALMA_M-TEAM.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 6599,
@@ -1221,7 +1221,7 @@
     {
         "model": "Boone 7 disque",
         "brand": "Trek",
-        "image": "/Boone_7_disque.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Boone_7_disque.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 4999,
@@ -1235,7 +1235,7 @@
     {
         "model": "Sender AL 5.0",
         "brand": "Canyon",
-        "image": "/Sender_AL_5.0.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Sender_AL_5.0.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 2499,
@@ -1249,7 +1249,7 @@
     {
         "model": "Torque CF 9.0",
         "brand": "Canyon",
-        "image": "/Torque_CF_9.0.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Torque_CF_9.0.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 4799,
@@ -1263,7 +1263,7 @@
     {
         "model": "Strive CFR 9.0 LTD",
         "brand": "Canyon",
-        "image": "/Strive_CFR_9.0_LTD.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Strive_CFR_9.0_LTD.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 6999,
@@ -1277,7 +1277,7 @@
     {
         "model": "RALLON M-TEAM",
         "brand": "Orbea",
-        "image": "/RALLON_M-TEAM.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/RALLON_M-TEAM.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 6499,
@@ -1293,7 +1293,7 @@
     {
         "model": "OCCAM M10",
         "brand": "Orbea",
-        "image": "/OCCAM_M10.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/OCCAM_M10.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 4999,
@@ -1309,7 +1309,7 @@
     {
         "model": "Reign",
         "brand": "Giant",
-        "image": "/Reign.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Reign.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 2700,
@@ -1325,7 +1325,7 @@
     {
         "model": "Glory",
         "brand": "Giant",
-        "image": "/Glory.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Glory.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 4500,
@@ -1341,7 +1341,7 @@
     {
         "model": "Bianchi GRIZZLY 9.3",
         "brand": "Bianchi",
-        "image": "/Bianchi_GRIZZLY_9.3.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Bianchi_GRIZZLY_9.3.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 1199,
@@ -1355,7 +1355,7 @@
     {
         "model": " Bianchi Magma 9.2 ",
         "brand": "Bianchi",
-        "image": "/_Bianchi_Magma_9.2_.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/_Bianchi_Magma_9.2_.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 640,
@@ -1369,7 +1369,7 @@
     {
         "model": "Kuma 27.0",
         "brand": "Bianchi",
-        "image": "/Kuma_27.0.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Kuma_27.0.jpeg",
         "material": "Aluminium",
         "year": "2017",
         "price": 999,
@@ -1383,7 +1383,7 @@
     {
         "model": "977",
         "brand": "Look",
-        "image": "/977.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/977.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 2999,
@@ -1397,7 +1397,7 @@
     {
         "model": "LAUFEY H10",
         "brand": "Orbea",
-        "image": "/LAUFEY_H10.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/LAUFEY_H10.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 1599,
@@ -1411,7 +1411,7 @@
     {
         "model": "MX 40",
         "brand": "Orbea",
-        "image": "/MX_40.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/MX_40.jpeg",
         "material": "Aluminium",
         "year": "2015",
         "price": 559,
@@ -1425,7 +1425,7 @@
     {
         "model": "Talon",
         "brand": "Giant",
-        "image": "/Talon.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Talon.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 580,
@@ -1439,7 +1439,7 @@
     {
         "model": "Marlin",
         "brand": "Trek",
-        "image": "/Marlin.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Marlin.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 449,
@@ -1453,7 +1453,7 @@
     {
         "model": "Roscoe",
         "brand": "Trek",
-        "image": "/Roscoe.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Roscoe.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 899,
@@ -1467,7 +1467,7 @@
     {
         "model": " Bianchi Methanol 9.2 CV RS",
         "brand": "Bianchi",
-        "image": "/_Bianchi_Methanol_9.2_CV_RS.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/_Bianchi_Methanol_9.2_CV_RS.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 5499,
@@ -1482,7 +1482,7 @@
     {
         "model": "Bianchi Nitron 9.3 ",
         "brand": "Bianchi",
-        "image": "/Bianchi_Nitron_9.3_.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Bianchi_Nitron_9.3_.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 1699,
@@ -1496,7 +1496,7 @@
     {
         "model": "989 RS",
         "brand": "Look",
-        "image": "/989_RS.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/989_RS.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 7299,
@@ -1511,7 +1511,7 @@
     {
         "model": "Dogma XC 9.9",
         "brand": "Pinarello",
-        "image": "/Dogma_XC_9.9.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Dogma_XC_9.9.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 6100,
@@ -1525,7 +1525,7 @@
     {
         "model": "Lux CF SLX 9.0 Race Team",
         "brand": "Canyon",
-        "image": "/Lux_CF_SLX_9.0_Race_Team.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Lux_CF_SLX_9.0_Race_Team.png",
         "material": "Carbone",
         "year": "2018",
         "price": 6799,
@@ -1539,7 +1539,7 @@
     {
         "model": "Exceed CF SLX 9.0 Pro Race",
         "brand": "Canyon",
-        "image": "/Exceed_CF_SLX_9.0_Pro_Race.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Exceed_CF_SLX_9.0_Pro_Race.png",
         "material": "Carbone",
         "year": "2018",
         "price": 5999,
@@ -1553,7 +1553,7 @@
     {
         "model": "Grand Canyon WMN AL 6.0",
         "brand": "Canyon",
-        "image": "/Grand_Canyon_WMN_AL_6.0.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Grand_Canyon_WMN_AL_6.0.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 899,
@@ -1567,7 +1567,7 @@
     {
         "model": "OIZ M-TEAM",
         "brand": "Orbea",
-        "image": "/OIZ_M-TEAM.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/OIZ_M-TEAM.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 7199,
@@ -1583,7 +1583,7 @@
     {
         "model": "Anthem Advanced Pro 29 0 Eagle",
         "brand": "Giant",
-        "image": "/Anthem_Advanced_Pro_29_0_Eagle.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Anthem_Advanced_Pro_29_0_Eagle.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 9000,
@@ -1597,7 +1597,7 @@
     {
         "model": "XTC Advanced SL 29",
         "brand": "Giant",
-        "image": "/XTC_Advanced_SL_29.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/XTC_Advanced_SL_29.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 4300,
@@ -1611,7 +1611,7 @@
     {
         "model": "Supercaliber",
         "brand": "Trek",
-        "image": "/Supercaliber.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Supercaliber.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 5999,
@@ -1625,7 +1625,7 @@
     {
         "model": "Procaliber",
         "brand": "Trek",
-        "image": "/Procaliber.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Procaliber.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 1999,
@@ -1639,7 +1639,7 @@
     {
         "model": "Top Fuel 9.8",
         "brand": "Trek",
-        "image": "/Top_Fuel_9.8.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Top_Fuel_9.8.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 5499,
@@ -1653,7 +1653,7 @@
     {
         "model": "Fuel EX 9.8",
         "brand": "Trek",
-        "image": "/Fuel_EX_9.8.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Fuel_EX_9.8.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 5499,
@@ -1667,7 +1667,7 @@
     {
         "model": "Remedy 9.8 27,5",
         "brand": "Trek",
-        "image": "/Remedy_9.8_27,5.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Remedy_9.8_27,5.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 5299,
@@ -1681,7 +1681,7 @@
     {
         "model": "Slash 9.8 29",
         "brand": "Trek",
-        "image": "/Slash_9.8_29.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Slash_9.8_29.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 5799,
@@ -1695,7 +1695,7 @@
     {
         "model": "Crockett 5 disque",
         "brand": "Trek",
-        "image": "/Crockett_5_disque.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Crockett_5_disque.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 1999,
@@ -1709,7 +1709,7 @@
     {
         "model": "Stitched 360",
         "brand": "Canyon",
-        "image": "/Stitched_360.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Stitched_360.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 849,
@@ -1723,7 +1723,7 @@
     {
         "model": "Stitched 720 Pro",
         "brand": "Canyon",
-        "image": "/Stitched_720_Pro.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Stitched_720_Pro.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 1750,
@@ -1737,7 +1737,7 @@
     {
         "model": "EVO EXPERT",
         "brand": "Inspyre",
-        "image": "/EVO_EXPERT.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/EVO_EXPERT.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 600,
@@ -1751,7 +1751,7 @@
     {
         "model": "CK AM",
         "brand": "Haro",
-        "image": "/CK_AM.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/CK_AM.png",
         "material": "Aluminium",
         "year": "2019",
         "price": 749,
@@ -1765,7 +1765,7 @@
     {
         "model": "Interstate",
         "brand": "Haro",
-        "image": "/Interstate.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Interstate.png",
         "material": "Aluminium",
         "year": "2019",
         "price": 599,
@@ -1779,7 +1779,7 @@
     {
         "model": "Treviso Disk",
         "brand": "Pinarello",
-        "image": "/Treviso_Disk.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Treviso_Disk.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 1950,
@@ -1795,7 +1795,7 @@
     {
         "model": "KATU 40",
         "brand": "Orbea",
-        "image": "/KATU_40.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/KATU_40.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 540,
@@ -1809,7 +1809,7 @@
     {
         "model": "Optima A30",
         "brand": "Orbea",
-        "image": "/Optima_A30.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Optima_A30.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 599,
@@ -1823,7 +1823,7 @@
     {
         "model": "ExpressWay",
         "brand": "Giant",
-        "image": "/ExpressWay.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/ExpressWay.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 430,
@@ -1837,7 +1837,7 @@
     {
         "model": "T200 Midstep",
         "brand": "Trek",
-        "image": "/T200_Midstep.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/T200_Midstep.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 699,
@@ -1851,7 +1851,7 @@
     {
         "model": " L500 Stagger",
         "brand": "Trek",
-        "image": "/_L500_Stagger.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/_L500_Stagger.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 1099,
@@ -1865,7 +1865,7 @@
     {
         "model": "Cross High",
         "brand": "Amsterdamair",
-        "image": "/Cross_High.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Cross_High.jpeg",
         "material": "Acier",
         "year": "2010",
         "price": 690,
@@ -1879,7 +1879,7 @@
     {
         "model": "Cross Low Exclusive",
         "brand": "Amsterdamair",
-        "image": "/Cross_Low_Exclusive.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Cross_Low_Exclusive.jpeg",
         "material": "Acier",
         "year": "2010",
         "price": 690,
@@ -1893,7 +1893,7 @@
     {
         "model": "LEGEND EXCLUSIVE",
         "brand": "Amsterdamair",
-        "image": "/LEGEND_EXCLUSIVE.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/LEGEND_EXCLUSIVE.jpeg",
         "material": "Acier",
         "year": "2013",
         "price": 590,
@@ -1907,7 +1907,7 @@
     {
         "model": "Triporteur",
         "brand": "Amsterdamair",
-        "image": "/Triporteur.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Triporteur.jpeg",
         "material": "Acier",
         "year": "2015",
         "price": 2190,
@@ -1921,7 +1921,7 @@
     {
         "model": "Biporteur electrique",
         "brand": "Amsterdamair",
-        "image": "/Biporteur_electrique.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Biporteur_electrique.jpeg",
         "material": "Acier",
         "year": "2015",
         "price": 2390,
@@ -1935,7 +1935,7 @@
     {
         "model": "Commuter 4.0",
         "brand": "Canyon",
-        "image": "/Commuter_4.0.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Commuter_4.0.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 1099,
@@ -1951,7 +1951,7 @@
     {
         "model": "Commuter Sport 5.0",
         "brand": "Canyon",
-        "image": "/Commuter_Sport_5.0.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Commuter_Sport_5.0.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 999,
@@ -1967,7 +1967,7 @@
     {
         "model": "Carpe 20",
         "brand": "Orbea",
-        "image": "/Carpe_20.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Carpe_20.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 699,
@@ -1981,7 +1981,7 @@
     {
         "model": "Vector 10",
         "brand": "Orbea",
-        "image": "/Vector_10.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Vector_10.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 1099,
@@ -1998,7 +1998,7 @@
     {
         "model": "FastRoad Sl 3",
         "brand": "Giant",
-        "image": "/FastRoad_Sl_3.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/FastRoad_Sl_3.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 700,
@@ -2013,7 +2013,7 @@
     {
         "model": "Escape",
         "brand": "Giant",
-        "image": "/Escape.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Escape.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 400,
@@ -2027,7 +2027,7 @@
     {
         "model": "Pista steel",
         "brand": "Bianchi",
-        "image": "/Pista_steel.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Pista_steel.jpeg",
         "material": "Aluminium",
         "year": "2000",
         "price": 800,
@@ -2044,7 +2044,7 @@
     {
         "model": "Pista Sei Giorni ",
         "brand": "Bianchi",
-        "image": "/Pista_Sei_Giorni_.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Pista_Sei_Giorni_.jpeg",
         "material": "Aluminium",
         "year": "2010",
         "price": 950,
@@ -2061,7 +2061,7 @@
     {
         "model": "875 Madison",
         "brand": "Look",
-        "image": "/875_Madison.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/875_Madison.jpeg",
         "material": "Carbone",
         "year": "2017",
         "price": 1999,
@@ -2078,7 +2078,7 @@
     {
         "model": "Lungavita",
         "brand": "Pinarello",
-        "image": "/Lungavita.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Lungavita.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 830,
@@ -2094,7 +2094,7 @@
     {
         "model": "Tipo Pista",
         "brand": "Cinelli",
-        "image": "/Tipo_Pista.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Tipo_Pista.jpeg",
         "material": "Aluminium",
         "year": "2015",
         "price": 749,
@@ -2108,7 +2108,7 @@
     {
         "model": "Impulso E-road",
         "brand": "Bianchi",
-        "image": "/Impulso_E-road.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Impulso_E-road.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 5599,
@@ -2124,7 +2124,7 @@
     {
         "model": "E-765 OPTIMUM",
         "brand": "Look",
-        "image": "/E-765_OPTIMUM.jpg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/E-765_OPTIMUM.jpg",
         "material": "Aluminium",
         "year": "2020",
         "price": 7699,
@@ -2140,7 +2140,7 @@
     {
         "model": "Nytro",
         "brand": "Pinarello",
-        "image": "/Nytro.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Nytro.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 6750,
@@ -2155,7 +2155,7 @@
     {
         "model": "Gain M20",
         "brand": "Orbea",
-        "image": "/Gain_M20.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Gain_M20.jpeg",
         "material": "Carbone",
         "year": "2018",
         "price": 4699,
@@ -2172,7 +2172,7 @@
     {
         "model": "Road E+1 Pro",
         "brand": "Giant",
-        "image": "/Road_E+1_Pro.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Road_E+1_Pro.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 4250,
@@ -2188,7 +2188,7 @@
     {
         "model": "Domane+",
         "brand": "Trek",
-        "image": "/Domane+.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Domane+.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 5999,
@@ -2205,7 +2205,7 @@
     {
         "model": "E-765",
         "brand": "Look",
-        "image": "/E-765.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/E-765.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 6599,
@@ -2221,7 +2221,7 @@
     {
         "model": "Explore E+ 2 GTS",
         "brand": "Giant",
-        "image": "/Explore_E+_2_GTS.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Explore_E+_2_GTS.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 2650,
@@ -2237,7 +2237,7 @@
     {
         "model": "Dual Sport+",
         "brand": "Trek",
-        "image": "/Dual_Sport+.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Dual_Sport+.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 3399,
@@ -2251,7 +2251,7 @@
     {
         "model": "Verve+",
         "brand": "Trek",
-        "image": "/Verve+.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Verve+.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 2399,
@@ -2265,7 +2265,7 @@
     {
         "model": "QUICK NEO TOURER",
         "brand": "Cannondale",
-        "image": "/QUICK_NEO_TOURER.jpg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/QUICK_NEO_TOURER.jpg",
         "material": "Aluminium",
         "year": "2018",
         "price": 2864,
@@ -2281,7 +2281,7 @@
     {
         "model": "ANDROMEDA",
         "brand": "Pinarello",
-        "image": "/ANDROMEDA.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/ANDROMEDA.jpeg",
         "material": "Carbone",
         "year": "2019",
         "price": 5499,
@@ -2297,7 +2297,7 @@
     {
         "model": "Neuron:on WMN",
         "brand": "Canyon",
-        "image": "/Neuron:on_WMN.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Neuron:on_WMN.png",
         "material": "Aluminium",
         "year": "2019",
         "price": 3799,
@@ -2313,7 +2313,7 @@
     {
         "model": "Spectral:ON WMN",
         "brand": "Canyon",
-        "image": "/Spectral:ON_WMN.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Spectral:ON_WMN.png",
         "material": "Aluminium",
         "year": "2018",
         "price": 3799,
@@ -2329,7 +2329,7 @@
     {
         "model": "WILD HT 20 29",
         "brand": "Orbea",
-        "image": "/WILD_HT_20_29.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/WILD_HT_20_29.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 3999,
@@ -2343,7 +2343,7 @@
     {
         "model": "Stance E+ 1 Pro 29",
         "brand": "Giant",
-        "image": "/Stance_E+_1_Pro_29.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Stance_E+_1_Pro_29.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 2950,
@@ -2357,7 +2357,7 @@
     {
         "model": "Fathom E+ 1 Pro 29",
         "brand": "Giant",
-        "image": "/Fathom_E+_1_Pro_29.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Fathom_E+_1_Pro_29.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 3250,
@@ -2371,7 +2371,7 @@
     {
         "model": "Reign E+ 1 Pro",
         "brand": "Giant",
-        "image": "/Reign_E+_1_Pro.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Reign_E+_1_Pro.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 5550,
@@ -2387,7 +2387,7 @@
     {
         "model": "Rail",
         "brand": "Trek",
-        "image": "/Rail.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Rail.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 5299,
@@ -2401,7 +2401,7 @@
     {
         "model": "Powerfly",
         "brand": "Trek",
-        "image": "/Powerfly.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Powerfly.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 3899,
@@ -2415,7 +2415,7 @@
     {
         "model": "Powerfly Long Travel",
         "brand": "Trek",
-        "image": "/Powerfly_Long_Travel.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Powerfly_Long_Travel.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 5650,
@@ -2429,7 +2429,7 @@
     {
         "model": "Powerfly full Suspension",
         "brand": "Trek",
-        "image": "/Powerfly_full_Suspension.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Powerfly_full_Suspension.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 3999,
@@ -2443,7 +2443,7 @@
     {
         "model": "ORGAN E-Central",
         "brand": "Gitane",
-        "image": "/ORGAN_E-Central.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/ORGAN_E-Central.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 1349,
@@ -2459,7 +2459,7 @@
     {
         "model": "KERAM ASPHALT 30",
         "brand": "Orbea",
-        "image": "/KERAM_ASPHALT_30.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/KERAM_ASPHALT_30.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 2499,
@@ -2474,7 +2474,7 @@
     {
         "model": "Optima Confort 30",
         "brand": "Orbea",
-        "image": "/Optima_Confort_30.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Optima_Confort_30.jpeg",
         "material": "Aluminium",
         "year": "2018",
         "price": 2399,
@@ -2489,7 +2489,7 @@
     {
         "model": "DailyTour E+",
         "brand": "Giant",
-        "image": "/DailyTour_E+.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/DailyTour_E+.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 3300,
@@ -2505,7 +2505,7 @@
     {
         "model": "Super Commuter+ 8S",
         "brand": "Trek",
-        "image": "/Super_Commuter+_8S.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Super_Commuter+_8S.jpeg",
         "material": "Aluminium",
         "year": "2020",
         "price": 4499,
@@ -2519,7 +2519,7 @@
     {
         "model": "Allant+ 9.9",
         "brand": "Trek",
-        "image": "/Allant+_9.9.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/Allant+_9.9.jpeg",
         "material": "Carbone",
         "year": "2020",
         "price": 5999,
@@ -2533,7 +2533,7 @@
     {
         "model": "District+ 1 Lowstep",
         "brand": "Trek",
-        "image": "/District+_1_Lowstep.jpeg",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/District+_1_Lowstep.jpeg",
         "material": "Aluminium",
         "year": "2019",
         "price": 1999,
@@ -2549,7 +2549,7 @@
         "subCategories": "Tri/VLM",
         "model": "PRsix",
         "brand": "QuintanaRoo",
-        "image": "/PRsix.png",
+        "image": "/home/luna/Documents/react-project/AllBikes/Back/routes/bikes/imagesBikes/PRsix.png",
         "material": "Carbone",
         "year": "2020",
         "price": 5900,

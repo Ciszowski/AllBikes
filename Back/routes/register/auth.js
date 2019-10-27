@@ -29,13 +29,13 @@ router.post('/loginIn', (req, res) => {
                             resolve(res)
                         })
                     }).then(() => {
-                    const { name, surname, email, privilege } = results[0];
+                    const { id_user, name, surname, email, privilege } = results[0];
                     const payload = {email};
                     const token= jwt.sign( payload, mdpToken, {expiresIn: '2h'})
-                    if (checkPass) {
+                    if(checkPass){
                        return res.status(200).json                    
                             ({
-                                'name': name, 'surname': surname, 'email': email,
+                                'id_user': id_user,'name': name, 'surname': surname, 'email': email,
                                 'token': token,'privilege': privilege
                             })
                     }
@@ -63,7 +63,6 @@ router.post('/signIn', (req, res) => {
 
 
 router.post('/updateProfile', (req, res)=>{
-    console.log('je suis la ')
     const {name,surname, email}= req.body.value;
     const { oldEmail } = req.body;
 
