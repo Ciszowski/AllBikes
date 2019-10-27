@@ -78,7 +78,7 @@ export default function LoginPage(props) {
     const dispatch = useDispatch();
     const [msgServer, setMessage] = useState({
         msg: '',
-        bool: false
+        open: false
     })
     const [value, setValue] = useState({
         name: '',
@@ -104,7 +104,7 @@ export default function LoginPage(props) {
         })
             .then((res) => {
                 if (!res.ok) {
-                    setMessage({ bool: true, msg: res.statusText});
+                    setMessage({ open: true, msg: res.statusText});
                     setTimeout(() => {
                         window.location.reload();
                     }, 2000);
@@ -133,7 +133,7 @@ export default function LoginPage(props) {
                 if (error) {
                     console.log('error', error)
                 }
-                setMessage({ bool: true, msg:resFin.message});
+                setMessage({ open: true, msg:resFin.message});
                 setTimeout(() => {
                     window.location.reload();
                 }, 2000);
@@ -257,7 +257,7 @@ export default function LoginPage(props) {
                 </form>
                 </Card>)}
             {msgServer && (<Snackbar
-                    open={msgServer.bool}
+                    open={msgServer.open}
                     anchorOrigin={{
                         vertical: 'bottom',
                         horizontal: 'center'

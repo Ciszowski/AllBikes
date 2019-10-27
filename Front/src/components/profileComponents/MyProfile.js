@@ -25,8 +25,8 @@ import {
     Typography,
     Button,
     Container,
-    SvgIcon,
-    IconButton
+    IconButton,
+    Icon
 } from '@material-ui/core';
 
 const useStyle = makeStyles((theme) => ({
@@ -105,12 +105,11 @@ export default function MyProfile(props) {
         <React.Fragment>
             {data.value && (
                 <React.Fragment>
-                    <IconButton aria-label="back" color='primary' onClick={() => dispatch({type: "VALUE&LINK"})}>
-                        <SvgIcon>
-                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-                        </SvgIcon>
+                    <IconButton aria-label="back" style={{color: '#39CCCC'}} onClick={() => dispatch({type: "VALUE&LINK"})}>
+                        <Icon>backspace</Icon>
                     </IconButton>
                     {objProfile[data.value]}
+                    
                 </React.Fragment>
             )}
             {!data.value && (

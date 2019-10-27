@@ -1,5 +1,5 @@
 import './mainCss.css'
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route, Redirect, withRouter ,Link} from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
@@ -18,9 +18,15 @@ import Button from '@material-ui/core/Button';
 import cyclist from './gallerie/roadbikes.jpg';
 import famille from './gallerie/family.jpeg';
 
-
 function App(props) {
   const link = useSelector((state) => state.register.link)
+
+  useEffect(()=>{
+    if(!link){
+      return props.history.push('/home')
+    }
+  },[])
+
   return (
     <React.Fragment>
       <header>

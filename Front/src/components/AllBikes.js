@@ -90,10 +90,19 @@ const useStyles = makeStyles({
 });
 
 
+const initialeState ={
+    subCategories: '',
+    brand: '',
+    material: '',
+    price: [0, 100000],
+    model: '',
+}
+
+
 export default function AllBikes(props) {
     const classes = useStyles();
     const link = useSelector((state) => state.register.link);
-    const [selectItem, setSelectItem] = useState(null);
+    const [selectItem, setSelectItem] = useState({});
     const [value, setValue] = useState({
         subCategories: '',
         brand: '',
@@ -107,29 +116,30 @@ export default function AllBikes(props) {
         data: [],
     })
 
-
     async function fetchData() {
+        // setValue({...initialeState});
         const result = await fetch(`/dataBike/loadBikes/${link}`)
-            .then((res) => res.json())
-            .then((data) => {
-                return data
-            });
+        .then((res) => res.json())
+        .then((data) => {
+            return data
+        });
         setDataBike({ data: result, tempData: result });
         return result
     }
     useEffect(() => {
+        setSelectItem({})
         fetchData().then((data) => {
             Object.keys(value).slice(0, -1).map((bikeAttr) => {
-                const optionsBis = data.reduce((ac, el) => {
+                const options = data.reduce((ac, el) => {
                     if (!(1 + ac.lastIndexOf(el[bikeAttr]))) {
                         ac.push(el[bikeAttr]);
-                    }
+                    }   
                     return ac;
                 }, ['']);
                 return setSelectItem((prevState) => {
                     return {
                         ...prevState, [bikeAttr]: bikeAttr === 'price' ?
-                            optionsBis.splice(1, optionsBis.length - 1).sort((a, b) => a - b) : optionsBis
+                            options.splice(1, options.length - 1).sort((a, b) => a - b) : options
                     }
                 })
             })
@@ -137,6 +147,7 @@ export default function AllBikes(props) {
     }, [link])
 
     const handleChange = props => (ev, value) => {
+        console.log('value', value)
         if (props === "price") {
             setValue((prevState) => {
                 return { ...prevState, [props]: value }
@@ -145,7 +156,7 @@ export default function AllBikes(props) {
             ev.persist()
             setValue((prevState) => {
                 return { ...prevState, [props]: ev.target.value };
-            })
+            });
         }
     }
 
@@ -184,8 +195,7 @@ export default function AllBikes(props) {
                 <Card className={classes.card}>
                     <CardContent className={classes.cardContent} >
                         <div className={classes.div}>
-
-                            {selectItem && (Object.keys(selectItem).slice(0, -1).map((item, idx) => {
+                            {selectItem  ? Object.keys(selectItem).slice(0, -1).map((item, idx) => {
                                 return (
                                     <TextField select
                                         key={idx}
@@ -207,7 +217,7 @@ export default function AllBikes(props) {
                                         })}
                                     </TextField>
                                 )
-                            }))}
+                            }) : ''}
                         </div>
                         <div className={classes.div}>
                             {selectItem && (
@@ -240,31 +250,30 @@ export default function AllBikes(props) {
             </Container>
             <Container className={classes.root} maxWidth="xl">
                 {dataBike.tempData && (
-                    Object.keys(dataBike.tempData).map((element, index) => {
-                        const img = dataBike.tempData[element].image.replace(/[a-zA-Z-]+\/?\/{1,}/gm, '')
-                        const linkImg = props.match.path + img
+                    dataBike.tempData.map((element, index) => {
+                        const linkImg = props.match.path + (element.image)
                         return (
                             <Card key={index}>
                                 <CardActionArea 
                                     variant="outlined" 
                                     className={classes.cardBike} 
-                                    onClick={()=>testFunc(dataBike.tempData[element])}>
+                                    onClick={()=>testFunc(element)}>
 
                                     <CardHeader
                                         className={classes.cardHeader}
-                                        title={dataBike.tempData[element].brand}
+                                        title={element.brand}
                                     />
                                     <CardMedia
                                         className={classes.media}
                                         image={linkImg}
-                                        title={dataBike.tempData[element].model}
+                                        title={element.model}
                                     />
                                     <CardContent className={classes.cardActions}>
                                         <Typography variant="body1" >
-                                            {dataBike.tempData[element].model}
+                                            {element.model}
                                         </Typography>
                                         <Typography variant="subtitle1" color="secondary" className={classes.price}>
-                                            {dataBike.tempData[element].price} €
+                                            {element.price} €
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>

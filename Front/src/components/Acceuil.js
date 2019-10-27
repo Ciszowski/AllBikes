@@ -9,12 +9,12 @@ export default function Home() {
         console.log('je rentre ici')
     }
     return (
-        <div>
+        <Card>
             
                 <CardActionArea onClick={testFunc}>
                     <p>je suis sur l'acceuil</p>
                 </CardActionArea>
            
-        </div>
+        </Card>
     )
 }

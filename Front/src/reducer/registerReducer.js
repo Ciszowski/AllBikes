@@ -1,4 +1,5 @@
 const initialState = {
+  id_user: 0,
   name: '',
   surname: '',
   email: '',
@@ -12,9 +13,10 @@ const initialState = {
 const registerReducer = (state = initialState, action) => {
   switch (action.type) {
     case "REGISTER":
-      let { name, surname, email, token, privilege } = action.payload
+      const {id_user, name, surname, email, token, privilege } = action.payload
       return {
         ...state,
+        id_user: id_user,
         name: name,
         surname: surname,
         email: email,
