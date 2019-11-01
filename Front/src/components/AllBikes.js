@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -21,14 +21,12 @@ const useStyles = makeStyles({
         justifyContent: "center",
     },
     card: {
-        marginTop: "5px",
+        margin: "10px 0",
         display: 'flex',
         flexFlow: 'row wrap',
-        backgroundColor: "#dbdbdb",
-        border: "2px solid #01FF70",
     },
     cardBike: {
-        color: "white",
+        backgroundColor: 'white',
         position: 'relative',
         marginTop: "5px",
         paddingTop: '35px',
@@ -90,7 +88,7 @@ const useStyles = makeStyles({
 });
 
 
-const initialeState ={
+const initialeState = {
     subCategories: '',
     brand: '',
     material: '',
@@ -110,19 +108,19 @@ export default function AllBikes(props) {
         price: [0, 100000],
         model: '',
     });
-    
+
     const [dataBike, setDataBike] = useState({
         tempData: [],
         data: [],
     })
 
     async function fetchData() {
-        // setValue({...initialeState});
+        setValue({ ...initialeState });
         const result = await fetch(`/dataBike/loadBikes/${link}`)
-        .then((res) => res.json())
-        .then((data) => {
-            return data
-        });
+            .then((res) => res.json())
+            .then((data) => {
+                return data
+            });
         setDataBike({ data: result, tempData: result });
         return result
     }
@@ -133,7 +131,7 @@ export default function AllBikes(props) {
                 const options = data.reduce((ac, el) => {
                     if (!(1 + ac.lastIndexOf(el[bikeAttr]))) {
                         ac.push(el[bikeAttr]);
-                    }   
+                    }
                     return ac;
                 }, ['']);
                 return setSelectItem((prevState) => {
@@ -147,7 +145,6 @@ export default function AllBikes(props) {
     }, [link])
 
     const handleChange = props => (ev, value) => {
-        console.log('value', value)
         if (props === "price") {
             setValue((prevState) => {
                 return { ...prevState, [props]: value }
@@ -162,31 +159,31 @@ export default function AllBikes(props) {
 
     useEffect(() => {
         const newData = dataBike.data.filter((el) => {
-            let isCheck= true;
-            for (let i=0; i < Object.keys(value).length; i++){
+            let isCheck = true;
+            for (let i = 0; i < Object.keys(value).length; i++) {
                 const attr = Object.keys(value);
-                if(attr[i] === "price"){
-                    if(el[attr[i]] >= value['price'][0] && el[attr[i]] <= value['price'][1]){
+                if (attr[i] === "price") {
+                    if (el[attr[i]] >= value['price'][0] && el[attr[i]] <= value['price'][1]) {
                         continue
-                    }else{
-                        isCheck=false;
+                    } else {
+                        isCheck = false;
                     }
-                }else if((el[attr[i]].toLowerCase()).includes((value[attr[i]]).toLowerCase())){
+                } else if ((el[attr[i]].toLowerCase()).includes((value[attr[i]]).toLowerCase())) {
                     continue
-                }else{
-                    isCheck= false;
+                } else {
+                    isCheck = false;
                 }
             }
             return isCheck && el;
         });
-        setDataBike((prevState)=>{
-            return {...prevState, tempData: newData}
+        setDataBike((prevState) => {
+            return { ...prevState, tempData: newData }
         })
     }, [value])
 
 
-    function testFunc(idName) {
-        props.history.push(props.location.pathname+'/'+ idName.model.replace(/[' ']+/gi,'_'))       
+    function onNavigate(idName) {
+        props.history.push(props.location.pathname + '/' + idName.model.replace(/[' ']+/gi, '_'))
     }
 
     return (
@@ -195,7 +192,7 @@ export default function AllBikes(props) {
                 <Card className={classes.card}>
                     <CardContent className={classes.cardContent} >
                         <div className={classes.div}>
-                            {selectItem  ? Object.keys(selectItem).slice(0, -1).map((item, idx) => {
+                            {selectItem ? Object.keys(selectItem).slice(0, -1).map((item, idx) => {
                                 return (
                                     <TextField select
                                         key={idx}
@@ -248,40 +245,41 @@ export default function AllBikes(props) {
 
                 </Card>
             </Container>
-            <Container className={classes.root} maxWidth="xl">
-                {dataBike.tempData && (
-                    dataBike.tempData.map((element, index) => {
-                        const linkImg = props.match.path + (element.image)
-                        return (
-                            <Card key={index}>
-                                <CardActionArea 
-                                    variant="outlined" 
-                                    className={classes.cardBike} 
-                                    onClick={()=>testFunc(element)}>
+            <Suspense fallback={<h1> Loading ...</h1>}>
+                <Container className={classes.root} maxWidth="xl">
+                    {
+                        dataBike.tempData.map((element, index) => {
+                            const linkImg = props.match.path + (element.image)
+                            return (
+                                <Card key={index} style={{ backgroundColor: 'inherit' }}>
+                                    <CardActionArea
+                                        variant="outlined"
+                                        className={classes.cardBike}
+                                        onClick={() => onNavigate(element)}>
 
-                                    <CardHeader
-                                        className={classes.cardHeader}
-                                        title={element.brand}
-                                    />
-                                    <CardMedia
-                                        className={classes.media}
-                                        image={linkImg}
-                                        title={element.model}
-                                    />
-                                    <CardContent className={classes.cardActions}>
-                                        <Typography variant="body1" >
-                                            {element.model}
+                                        <CardHeader
+                                            className={classes.cardHeader}
+                                            title={element.brand}
+                                        />
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={linkImg}
+                                            title={element.model}
+                                        />
+                                        <CardContent className={classes.cardActions}>
+                                            <Typography variant="body1" >
+                                                {element.model}
+                                            </Typography>
+                                            <Typography variant="subtitle1" color="secondary" className={classes.price}>
+                                                {element.price} €
                                         </Typography>
-                                        <Typography variant="subtitle1" color="secondary" className={classes.price}>
-                                            {element.price} €
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        )
-                    })
-                )}
-            </Container>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            )}
+                    )}
+                </Container>
+            </Suspense>
         </React.Fragment>
     )
 };

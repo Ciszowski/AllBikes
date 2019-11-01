@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 //component
+import { objCard } from '../navData/Data'
 import MyFavoris from './Favoris';
 import ModifProfile from './ModifProfil';
 import Admin from './Admin';
 import ChangePass from './ChangePass';
-
+import FindOwnBike from './FindOwnBike';
 //img
-import avatar from '../../gallerie/avatar.jpg'
-import favoris from "../../gallerie/icone-favoris.png";
-import home from '../../gallerie/blue-home.png';
-import rouages from '../../gallerie/rouages.png';
-import secret from '../../gallerie/top-secret.png'
+import avatar from '../../gallerie/avatar.jpg';
 
 //material
 import { makeStyles } from '@material-ui/core/styles';
@@ -52,6 +49,12 @@ const useStyle = makeStyles((theme) => ({
         marginRight: '30%',
         backgroundSize: 'contain',
     },
+    iconBtn:{
+        color: '#39CCCC',
+        position: 'relative',
+        top: '40px',
+        left: '40px'
+    },
     content: {
         backgroundColor: '#dbdbdb',
         textAlign: 'center',
@@ -64,22 +67,14 @@ const useStyle = makeStyles((theme) => ({
     },
 }))
 
-
-const objCard = [
-    { value: 'favoris', typo: 'Mes favoris', image: favoris },
-    { value: 'profil', typo: 'Modifier profil', image: home },
-    { value: 'password', typo: 'Changer mot de passe', image: secret },
-    { value: 'admin', typo: 'admin', image: rouages },
-]
-
-
 export default function MyProfile(props) {
     const classes = useStyle();
     const dispatch = useDispatch();
 
     const [date, setDate] = useState(null)
-    const data = useSelector((state) => (
+    const user = useSelector((state) => (
         {
+            id_user: state.register.id_user,
             name: state.register.name,
             surname: state.register.surname,
             email: state.register.email,
@@ -87,32 +82,49 @@ export default function MyProfile(props) {
             value : state.register.value
         }))
     const objProfile = {
-        favoris: <MyFavoris />,
+        favoris: <MyFavoris {...props}/>,
         profil: <ModifProfile />,
-        password: <ChangePass email={data.email}/>,
+        password: <ChangePass email={user.email}/>,
+        findOwnBike: <FindOwnBike/>,
         admin: <Admin />
     }
 
+    useEffect(() => {
+        getFavoris();
+    }, []);
+    
+    async function getFavoris() {
+        await fetch(`/dataBike/getFavori/${user.id_user}` )
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({ type: "LOADFAVORI", payload: data.results})
+            })
+    };
+
     function handleButtonProfile(ev){
         const valueProfile = ev.target.value ? ev.target.value : ev.target.title
-        if (valueProfile === 'admin' && !data.privilege) {
+        if (valueProfile === 'admin' && !user.privilege) {
             alert('Access Denied')
         }
         dispatch({type: 'SETVALUE', value: valueProfile})
     }
-    
+
     return (
         <React.Fragment>
-            {data.value && (
-                <React.Fragment>
-                    <IconButton aria-label="back" style={{color: '#39CCCC'}} onClick={() => dispatch({type: "VALUE&LINK"})}>
-                        <Icon>backspace</Icon>
+            {user.value && (
+                <Container maxWidth="xl">
+                    <IconButton
+                        className={classes.iconBtn}
+                        aria-label="back" 
+                        onClick={() => dispatch({type: "VALUE&LINK"})}
+                    >
+                        <Icon style={{fontSize: '50px'}}>backspace</Icon>
                     </IconButton>
-                    {objProfile[data.value]}
+                    {objProfile[user.value]}
                     
-                </React.Fragment>
+                </Container>
             )}
-            {!data.value && (
+            {!user.value && (
                 <React.Fragment>
                     <Container fixed className={classes.root}>
                         <Card className={classes.cardHeader}>
@@ -122,8 +134,8 @@ export default function MyProfile(props) {
                                     <Avatar className={classes.avatar} >
                                         <img src={avatar} alt='avatar' className={classes.avatar} />
                                     </Avatar>}
-                                title={data.name + ' ' + data.surname}
-                                subheader={data.email}
+                                title={user.name + ' ' + user.surname}
+                                subheader={user.email}
                             />
                             <CardContent className={classes.cardHeader.content}>
                                 <Typography variant="body2" color="textSecondary" component="p"> {date}</Typography>
@@ -141,7 +153,7 @@ export default function MyProfile(props) {
                                             title={el.value} />
                                     </Button>
                                     <CardContent className={classes.content}>
-                                        <Typography variant="body1">  {el.typo}  </Typography>
+                                        <Typography variant="body2">  {el.type}  </Typography>
                                     </CardContent>
                                 </Card>
                             )

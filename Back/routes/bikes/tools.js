@@ -22,6 +22,14 @@ async function downloadImg(url, model) {
     })
 };
 
+const getFavoris = (objBike, dataSQL) => {
+    return objBike.filter((elBike) => {
+        const nameBike = dataSQL.map((el) => el.name)
+        return nameBike.includes(elBike.model) && elBike
+    })
+};
+
 module.exports = {
-    downloadImg
+    downloadImg,
+    getFavoris
 }

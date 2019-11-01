@@ -36,6 +36,11 @@ const registerReducer = (state = initialState, action) => {
         link: action.payload,
         value: null
       }
+    case "LINK": //only for Favori.js to get back in
+      return{
+        ...state,
+        link: action.payload
+      }
     default:
       return state
   }

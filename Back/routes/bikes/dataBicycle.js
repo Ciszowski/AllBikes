@@ -4,6 +4,7 @@ const jsonBikes = __dirname + '/bikes.json';
 const objBike = require(jsonBikes);
 const tools = require('./tools')
 const fs = require('fs');
+const connection = require('../../database/mysql');
 
 router.get("/loadBikes/:name",(req,res)=>{
     const {name} = req.params;
@@ -42,11 +43,12 @@ router.get('/getFavori/:id', (req, res)=>{
     const request = `SELECT * from favori WHERE  id_user=${id}`;
 
     connection.query(request, (err, results)=>{
-        try{
-            console.log('resultats',results)
+        try{            
+            res.json({results: tools.getFavoris(objBike, results)})
         }catch(err){
-            console.log('Some Error occured', err)
+            console.log('Some Error occured', err);
         }
     })
 });
+
 module.exports = router;

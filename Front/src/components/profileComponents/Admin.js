@@ -44,9 +44,12 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-around'
     },
     button: {
+        backgroundColor:"#39CCCC",
+        color:'white'
+    },
+    cardActions: {
         display: 'flex',
         justifyContent: 'flex-end',
-        color:"#39CCCC"
     },
     contain:{
         display:'inline-flex',
@@ -88,7 +91,7 @@ export default function Admin() {
         price: 0,
         material: '',
         brand: '',
-        tempSize : '',
+        tempSize : "",
         size: [],
         description: ''
     })
@@ -105,7 +108,9 @@ export default function Admin() {
         }
     }
     function addSize() {
-        setData({...data, tempSize: ''})
+        const {size, tempSize} = data;
+        size.push(tempSize)
+        setData({...data, tempSize: ""});
     }
     function onRegisterBike(){
         data.size.push(data.tempSize)
@@ -129,7 +134,6 @@ export default function Admin() {
 
     const isDisabled = Object.keys(data).filter((el) =>data[el].length && el !== 'tempSize').length === 
                         Object.keys(data).filter((el)=> el !== 'tempSize').length ? true : false
-
     return (
         <React.Fragment>
             <Container className={classes.root}>
@@ -137,7 +141,7 @@ export default function Admin() {
                     <CardHeader
                         className={classes.cardHead}
                         title='Ajout d"un nouveau vélo' />
-                                                <Typography> Taille disponible: {data.size.map((el)=>  el + ' ')} </Typography>     
+                        <Typography> Taille disponible: {data.size.map((el)=>  el + ' ')} </Typography>     
                     <CardContent className={classes.cardContent}>
                         <TextField select
                             className={classes.textField}
@@ -180,7 +184,7 @@ export default function Admin() {
                                     <div className={classes.contain} key={idx} >
                                         <TextField className={classes.textField} value={data[charact]} required label={charact} type="number"
                                             onChange={handleChange({ charact })} variant="outlined" margin="normal"/>
-                                        <IconButton color="primary" className={classes.iconButton} onClick={addSize}>
+                                        <IconButton className={classes.iconButton} onClick={addSize}>
                                             <DirectionsIcon className={classes.icon} />
                                         </IconButton>
                                     </div>
@@ -199,12 +203,13 @@ export default function Admin() {
                             }
                         })}
                     </CardContent>
-                    <CardActions className={classes.button}>
-
+                    <CardActions className={classes.cardActions}>
                         <Button className={classes.button}
-                            variant="contained"
+                            variant="outlined"
                             disabled={!isDisabled}
-                            onClick={onRegisterBike}> Enregister nouveau vélo </Button>
+                            onClick={onRegisterBike}> 
+                            Enregister nouveau vélo 
+                        </Button>
                     </CardActions>
                 </Card>
                 {msgServer && (<Snackbar

@@ -13,7 +13,8 @@ import { Container,
         TableBody,
         IconButton, 
         CardMedia, 
-        Snackbar } from '@material-ui/core';
+        Snackbar, 
+        Button} from '@material-ui/core';
 
 
 const useStyles = makeStyles({
@@ -33,6 +34,10 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: 'center',
         color: 'white',
+    },
+    iconBtn:{
+        backgroundColor: '#39CCCC', 
+        color: 'white'
     },
     cardImage:{
         alignSelf: 'center',
@@ -64,7 +69,11 @@ export default function SingleBike(props) {
     const user = useSelector((state)=>({
         id_user: state.register.id_user,
         email: state.register.email,
-        login: state.register.isLogin
+        login: state.register.isLogin,
+        value: state.register.value
+    }))
+    const favoriList = useSelector((state)=>({
+        favori: (state.listBike.favori).map((el) => el.model)
     }))
     const [disabled, setDisabled] = useState(false);
     const [data, setData] = useState(null);
@@ -74,14 +83,17 @@ export default function SingleBike(props) {
     })
 
     async function fetchSingleBike() {
-        await fetch('/dataBike/getSingleBike/' + props.match.params.name)
+        return await fetch('/dataBike/getSingleBike/' + props.match.params.name)
             .then((res) => res.json ())
             .then((data) => {
-                setData(data)
+                setData(data);
+                return data
             })
     }
     useEffect(() => {
-        fetchSingleBike()
+        fetchSingleBike().then((data)=>{
+            favoriList.favori.includes(data[0].model) && (setDisabled(true));
+        })
     }, [])
     
     const handleClose = ()=>{   
@@ -110,21 +122,18 @@ export default function SingleBike(props) {
             }
         }
     }
-    const parentPath = props.match.url.replace(/(\/[^\/]+)$/gm, "")
-    console.log('user ', user)
+    const parentPath = props.match.url.replace(/(\/[^\/]+)$/gm, "");
     return (
         <React.Fragment>
             <Container maxWidth="xl" className={classes.rootHead}>
                 <IconButton
-                    style={{ backgroundColor: '#39CCCC', color: 'white' }}
-                    variant="contained"
+                    className={classes.iconBtn}
                     color="primary"
-                    className={classes.button}
-                    onClick={() => props.history.push(parentPath)}
+                    onClick={() => props.history.push(user.value ? '/mon-compte': parentPath)}
                 >
                     <Icon>backspace</Icon>
                 </IconButton>
-                <IconButton
+                <Button
                     style={{ backgroundColor: '#39CCCC', color: 'white' }}
                     variant="contained"
                     color="primary"
@@ -132,9 +141,9 @@ export default function SingleBike(props) {
                     onClick={addFavori}
                     disabled={disabled}
                 >
-                    ajouter au favori
-                    <Icon>star</Icon>
-                </IconButton>
+                     {user.login ? 'ajouter aux favoris': 'se connecter' } 
+                     <Icon>star</Icon>
+                </Button>   
             </Container>
             {data && (data.map((element, index) => {
                 return (
@@ -228,7 +237,8 @@ export default function SingleBike(props) {
             }))}
 
             <Container maxWidth="xl" className={classes.rootFoot}>
-                <Typography variant="subtitle1" component="p"> *Toutes les tailles disponibles ne sont pas directement chez le constructeur, pour cela reférer vous à un revendeur de cette marque près de chez vous.
+                <Typography variant="subtitle1" component="p"> 
+                    *Toutes les tailles disponibles ne sont pas directement chez le constructeur, pour cela reférer vous à un revendeur de cette marque près de chez vous.
                 </Typography>
             </Container>
             <Snackbar

@@ -5,16 +5,14 @@ import {
 } from '@material-ui/core';
 
 export default function Home() {
-    function testFunc(){
+    function testFunc() {
         console.log('je rentre ici')
     }
     return (
         <Card>
-            
-                <CardActionArea onClick={testFunc}>
-                    <p>je suis sur l'acceuil</p>
-                </CardActionArea>
-           
+            <CardActionArea onClick={testFunc}>
+                <p>je suis sur l'acceuil</p>
+            </CardActionArea>
         </Card>
     )
 }

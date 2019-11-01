@@ -161,11 +161,11 @@ export default function LoginPage(props) {
                     />
                     <form className={classes.textfield} onSubmit={loginIn}>
                         <ValidationTextField
+                            autoComplete="email"
                             className={classes.input}
                             required
                             value={value.email}
                             type="email"
-                            autoComplete="email"
                             label="email"
                             InputLabelProps={{ required: false }}
                             onChange={handleChange("email")}

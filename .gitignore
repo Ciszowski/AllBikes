@@ -3,6 +3,7 @@
 # dependencies
 /Front/node_modules
 /Back/node_modules
+/Back/routes/bikes/imagesBikes
 /Front/.pnp
 /Back/.pnp
 .pnp.js

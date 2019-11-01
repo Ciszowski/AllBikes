@@ -94,7 +94,6 @@ export default function ModifProfile() {
         .then(res => res.json())
         .then((resData)=>{
             const payload = Object.assign(resData.resultat[0], {token: data.token})
-            console.log('resdata',payload)
             dispatch({type: 'REGISTER', payload: payload})
         })
     }

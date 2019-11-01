@@ -1,6 +1,6 @@
 import './mainCss.css'
 import React, { useEffect } from 'react';
-import { Switch, Route, Redirect, withRouter ,Link} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect, withRouter, Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
@@ -21,30 +21,32 @@ import famille from './gallerie/family.jpeg';
 function App(props) {
   const link = useSelector((state) => state.register.link)
 
-  useEffect(()=>{
-    if(!link){
+  useEffect(() => {
+    if (!link) {
       return props.history.push('/home')
     }
-  },[])
+  }, [])
 
   return (
     <React.Fragment>
-      <header>
-        <img src={cyclist} height="150px" width="50%" alt=" road bike"/>
-        <img src={famille} height="150px" width="50%" alt=" family with bike" />
-        <ButtonAppBar  {...props} />
-        <Link to='/home' className="logo">
-          <Button variant="contained" color="inherit" >ALL BIKES</Button>
-        </Link>
-      </header>
-      <Switch>
-        <Route path='/home' component={Acceuil} />
-        <Route exact path="/mon-compte" component={WithNoAuth} />
-        <Route exact path={'/'+link} component={AllBikes}/>
-        <Route exact path={'/'+link +'/:name'} component={SingleBike}/>
-        <Redirect to="/home" />
-      </Switch>
-    </React.Fragment>
+      
+        <header>
+          <img src={cyclist} height="150px" width="50%" alt=" road bike" />
+          <img src={famille} height="150px" width="50%" alt=" family with bike" />
+          <ButtonAppBar  {...props} />
+          <Link to='/home' className="logo">
+            <Button variant="contained" color="inherit" >ALL BIKES</Button>
+          </Link>
+        </header>
+        <Switch>
+          <Route exact path='/home' component={Acceuil} />
+          <Route exact path="/mon-compte" component={WithNoAuth} />
+          <Route exact path={'/' + link} component={AllBikes} />
+          <Route exact path={'/' + link + '/:name'} component={SingleBike} />
+          <Redirect to="/home" />
+        </Switch>
+
+    </React.Fragment> 
   );
 }
 

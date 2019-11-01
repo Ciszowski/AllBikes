@@ -1,13 +1,13 @@
 export const initialState = {
-   data: []
+   favori: []
 };
 
 export const bikeReducer = (state = initialState, action) => {
    switch (action.type) {
-      case "LOADBIKE":
+      case "LOADFAVORI":
          return {
             ...state,
-            data: action.payload
+            favori: action.payload
          }
       default:
          return state
