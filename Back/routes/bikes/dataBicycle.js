@@ -51,4 +51,14 @@ router.get('/getFavori/:id', (req, res)=>{
     })
 });
 
+
+router.post('/resultQuizz',(req,res)=>{
+    console.log('réponse de req body',req.body);
+    const { modele, price } = req.body
+    const result = tools.getResult(modele, price, objBike);
+    res.status(200).json({result})
+})
+
+
+
 module.exports = router;

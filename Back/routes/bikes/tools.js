@@ -28,8 +28,14 @@ const getFavoris = (objBike, dataSQL) => {
         return nameBike.includes(elBike.model) && elBike
     })
 };
+const getResult= (modele, price, objBike)=>{
+    return objBike.filter((elBike)=>{
+        return elBike.subCategories === modele && (elBike.price >= price[0] && elBike.price <= price[1])
+    })
+}
 
 module.exports = {
     downloadImg,
-    getFavoris
+    getFavoris,
+    getResult
 }

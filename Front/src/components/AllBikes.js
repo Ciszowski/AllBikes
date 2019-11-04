@@ -142,7 +142,7 @@ export default function AllBikes(props) {
                 })
             })
         })
-    }, [link])
+    },[link])
 
     const handleChange = props => (ev, value) => {
         if (props === "price") {

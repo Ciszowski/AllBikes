@@ -50,9 +50,9 @@ const useStyle = makeStyles((theme) => ({
         backgroundSize: 'contain',
     },
     iconBtn:{
-        color: '#39CCCC',
+        backgroundColor: '#39CCCC',
         position: 'relative',
-        top: '40px',
+        top: '45px',
         left: '40px'
     },
     content: {
@@ -65,13 +65,19 @@ const useStyle = makeStyles((theme) => ({
         height: 150,
         width: 140
     },
+    space:{
+        flex: '1 1 20rem'
+    }
 }))
 
 export default function MyProfile(props) {
     const classes = useStyle();
     const dispatch = useDispatch();
 
-    const [date, setDate] = useState(null)
+    const [profil, setProfil] = useState({
+        nbFavori: 0,
+        date: ''
+    })
     const user = useSelector((state) => (
         {
             id_user: state.register.id_user,
@@ -85,18 +91,19 @@ export default function MyProfile(props) {
         favoris: <MyFavoris {...props}/>,
         profil: <ModifProfile />,
         password: <ChangePass email={user.email}/>,
-        findOwnBike: <FindOwnBike/>,
+        findOwnBike: <FindOwnBike {...props}/>,
         admin: <Admin />
     }
 
     useEffect(() => {
         getFavoris();
-    }, []);
+    },[]);
     
     async function getFavoris() {
         await fetch(`/dataBike/getFavori/${user.id_user}` )
             .then((res) => res.json())
             .then((data) => {
+                setProfil({...profil, nbFavori: data.results.length})
                 dispatch({ type: "LOADFAVORI", payload: data.results})
             })
     };
@@ -115,10 +122,10 @@ export default function MyProfile(props) {
                 <Container maxWidth="xl">
                     <IconButton
                         className={classes.iconBtn}
-                        aria-label="back" 
+                        aria-label="back"
                         onClick={() => dispatch({type: "VALUE&LINK"})}
                     >
-                        <Icon style={{fontSize: '50px'}}>backspace</Icon>
+                        <Icon style={{fontSize: '25px'}}>backspace</Icon>
                     </IconButton>
                     {objProfile[user.value]}
                     
@@ -138,7 +145,8 @@ export default function MyProfile(props) {
                                 subheader={user.email}
                             />
                             <CardContent className={classes.cardHeader.content}>
-                                <Typography variant="body2" color="textSecondary" component="p"> {date}</Typography>
+                                <Typography variant="body1" color="textSecondary" component="p"> Nombre de favori : {profil.nbFavori}</Typography>
+                                <Typography variant="body1" color="textSecondary" component="p"> {profil.date}</Typography>
                             </CardContent>
                         </Card>
                     </Container>
@@ -153,7 +161,7 @@ export default function MyProfile(props) {
                                             title={el.value} />
                                     </Button>
                                     <CardContent className={classes.content}>
-                                        <Typography variant="body2">  {el.type}  </Typography>
+                                        <Typography variant="body2"> {el.type} </Typography>
                                     </CardContent>
                                 </Card>
                             )

@@ -1,9 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/Front/src/gallerie
 /Front/node_modules
 /Back/node_modules
 /Back/routes/bikes/imagesBikes
+/Back/routes/quizz/Qimages
 /Front/.pnp
 /Back/.pnp
 .pnp.js

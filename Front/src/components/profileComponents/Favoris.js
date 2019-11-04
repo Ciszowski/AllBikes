@@ -180,7 +180,6 @@ export default function MyFavoris(props) {
                 fullWidth={true}
                 maxWidth="sm"
                 open={open.dialog}
-                direction="down"
             >
                 <DialogTitle className={classes.dialog}> {"Validation de supression du vélo"}</DialogTitle>
                 <DialogContent dividers={true}>

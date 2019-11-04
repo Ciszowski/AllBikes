@@ -1,6 +1,6 @@
 import './mainCss.css'
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect, withRouter, Link } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter, Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 

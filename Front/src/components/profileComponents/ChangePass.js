@@ -78,7 +78,6 @@ export default function ChangePass(props) {
         setValuePass({ ...valuePass, [props]: ev.target.value })
     }
     function onSaveModif(){
-        console.log('save modif')
         fetch('/auth/modifPass',{
             method: 'POST',
             headers: new Headers({

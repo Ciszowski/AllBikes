@@ -6,7 +6,7 @@ import velo from '../../gallerie/velo.png';
 
 export const NavData= {
     Course:{
-        Endurance:'Do i need to write something here without i"ve got some error or doublon ?',
+        Endurance: "",
         'Tri/VLM':'',
         Piste:'',
         Performance:'',
@@ -53,4 +53,16 @@ export const objCard = [
     { value: 'password', type: 'Changer mot de passe', image: secret },
     { value: 'findOwnBike', type: 'Trouve ton vélo', image: velo},
     { value: 'admin', type: 'admin', image: rouages }
+]
+
+export const questionMark=[
+    {Q:"Sur quel types de terrains souhaitez-vous pratiquer ?"},
+    {Q:"Laquelles de ces pratiques vous correspond le mieux ?"},
+    {Q:"Esprit sportif ou cherchez vous la commodité?"},
+    {Q:"Quel est votre budget ?"}
+]
+export const questionPrice=[
+    {title: "De 500€ à 2000€", value: [0,2000]},
+    {title: 'De 2000€ à 5000€', value: [2000,5000]},
+    {title: 'Supérieur à 5000€', value: [5000, 20000]}
 ]
