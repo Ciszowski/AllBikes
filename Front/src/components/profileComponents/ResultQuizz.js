@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Container, Card, CardActionArea, CardHeader, CardMedia, CardContent, Typography, IconButton, Icon } from '@material-ui/core';
+import { NavData } from '../navData/Data';
+import { Container, Card, CardActionArea, CardHeader, CardMedia, CardContent, Typography, Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles({
@@ -9,10 +10,14 @@ const useStyles = makeStyles({
         flexFlow: 'row wrap',
         justifyContent: "space-evenly",
     },
+    subtitle:{
+        textAlign: "center",
+        padding: "30px"
+    },
     title: {
         textAlign: 'center',
         padding: '15px 15px',
-        margin: '0 25% 50px 25%',
+        margin: '0 25% 10px 25%',
         backgroundColor: '#39CCCC',
         color: 'white'
     },
@@ -70,10 +75,11 @@ export default function ResultQuizz(props) {
         modele: state.listBike.modele,
         price: state.listBike.price,
     }));
+    const { modele, price } = resQuizz;
 
 
     useEffect(() => {
-        if (resQuizz.modele && resQuizz.price.length) {
+        if (modele && price.length) {
             fetchResult()
         }
     }, [])
@@ -84,7 +90,7 @@ export default function ResultQuizz(props) {
             headers: new Headers({
                 'Content-Type': 'application/json'
             }),
-            body: JSON.stringify({ modele: resQuizz.modele, price: resQuizz.price })
+            body: JSON.stringify({ modele: modele, price: price })
         })
             .then((res) => res.json())
             .then((data) => {
@@ -95,18 +101,19 @@ export default function ResultQuizz(props) {
         dispatch({ type: 'LINK', payload: element.categorie })
         props.history.push('/' + element.categorie + '/' + (element.model).replace(/[' ']+/gi, '_'))
     }
-
-    console.log('result data', props)
     return (
         <Container className={classes.root} maxWidth="lg">
+
             <h1 className={classes.title}>
                 <Icon>star</Icon>
                 &nbsp;Vos Velos qui vous correspondent &nbsp;
-                <Icon>star</Icon>
+                        <Icon>star</Icon>
             </h1>
 
-            <Typography> Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d'entre elles a été altérée par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard. Si vous voulez utiliser un passage du Lorem Ipsum, vous devez être sûr qu'il n'y a rien d'embarrassant caché dans le texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de 200 mots latins, en combinaison de plusieurs structures de phrases, pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d'humour.
+            <Typography variant="body1" component="p" className={classes.subtitle}>
+                {NavData[NavData.findModele(modele)][modele]}
             </Typography>
+
             {resultData && (
                 resultData.map((element, index) => {
                     const linkImg = ('/' + element.categorie) + (element.image)

@@ -238,7 +238,7 @@ export default function SingleBike(props) {
 
             <Container maxWidth="xl" className={classes.rootFoot}>
                 <Typography variant="subtitle1" component="p"> 
-                    *Toutes les tailles disponibles ne sont pas directement chez le constructeur, pour cela reférer vous à un revendeur de cette marque près de chez vous.
+                    *Toutes les tailles disponibles ne sont pas directement chez le constructeur, pour cela reférez-vous à un revendeur de cette marque près de chez vous.
                 </Typography>
             </Container>
             <Snackbar

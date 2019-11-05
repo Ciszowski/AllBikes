@@ -153,7 +153,7 @@ export default function Admin() {
                             margin="normal"
                             variant="outlined"
                         >
-                            {Object.keys(NavData).map((option, index) => {
+                            {Object.keys(NavData).slice(0,-1).map((option, index) => {
                                 return (<option key={index} value={option}>
                                     {option}
                                 </option>)
@@ -208,7 +208,7 @@ export default function Admin() {
                             variant="outlined"
                             disabled={!isDisabled}
                             onClick={onRegisterBike}> 
-                            Enregister nouveau vélo 
+                            Ajouter nouveau vélo 
                         </Button>
                     </CardActions>
                 </Card>

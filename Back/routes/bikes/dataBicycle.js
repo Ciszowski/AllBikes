@@ -19,7 +19,7 @@ router.get("/getSingleBike/:name", (req,res)=>{
 router.post('/addNewBike', (req, res) => {
     const{categoryBike,typeOfBike,model,img,year,price,material,brand,size,description}= req.body;
     tools.downloadImg(img, model).then((data) => {
-        var imagePath = data.path
+        var imagePath = (data.path).match(/\/\w+.\w+$/gm).join('');
         const dataJson = {
             categorie: categoryBike,
             subCategories: typeOfBike,
@@ -28,7 +28,7 @@ router.post('/addNewBike', (req, res) => {
             image: imagePath,
             material: material,
             year: year,
-            price: price,
+            price: Number(price),
             size: size,
             details: description,
         }
@@ -53,7 +53,6 @@ router.get('/getFavori/:id', (req, res)=>{
 
 
 router.post('/resultQuizz',(req,res)=>{
-    console.log('réponse de req body',req.body);
     const { modele, price } = req.body
     const result = tools.getResult(modele, price, objBike);
     res.status(200).json({result})
