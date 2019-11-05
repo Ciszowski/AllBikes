@@ -6,10 +6,10 @@ import { useSelector } from 'react-redux';
 
 //components
 import ButtonAppBar from './components/NavigateBar';
-import AllBikes from './components/AllBikes';
+import AllBikes from './components/bikes/AllBikes';
 import WithNoAuth from './fcRouter/WithNoAuth'
 import Acceuil from './components/Acceuil';
-import SingleBike from './components/SingleBike';
+import SingleBike from './components/bikes/SingleBike';
 
 //material
 import Button from '@material-ui/core/Button';

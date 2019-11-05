@@ -54,7 +54,7 @@ export const NavData = {
                     le but étant d'aller le plus rapidement possible passant par des ascensions dures et des descentes 
                     techniques tout en restant à l'écart des routes goudronnées. Voici un choix qui pourrait vous 
                     correspondre.`,
-        BMX: `Vous êtes acrobatique ou souhaitez le devenir? Le BMX fait de se sport une activité très technique et 
+        BMX: `Vous vous sentez acrobatique ou souhaitez le devenir? Le BMX fait de se sport une activité très technique et 
             spéctaculaire demandant des qualités physiques telles que la vélocité, et l'endurance. A partir de 2020,
             il sera également une discipline olympique.Voici une sélection de vélos qui pourrait vous correspondre.`
     },
@@ -76,14 +76,23 @@ export const NavData = {
                 Voici quelques modèles dont leur légèreté et rigidité vous surprendra.`
     },
     VAE: {
-        Course: `Aimez-vous les grands défis sur route mais certains vous semblent inaccessible ? Ces vélos de courses hybride
-                doté d'une assistance electrique vont vous surprendre en vous permettant de franchir n'importe quel col, de vous ramener chez vous quand vous vous sentez fatiguer, voire jusqu'à trouver les sensations qu'éprouvent les professionnels cyclistes en allant à leur vitesse de pointe dans les montée où même dans les longues lignes
+        Course: `Aimez-vous les grands défis sur route mais certains vous semblent inaccessible ? Ces vélos de courses hybride,
+                doté d'une assistance electrique, vont vous surprendre en vous permettant de franchir n'importe quel col,
+                de vous ramener chez vous quand vous vous sentez fatiguer, voire jusqu'à trouver les sensations qu'éprouvent 
+                les professionnels cyclistes en allant à leur vitesse de pointe dans les montée où même dans les longues lignes
                 droites.`,
         Trekking: `Vous souhaitez voyager en vélo, aller sur les routes de campagnes et les chemins de terre, voir du pays
                     mais vous vous voulez rouler sans effort et de manière confortable ?  Ces vélos hybride doté d'une assistance
                     sont fait pour vous. Ils vous permettront de rester actif tout en vous divertissant à travers tout types de sentiers`,
-        VTT: ``,
-        Ville: ``,
+        VTT: `Vous aimez partir à l'aventure là ou bon vous semble, souhaitez faire des ascensions hors des routes, et tout cela 
+                avec confort et peu d'effort? C'est possible avec les vélos VTTAE, les vélos vtt doté d'une assistance éléctriques.
+                Graĉe à leur puissant moteur, découvrez de nouvelles pistes, parcourez les vastes plaines sans effort ou même 
+                 partez à l'ascension de pics inconnus. Voici une selection de vélos qui vous pourront vous plaire.`,
+        Ville: `Vous souhaitez aller au travail sans effort tout en vous déplaçant en vélo ? Se balader, voire emprunter en toute
+                tranquilité les voies vertes ou même en ville ? Cela est possible avec les vélos à assistance électrique de ville. 
+                Doté d'un moteur, ce type de vélo vous emmenera là ou vous le souhaitez, arriver au travail à temps, rentrez
+                chez soi tout en évitant la circulation.Voici une séléction de vélos qui pourront amplifier grandement votre envi
+                de faire du vélo.`,
     },
     findModele: function (modele) {
         return Object.keys(this).filter((element) => {
@@ -106,7 +115,7 @@ export const objCard = [
     { value: 'favoris', type: 'Mes favoris', image: favoris },
     { value: 'profil', type: 'Modifier profil', image: home },
     { value: 'password', type: 'Changer mot de passe', image: secret },
-    { value: 'findOwnBike', type: 'Trouve ton vélo', image: velo },
+    { value: 'findOwnBike', type: 'Trouvez votre vélo', image: velo },
     { value: 'admin', type: 'admin', image: rouages }
 ]
 
