@@ -1,6 +1,9 @@
+//import react
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { makeStyles } from '@material-ui/styles';
+//tools
+import {useFavori} from '../miscellaneous/Style';
+//material
 import {
     Card,
     CardMedia,
@@ -21,75 +24,8 @@ import {
     Snackbar
 } from '@material-ui/core';
 
-const useStyles = makeStyles({
-    root: {
-        display: 'flex',
-        flexFlow: 'row wrap',
-        justifyContent: "space-evenly",
-    },
-    title: {
-        textAlign: 'center',
-        padding: '15px 15px',
-        margin: '0 25% 50px 25%',
-        backgroundColor: '#4A5602',
-        color: '#F6F8D3'
-    },
-    card: {
-        position: 'relative'
-    },
-    deleteBtn: {
-        position: 'absolute',
-        bottom: -10,
-        right: 0
-    },
-    cardBike: {
-        position: 'relative',
-        marginTop: "5px",
-        paddingTop: '35px',
-        display: 'flex',
-        flexDirection: 'column',
-        border: "2px solid #A2996E",
-    },
-    cardHeader: {
-        position: 'absolute',
-        top: 1,
-        left: 1,
-        fontWeight: 'bolder',
-        color: "#4A5602"
-    },
-    price: {
-        position: 'absolute',
-        top: 1,
-        right: 1,
-    },
-    cardContent: {
-        height: "10px",
-        border: "2px solid #01FF70",
-        width: '100%',
-        display: "flex",
-        justifyContent: "center",
-        alignItems: 'center',
-        color: "#F6F8D3",
-        backgroundColor: '#4A5602',
-        padding: "25px 25px",
-        fontWeight: 'bolder'
-    },
-    media: {
-        display: 'flex',
-        alignSelf: "center",
-        backgroundSize: "100%",
-        width: 400,
-        height: 300,
-    },
-    dialog: {
-        backgroundColor: '#4A5602',
-        color: '#F6F8D3',
-        fontWeight: 'bolder'
-    }
-})
-
 export default function MyFavoris(props) {
-    const classes = useStyles();
+    const classes = useFavori();
     const dispatch = useDispatch();
     const user = useSelector((state) => ({
         id_user: state.register.id_user
@@ -102,7 +38,6 @@ export default function MyFavoris(props) {
         snack: false,
         dialog: false
     })
-
 
     function onNavigate(el) {
         dispatch({ type: 'LINK', payload: el.categorie })

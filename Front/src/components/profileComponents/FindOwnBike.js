@@ -1,58 +1,17 @@
+//react
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Dialog, Card, CardMedia, CardContent, Typography, DialogContent, DialogTitle, CardActionArea, DialogActions, Button, IconButton, Icon, Container } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import { questionMark, questionPrice } from '../miscellaneous/Data';
+//components
 import ResultQuizz from './ResultQuizz';
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        color:"#262719",
-        display: 'flex',
-        width: '100%',
-        flexDirection: "row",
-        justifyContent: 'flex-end'
-    },
-    card: {
-        margin: '15px 30px',
-    },
-    dialogTitle: {
-        color:"#F6F8D3",
-        backgroundColor: '#4A5602',
-        textAlign: 'center',
-        padding:'0',
-        margin:"0"
-    },
-    cardMedia: {
-        height: '200px',
-        width: '220px'
-    },
-    dialogText: {
-        backgroundColor: '#A2996E',
-        color: "#262719",
-        textAlign: 'center',
-    },
-    dialogContent: {
-        display: 'flex',
-        flexFlow: 'row wrap',
-        justifyContent: 'center',
-    },
-    iconBtn: {
-        backgroundColor: "#4A5602",
-        color:"#F6F8D3",
-        fontSize: "50px"
-    }
-}))
-
-
-// anthonyciszowski@gmail.com
-
+//tools
+import {useFindOwnBike} from '../miscellaneous/Style';
+import { questionMark, questionPrice } from '../miscellaneous/Data';
+//material 
+import { Dialog, Card, CardMedia, CardContent, Typography, DialogContent, DialogTitle, CardActionArea, DialogActions, Button, IconButton, Icon, Container } from '@material-ui/core';
 
 export default function FindOwnBike(props) {
-    const classes = useStyles();
-
+    const classes = useFindOwnBike();
     const [open, setOpen] = useState(false);
-
     const dispatch = useDispatch();
     const question = useSelector((state) => ({
         modele: state.listBike.modele,

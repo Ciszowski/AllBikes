@@ -1,10 +1,11 @@
+//react
 import React, { useState } from 'react';
 import { useSelector ,useDispatch} from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
+//tools
+import {useModifProfil, ValidationTextField} from "../miscellaneous/Style";
+//material
 import {
     Container,
-    withStyles,
-    TextField,
     Card,
     Button,
     CardContent,
@@ -12,63 +13,8 @@ import {
     CardActions
 } from '@material-ui/core';
 
-
-const ValidationTextField = withStyles({
-    root: {
-        width: '20em',
-        backgroundColor: 'white',
-        '& input:valid + fieldset': {
-            borderColor: 'green',
-            borderWidth: 2,
-        },
-        '& input:valid:focus + fieldset': {
-            borderLeftWidth: 6,
-            padding: '4px !important',
-        },
-    },
-})(TextField);
-
-const useStyles = makeStyles((theme) => ({
-    root:{
-        display:'flex',
-        justifyContent: "center",
-        marginTop:"9%"
-    },
-    card : {
-        zIndex:"1",
-        position:"relative",
-        padding: '45px',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: "space-around",
-        backgroundColor: '#A2996E',
-    },
-    cardHead:{
-        color :'#F6F8D3',
-        textAlign: 'center',
-        display: 'flex',
-        alignSelf: 'center',
-        fontWeight: "bolder",
-        backgroundColor: '#4A5602',
-    },
-    cardContent:{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center'
-    },
-    button:{
-        position:'absolute',
-        bottom: "1px",
-        right: "1px"
-    },
-    input:{
-        margin: "15px 0",
-    }
-}))
-
 export default function ModifProfile() {
-
-    const classes = useStyles();
+    const classes = useModifProfil();
     const dispatch = useDispatch();
     const data = useSelector((state) => ({
         name: state.register.name,

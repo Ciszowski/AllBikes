@@ -1,8 +1,11 @@
+//react
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+//tools
+import {useSingleBike} from '../miscellaneous/Style';  
+//material
 import { Container, 
-        Typography, 
-        makeStyles, 
+        Typography,
         Card, 
         CardHeader, 
         CardContent, 
@@ -16,65 +19,8 @@ import { Container,
         Snackbar, 
         Button} from '@material-ui/core';
 
-
-const useStyles = makeStyles({
-    rootHead: {
-        width:"100%",
-        backgroundColor: "#4A5602",
-        display: 'flex',
-        justifyContent: 'space-between',
-    },
-    root: {
-        marginTop:'2%',
-        display: 'flex',
-        flexFlow: 'row wrap',
-        justifyContent:'center',
-        alignItems:'center'
-    },
-    rootFoot: {
-        backgroundColor: "#A2996E",
-        display: "flex",
-        justifyContent: 'center',
-        color: '#262719',
-    },
-    iconBtn:{
-        backgroundColor: '#A2996E', 
-        color: '#F6F8D3'
-    },
-    cardImage:{
-        maxHeight:'calc(25vw + 1rem)',
-        marginRight:'10px'
-    },
-    image: {
-        backgroundSize:"75%",
-        width: "calc(50vw + 5rem)",
-        height: "calc(25vw + 1rem)"
-    },
-    card: { 
-        margin: "2% 0",
-        color:'#4A5602',
-        backgroundColor: "#F6F8D3"
-    },
-    header: {
-        color: '#F6F8D3',
-        fontWeight: 'bolder',
-        backgroundColor: "#4A5602"
-    },
-    details: {
-        margin: '55px 0',
-    },
-    typo:{
-        color: '#4A5602',
-    },
-    cardContent:{
-        marginLeft:'10px',
-        maxWidth: "calc(25vw + 18rem)",
-        textAlign:"center",
-    }
-})
-
 export default function SingleBike(props) {
-    const classes = useStyles();
+    const classes = useSingleBike();
     const user = useSelector((state)=>({
         id_user: state.register.id_user,
         email: state.register.email,

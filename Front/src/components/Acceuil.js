@@ -1,56 +1,23 @@
+//react
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { HomeData } from './navData/Data';
+//tools
+import { useAcceuil }  from "./miscellaneous/Style";
+import { HomeData } from './miscellaneous/Data';
+import firstImg from '../gallerie/firstImageHome.jpg'
 import "./main.css";
+//material
 import {
     Card,
     CardActionArea,
     Container,
     CardContent,
-    makeStyles,
     CardMedia,
     Typography
 } from '@material-ui/core';
-import firstImg from '../gallerie/firstImageHome.jpg'
-
-const useStyles = makeStyles({
-    root: {
-        width: '100%',
-        display: "flex",
-        flexDirection: 'column',
-    },
-    card: {
-        width: "100%",
-        backgroundColor: "#A2996E",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent:"space-between",
-        borderTop: '15px solid #262719'
-    },
-    cardActions:{
-        width: 'calc(40vw + 75px)',
-    },
-    cardImg: {
-        width: 'calc(40vw + 75px)',
-        height: 'calc(40vh + 50px)'
-    },
-    cardContent:{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent:'center',
-
-    },
-    text:{
-        padding:'25px',
-        fontSize:"calc(0px + 2vh)",
-        fontWeight: "bolder",
-        textAlign: "center",
-        color: "#4A5602",
-    }
-})
 
 export default function Home(props) {
-    const classes = useStyles();
+    const classes = useAcceuil();
     const dispatch = useDispatch();
 
     function onNavigate(value) {

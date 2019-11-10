@@ -10,7 +10,6 @@ import WithNoAuth from './fcRouter/WithNoAuth'
 import Acceuil from './components/Acceuil';
 import SingleBike from './components/bikes/SingleBike';
 
-
 function App(props) {
   const link = useSelector((state) => state.register.link)
 
@@ -22,7 +21,6 @@ function App(props) {
 
   return (
     <React.Fragment>
-      
         <header>
           <ButtonAppBar  {...props} />
         </header>

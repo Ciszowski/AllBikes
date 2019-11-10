@@ -1,72 +1,14 @@
+//react
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+//tools
 import { NavData } from '../miscellaneous/Data';
+import {useResultQuizz} from '../miscellaneous/Style';
+//material
 import { Container, Card, CardActionArea, CardHeader, CardMedia, CardContent, Typography, Icon } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-
-const useStyles = makeStyles({
-    root: {
-        display: 'flex',
-        flexFlow: 'row wrap',
-        justifyContent: "space-evenly",
-    },
-    subtitle:{
-        color: "#262719",
-        textAlign: "center",
-        padding: "30px"
-    },
-    title: {
-        textAlign: 'center',
-        padding: '15px 15px',
-        margin: '0 25% 10px 25%',
-        backgroundColor: '#4A5602',
-        color: '#F6F8D3'
-    },
-    cardBike: {
-        backgroundColor: "F6F8D3",
-        position: 'relative',
-        marginTop: "5px",
-        paddingTop: '35px',
-        display: 'flex',
-        flexDirection: 'column',
-        border: "2px solid #A2996E",
-    },
-    cardHeader: {
-        position: 'absolute',
-        top: 1,
-        left: 1,
-        fontWeight: 'bolder',
-        color: "#4A5602"
-    },
-    price: {
-        position: 'absolute',
-        top: 1,
-        right: 1,
-    },
-    cardContent: {
-        height: "10px",
-        border: "2px solid #A2996E",
-        width: '100%',
-        display: "flex",
-        justifyContent: "center",
-        alignItems: 'center',
-        color: "#F6F8D3",
-        backgroundColor: '#4A5602',
-        padding: "25px 25px",
-        fontWeight: 'bolder'
-    },
-    media: {
-        display: 'flex',
-        alignSelf: "center",
-        backgroundSize: "100%",
-        width: 400,
-        height: 300,
-    }
-})
-
 
 export default function ResultQuizz(props) {
-    const classes = useStyles();
+    const classes = useResultQuizz();
     const [resultData, setData] = useState(null)
     const dispatch = useDispatch();
     const resQuizz = useSelector((state) => ({
@@ -74,7 +16,6 @@ export default function ResultQuizz(props) {
         price: state.listBike.price,
     }));
     const { modele, price } = resQuizz;
-
 
     useEffect(() => {
         if (modele && price.length) {

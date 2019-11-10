@@ -1,8 +1,10 @@
+//react
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+//tools
 import { NavData, characteristic } from '../miscellaneous/Data';
-
-import { makeStyles } from '@material-ui/core/styles';
+import {useAdmin} from '../miscellaneous/Style';
+//material
 import DirectionsIcon from '@material-ui/icons/Directions';
 import {
     Container,
@@ -17,67 +19,8 @@ import {
     Snackbar
 } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display:"flex",
-        justifyContent:"center"
-    },
-    card: {
-        height: '100%',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: "space-around",
-        backgroundColor: '#A2996E',
-    },
-    cardHead: {
-        color: '#F6F8D3',
-        textAlign: 'center',
-        display: 'flex',
-        alignSelf: 'center',
-        fontWeight: "bolder",
-        backgroundColor: '#4A5602',
-    },
-    cardContent: {
-        height: '40%',
-        display: 'flex',
-        flexFlow: 'row wrap',
-        justifyContent: 'space-around'
-    },
-    button: {
-        backgroundColor:"#4A5602",
-        color:'#F6F8D3'
-    },
-    cardActions: {
-        display: 'flex',
-        justifyContent: 'flex-end',
-    },
-    contain:{
-        display:'inline-flex',
-        position: 'relative'
-    },
-    iconButton: {
-        position: 'absolute',
-        top: '12px',
-        right: '0px'
-    },
-    icon:{
-        color:"#4A5602",
-        fontSize: '40px'
-    },
-    textField: {
-        width: '20em',
-        backgroundColor: "white",
-    },
-    multiline: {
-        width: '60em',
-        backgroundColor: "white",
-    }
-}))
-
-
 export default function Admin() {
-    const classes = useStyles()
+    const classes = useAdmin();
     const dispatch = useDispatch();
     const [msgServer, setMessage] = useState({
         msg: '',
@@ -224,4 +167,4 @@ export default function Admin() {
             </Container>
         </React.Fragment>
     )
-}
+};

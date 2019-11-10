@@ -1,83 +1,19 @@
+//react
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+//tools
+import {ValidationTextField, useLoginPage} from '../miscellaneous/Style';
+//material
 import {
     Card,
-    TextField,
     Button,
     CardHeader,
     Snackbar,
     Container
 } from '@material-ui/core';
 
-const ValidationTextField = withStyles({
-    root: {
-        '& input:valid + fieldset': {
-            borderColor: 'green',
-            borderWidth: 2,
-        },
-        '& input:valid:focus + fieldset': {
-            borderLeftWidth: 6,
-            padding: '4px !important',
-        },
-    },
-})(TextField);
-
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        margin: '10% auto',
-        display: 'flex',
-        flexFlow: 'row wrap',
-        justifyContent: "space-around"
-    },
-    cardCo: {
-        width: 400,
-        height: '20rem',
-        display: 'flex',
-        flexDirection: 'column',
-        backgroundColor: '#A2996E',
-    },
-    cardIn: {
-        width: 400,
-        height: '30rem',
-        display: 'flex',
-        flexDirection: 'column',
-        backgroundColor: '#A2996E',
-
-    },
-    buttonInscription: {
-        color: '#335601',
-        maxHeight: 50,
-        backgroundColor: '#A2996E',
-    },
-    cardHeader: {
-        backgroundColor: '#335601',
-        color: '#F6F8D3',
-        fontWeight:"bolder",
-        textAlign: 'center',
-    },
-    textfield: {
-        display: 'flex',
-        flexDirection: "column",
-        flexGrow: 1,
-        justifyContent: 'space-around',
-        alignItems: 'center',
-    },
-    cardActions: {
-        alignSelf: 'flex-end',
-        margin: theme.spacing(1),
-        backgroundColor: '#335601',
-        color: '#F6F8D3'
-    },
-    input: {
-        width: 350,
-        backgroundColor: 'white',
-    }
-}));
-
 export default function LoginPage(props) {
-    const classes = useStyles();
+    const classes = useLoginPage();
     const dispatch = useDispatch();
     const [msgServer, setMessage] = useState({
         msg: '',

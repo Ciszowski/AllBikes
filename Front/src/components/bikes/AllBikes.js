@@ -1,6 +1,9 @@
+//react
 import React, { useEffect, useState, Suspense } from 'react';
 import { useSelector } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
+//tools
+import {useAllBikes} from "../miscellaneous/Style";
+//material
 import {
     Card,
     TextField,
@@ -13,81 +16,6 @@ import {
     CardActionArea
 } from '@material-ui/core';
 
-
-const useStyles = makeStyles({
-    root: {
-        display: 'flex',
-        flexFlow: 'row wrap',
-        justifyContent: "center",
-    },
-    cardSelect: {
-        margin: "45px 0",
-        display: 'flex',
-        flexFlow: 'row wrap',   
-        backgroundColor: "#A2996E"
-    },
-    cardBike: {
-        margin: '15px',
-        backgroundColor: '#F6F8D3',
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        border: "2px solid #4A5602",
-    },
-    cardHeader: {
-        position:'absolute',
-        padding:'0',
-        margin: 0,
-        fontWeight: 'bolder',
-        color: "#4A5602"
-    },
-    price: {
-        position: 'absolute',
-        top: 1,
-        right: 1,
-    },
-    cardContentSelect: {
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: 'space-evenly',
-        height: '100%',
-        width: '100%',
-    },
-    cardContentBike: {
-        height: "10px",
-        border: "2px solid #4A5602",
-        width: '100%',
-        display: "flex",
-        justifyContent: "center",
-        alignItems: 'center',
-        color: "#4A5602",
-        backgroundColor: '#A2996E',
-    },
-    media: {
-        marginTop: "25px",
-        backgroundSize: "90%",
-        width: 250,
-        height: 150
-    },
-    div: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-    },
-    textField: {
-        width: '180px',
-        backgroundColor: 'white'
-    },
-    slider: {
-        color: 'green',
-        display: 'flex',
-        alignSelf: 'center',
-        width: '40%',
-    },
-
-});
-
-
 const initialeState = {
     subCategories: '',
     brand: '',
@@ -96,9 +24,8 @@ const initialeState = {
     model: '',
 }
 
-
 export default function AllBikes(props) {
-    const classes = useStyles();
+    const classes = useAllBikes();
     const link = useSelector((state) => state.register.link);
     const [selectItem, setSelectItem] = useState({});
     const [value, setValue] = useState({
