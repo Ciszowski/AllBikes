@@ -30,37 +30,40 @@ const ValidationTextField = withStyles({
 
 const useStyles = makeStyles((theme) => ({
     root:{
-        height: '500px',
-        width: '600px',
-        margin: '0 30%',
+        display:'flex',
+        justifyContent: "center",
+        marginTop:"9%"
     },
     card : {
-        height: '100%',
-        width: '100%',
+        zIndex:"1",
+        position:"relative",
+        padding: '45px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: "space-around",
-        backgroundColor: '#dbdbdb',
+        backgroundColor: '#A2996E',
     },
     cardHead:{
-        color :'white',
+        color :'#F6F8D3',
         textAlign: 'center',
         display: 'flex',
         alignSelf: 'center',
         fontWeight: "bolder",
-        backgroundColor: '#39CCCC',
+        backgroundColor: '#4A5602',
     },
     cardContent:{
-        height: '50%',
         display: 'flex',
-        flexFlow: 'column nowrap',
-        justifyContent: 'space-around',
+        flexDirection: 'column',
         alignItems: 'center'
     },
     button:{
-        display:'flex',
-        justifyContent: 'flex-end',
+        position:'absolute',
+        bottom: "1px",
+        right: "1px"
     },
+    input:{
+        margin: "15px 0",
+    }
 }))
 
 export default function ModifProfile() {
@@ -100,7 +103,7 @@ export default function ModifProfile() {
 
     return (
         <React.Fragment>
-            <Container className={classes.root}>
+            <Container maxWith="sm" className={classes.root}>
                 <Card color='primary' className={classes.card}>
                     <CardHeader
                         className={classes.cardHead}
@@ -138,7 +141,7 @@ export default function ModifProfile() {
                             variant="outlined" />
                     </CardContent>
                     <CardActions className={classes.button}>
-                            <Button style={{backgroundColor: '#39CCCC', color:'white'}}  variant="contained" onClick={onSaveModif}> Sauvegarder Modification</Button>
+                            <Button style={{backgroundColor: '#4A5602', color:'#F6F8D3'}}  variant="contained" onClick={onSaveModif}> Sauvegarder Modification</Button>
                     </CardActions>
                 </Card>
             </Container>

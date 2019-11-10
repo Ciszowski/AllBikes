@@ -29,38 +29,42 @@ const ValidationTextField = withStyles({
 })(TextField);
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        height: '500px',
-        width: '600px',
-        margin: '0 30%',
+    root:{
+        display:'flex',
+        justifyContent: "center",
+        marginTop:"9%"
     },
-    card: {
-        height: '100%',
-        width: '100%',
+    card : {
+        zIndex:"1",
+        position:"relative",
+        padding:'45px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: "space-around",
-        backgroundColor: '#dbdbdb',
+        backgroundColor: '#A2996E',
     },
-    cardHead: {
-        color: 'white',
+    cardHead:{
+        color :'#F6F8D3',
         textAlign: 'center',
         display: 'flex',
         alignSelf: 'center',
         fontWeight: "bolder",
-        backgroundColor: '#39CCCC',
+        backgroundColor: '#4A5602',
     },
-    cardContent: {
-        height: '30%',
+    cardContent:{
         display: 'flex',
-        flexFlow: 'column nowrap',
-        justifyContent: 'space-around',
+        flexDirection: 'column',
         alignItems: 'center'
     },
-    button: {
-        display: 'flex',
-        justifyContent: 'flex-end'
+    button:{
+        width:"50%",
+        position:'absolute',
+        bottom: "1px",
+        right: "1px"
     },
+    input:{
+        margin: "15px 0",
+    }
 }))
 
 
@@ -93,7 +97,7 @@ export default function ChangePass(props) {
     const isDisabled = (valuePass.password === valuePass.confirmPass) && valuePass.password.length ? true : false
     return (
         <React.Fragment>
-            <Container className={classes.root}>
+            <Container maxWith="sm" className={classes.root}>
                 <Card color='primary' className={classes.card}>
                     <CardHeader
                         className={classes.cardHead}
@@ -117,9 +121,8 @@ export default function ChangePass(props) {
                             variant="outlined" />
                     </CardContent>
                     <CardActions className={classes.button}>
-                        <Button className={classes.button} 
+                        <Button style={{backgroundColor: '#4A5602', color:'#F6F8D3'}}
                                 variant="contained" 
-                                color="primary"
                                 disabled={!isDisabled}
                                 onClick={onSaveModif}> Enregister mot de passe  </Button>
                     </CardActions>

@@ -26,9 +26,9 @@ const ValidationTextField = withStyles({
 
 const useStyles = makeStyles(theme => ({
     root: {
-        margin: '5% auto',
+        margin: '10% auto',
         display: 'flex',
-        flexDirection: 'row',
+        flexFlow: 'row wrap',
         justifyContent: "space-around"
     },
     cardCo: {
@@ -36,22 +36,25 @@ const useStyles = makeStyles(theme => ({
         height: '20rem',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#dbdbdb',
+        backgroundColor: '#A2996E',
     },
     cardIn: {
         width: 400,
         height: '30rem',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#dbdbdb',
+        backgroundColor: '#A2996E',
 
     },
     buttonInscription: {
+        color: '#335601',
         maxHeight: 50,
+        backgroundColor: '#A2996E',
     },
     cardHeader: {
-        backgroundColor: '#39CCCC',
-        color: 'grey',
+        backgroundColor: '#335601',
+        color: '#F6F8D3',
+        fontWeight:"bolder",
         textAlign: 'center',
     },
     textfield: {
@@ -64,8 +67,8 @@ const useStyles = makeStyles(theme => ({
     cardActions: {
         alignSelf: 'flex-end',
         margin: theme.spacing(1),
-        backgroundColor: '#39CCCC',
-        color: 'white'
+        backgroundColor: '#335601',
+        color: '#F6F8D3'
     },
     input: {
         width: 350,
@@ -94,7 +97,7 @@ export default function LoginPage(props) {
     }
 
     function loginIn(e) {
-        e.preventDefault()
+        e.preventDefault();
         fetch('/auth/loginIn', {
             method: 'POST',
             headers: new Headers({
@@ -105,9 +108,6 @@ export default function LoginPage(props) {
             .then((res) => {
                 if (!res.ok) {
                     setMessage({ open: true, msg: res.statusText});
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 2000);
                 }
                 return res.json()
             })
@@ -134,9 +134,9 @@ export default function LoginPage(props) {
                     console.log('error', error)
                 }
                 setMessage({ open: true, msg:resFin.message});
-                setTimeout(() => {
-                    window.location.reload();
-                }, 2000);
+                // setTimeout(() => {
+                //     window.location.reload();
+                // }, 2000);
             })
     }
 
@@ -262,7 +262,7 @@ export default function LoginPage(props) {
                         vertical: 'bottom',
                         horizontal: 'center'
                     }}
-                    autoHideDuration={3000}
+                    autoHideDuration={2000}
                     message={<span>`{msgServer.msg}`</span>}
                 />)}
         </Container>

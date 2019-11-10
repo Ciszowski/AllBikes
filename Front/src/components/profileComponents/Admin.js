@@ -19,7 +19,8 @@ import {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        margin: '0 10%',
+        display:"flex",
+        justifyContent:"center"
     },
     card: {
         height: '100%',
@@ -27,15 +28,15 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: "space-around",
-        backgroundColor: '#dbdbdb',
+        backgroundColor: '#A2996E',
     },
     cardHead: {
-        color: 'white',
+        color: '#F6F8D3',
         textAlign: 'center',
         display: 'flex',
         alignSelf: 'center',
         fontWeight: "bolder",
-        backgroundColor: '#39CCCC',
+        backgroundColor: '#4A5602',
     },
     cardContent: {
         height: '40%',
@@ -44,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-around'
     },
     button: {
-        backgroundColor:"#39CCCC",
-        color:'white'
+        backgroundColor:"#4A5602",
+        color:'#F6F8D3'
     },
     cardActions: {
         display: 'flex',
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
         right: '0px'
     },
     icon:{
-        color:"#39CCCC",
+        color:"#4A5602",
         fontSize: '40px'
     },
     textField: {
@@ -113,7 +114,6 @@ export default function Admin() {
         setData({...data, tempSize: ""});
     }
     function onRegisterBike(){
-        data.size.push(data.tempSize)
         fetch('/dataBike/addNewBike',{
             method:"POST",
             headers: new Headers({
@@ -136,7 +136,7 @@ export default function Admin() {
                         Object.keys(data).filter((el)=> el !== 'tempSize').length ? true : false
     return (
         <React.Fragment>
-            <Container className={classes.root}>
+            <Container maxWith="lg" className={classes.root}>
                 <Card color='primary' className={classes.card}>
                     <CardHeader
                         className={classes.cardHead}

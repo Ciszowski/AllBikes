@@ -11,6 +11,7 @@ const useStyles = makeStyles({
         justifyContent: "space-evenly",
     },
     subtitle:{
+        color: "#262719",
         textAlign: "center",
         padding: "30px"
     },
@@ -18,27 +19,24 @@ const useStyles = makeStyles({
         textAlign: 'center',
         padding: '15px 15px',
         margin: '0 25% 10px 25%',
-        backgroundColor: '#39CCCC',
-        color: 'white'
-    },
-    card: {
-        position: 'relative'
+        backgroundColor: '#4A5602',
+        color: '#F6F8D3'
     },
     cardBike: {
-        backgroundColor: "white",
+        backgroundColor: "F6F8D3",
         position: 'relative',
         marginTop: "5px",
         paddingTop: '35px',
         display: 'flex',
         flexDirection: 'column',
-        border: "2px solid #01FF70",
+        border: "2px solid #A2996E",
     },
     cardHeader: {
         position: 'absolute',
         top: 1,
         left: 1,
         fontWeight: 'bolder',
-        color: "#0074d9"
+        color: "#4A5602"
     },
     price: {
         position: 'absolute',
@@ -47,13 +45,13 @@ const useStyles = makeStyles({
     },
     cardContent: {
         height: "10px",
-        border: "2px solid #01FF70",
+        border: "2px solid #A2996E",
         width: '100%',
         display: "flex",
         justifyContent: "center",
         alignItems: 'center',
-        color: "#0074d9",
-        backgroundColor: '#39CCCC',
+        color: "#F6F8D3",
+        backgroundColor: '#4A5602',
         padding: "25px 25px",
         fontWeight: 'bolder'
     },
@@ -118,7 +116,7 @@ export default function ResultQuizz(props) {
                 resultData.map((element, index) => {
                     const linkImg = ('/' + element.categorie) + (element.image)
                     return (
-                        <Card key={index} className={classes.card}>
+                        <Card key={index} >
                             <CardActionArea
                                 variant="outlined"
                                 className={classes.cardBike}

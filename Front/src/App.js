@@ -1,6 +1,5 @@
-import './mainCss.css'
 import React, { useEffect } from 'react';
-import { Switch, Route, Redirect, withRouter, Link } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
@@ -11,12 +10,6 @@ import WithNoAuth from './fcRouter/WithNoAuth'
 import Acceuil from './components/Acceuil';
 import SingleBike from './components/bikes/SingleBike';
 
-//material
-import Button from '@material-ui/core/Button';
-
-//img
-import cyclist from './gallerie/roadbikes.jpg';
-import famille from './gallerie/family.jpeg';
 
 function App(props) {
   const link = useSelector((state) => state.register.link)
@@ -31,12 +24,7 @@ function App(props) {
     <React.Fragment>
       
         <header>
-          <img src={cyclist} height="150px" width="50%" alt=" road bike" />
-          <img src={famille} height="150px" width="50%" alt=" family with bike" />
           <ButtonAppBar  {...props} />
-          <Link to='/home' className="logo">
-            <Button variant="contained" color="inherit" >ALL BIKES</Button>
-          </Link>
         </header>
         <Switch>
           <Route exact path='/home' component={Acceuil} />

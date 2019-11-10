@@ -31,8 +31,8 @@ const useStyles = makeStyles({
         textAlign: 'center',
         padding: '15px 15px',
         margin: '0 25% 50px 25%',
-        backgroundColor: '#39CCCC',
-        color: 'white'
+        backgroundColor: '#4A5602',
+        color: '#F6F8D3'
     },
     card: {
         position: 'relative'
@@ -43,20 +43,19 @@ const useStyles = makeStyles({
         right: 0
     },
     cardBike: {
-        backgroundColor: "white",
         position: 'relative',
         marginTop: "5px",
         paddingTop: '35px',
         display: 'flex',
         flexDirection: 'column',
-        border: "2px solid #01FF70",
+        border: "2px solid #A2996E",
     },
     cardHeader: {
         position: 'absolute',
         top: 1,
         left: 1,
         fontWeight: 'bolder',
-        color: "#0074d9"
+        color: "#4A5602"
     },
     price: {
         position: 'absolute',
@@ -70,8 +69,8 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "center",
         alignItems: 'center',
-        color: "#0074d9",
-        backgroundColor: '#39CCCC',
+        color: "#F6F8D3",
+        backgroundColor: '#4A5602',
         padding: "25px 25px",
         fontWeight: 'bolder'
     },
@@ -83,8 +82,8 @@ const useStyles = makeStyles({
         height: 300,
     },
     dialog: {
-        backgroundColor: '#39CCCC',
-        color: 'white',
+        backgroundColor: '#4A5602',
+        color: '#F6F8D3',
         fontWeight: 'bolder'
     }
 })
@@ -189,10 +188,10 @@ export default function MyFavoris(props) {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={() => setOpen({ ...open, dialog: false })} color="secondary">
-                        Cancel
+                        Annuler
                     </Button>
                     <Button onClick={() => onDelete(open.message)} className={classes.dialog}>
-                        OK
+                        Supprimer
                     </Button>
                 </DialogActions>
             </Dialog>

@@ -36,9 +36,14 @@ const useStyle = makeStyles((theme) => ({
     cardHeader: {
         width: 490,
         textAlign: 'center',
-        backgroundColor: '#d6d6d6',
+        backgroundColor: '#A2996E',
+        borderRadius: '50% 20% / 10% 40%',
+    },
+    head:{
+        border:"5px groove #4A5602"
     },
     card: {
+        backgroundColor:"#A2996E",
         width: 250,
         margin: 25,
         borderRadius: '50% 20% / 10% 40%',
@@ -50,13 +55,16 @@ const useStyle = makeStyles((theme) => ({
         backgroundSize: 'contain',
     },
     iconBtn:{
-        backgroundColor: '#39CCCC',
+        zIndex:"2",
+        backgroundColor: '#4A5602',
         position: 'relative',
-        top: '45px',
-        left: '40px'
+        top: '40px',
+        left: '25px'
     },
     content: {
-        backgroundColor: '#dbdbdb',
+        border:"5px groove #4A5602",
+        backgroundColor: '#4A5602',
+        color:"#F6F8D3",
         textAlign: 'center',
         fontWeight: 'bolder'
     },
@@ -136,7 +144,7 @@ export default function MyProfile(props) {
                     <Container fixed className={classes.root}>
                         <Card className={classes.cardHeader}>
                             <CardHeader
-                                className={classes.style}
+                                className={classes.head}
                                 avatar={
                                     <Avatar className={classes.avatar} >
                                         <img src={avatar} alt='avatar' className={classes.avatar} />
@@ -144,9 +152,9 @@ export default function MyProfile(props) {
                                 title={user.name + ' ' + user.surname}
                                 subheader={user.email}
                             />
-                            <CardContent className={classes.cardHeader.content}>
-                                <Typography variant="body1" color="textSecondary" component="p"> Nombre de favori : {profil.nbFavori}</Typography>
-                                <Typography variant="body1" color="textSecondary" component="p"> {profil.date}</Typography>
+                            <CardContent className={classes.content}>
+                                <Typography variant="body1" component="p"> Nombre de favori : {profil.nbFavori}</Typography>
+                                <Typography variant="body1" component="p"> {profil.date}</Typography>
                             </CardContent>
                         </Card>
                     </Container>
@@ -161,7 +169,7 @@ export default function MyProfile(props) {
                                             title={el.value} />
                                     </Button>
                                     <CardContent className={classes.content}>
-                                        <Typography variant="body2"> {el.type} </Typography>
+                                        <Typography variant="h6"> {el.type} </Typography>
                                     </CardContent>
                                 </Card>
                             )

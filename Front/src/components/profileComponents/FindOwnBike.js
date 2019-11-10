@@ -7,37 +7,39 @@ import ResultQuizz from './ResultQuizz';
 
 const useStyles = makeStyles(theme => ({
     root: {
+        color:"#262719",
         display: 'flex',
         width: '100%',
         flexDirection: "row",
         justifyContent: 'flex-end'
     },
     card: {
-        margin: '15px',
-        maxWidth: '220px',
+        margin: '15px 30px',
     },
     dialogTitle: {
-        backgroundColor: '#39CCCC',
+        color:"#F6F8D3",
+        backgroundColor: '#4A5602',
         textAlign: 'center',
-        fontWeight: 'bolder'
+        padding:'0',
+        margin:"0"
     },
     cardMedia: {
         height: '200px',
         width: '220px'
     },
     dialogText: {
+        backgroundColor: '#A2996E',
+        color: "#262719",
         textAlign: 'center',
-        fontWeight: 'bolder',
-        backgroundColor: '#D3D3D3'
     },
     dialogContent: {
         display: 'flex',
         flexFlow: 'row wrap',
-        justifyContent: 'space-between'
+        justifyContent: 'center',
     },
     iconBtn: {
-
-        backgroundColor: "#39CCCC",
+        backgroundColor: "#4A5602",
+        color:"#F6F8D3",
         fontSize: "50px"
     }
 }))
@@ -112,8 +114,8 @@ export default function FindOwnBike(props) {
                     maxWidth="lg"
                     className={classes.dialog}
                     open={open}>
-                    <DialogTitle className={classes.dialogTitle} color="primary">
-                        {questionMark[question.step].Q}
+                    <DialogTitle className={classes.dialogTitle}>
+                        <h4> {questionMark[question.step].Q} </h4>
                     </DialogTitle>
                     <DialogContent className={classes.dialogContent} dividers={true}>
                         {question.quizz && (
@@ -128,7 +130,7 @@ export default function FindOwnBike(props) {
                                                     title={question.title}
                                                 />)}
                                             <CardContent className={classes.dialogText}>
-                                                <Typography> {question.title} </Typography>
+                                                <Typography variant="h6"> {question.title} </Typography>
                                             </CardContent>
                                         </CardActionArea>
                                     </Card>

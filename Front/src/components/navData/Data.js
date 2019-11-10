@@ -3,6 +3,11 @@ import home from '../../gallerie/blue-home.png';
 import rouages from '../../gallerie/rouages.png';
 import secret from '../../gallerie/top-secret.png';
 import velo from '../../gallerie/velo.png';
+import course from "../../gallerie/roadbikes.jpg";
+import VTT from "../../gallerie/vttistes.jpg";
+import trekking from "../../gallerie/trekking.jpg";
+import ville from "../../gallerie/ville.jpg";
+import profil from "../../gallerie/profil.png";
 
 export const NavData = {
     Course: {
@@ -129,4 +134,11 @@ export const questionPrice = [
     { title: "De 500€ à 2000€", value: [0, 2000] },
     { title: 'De 2000€ à 5000€', value: [2000, 5000] },
     { title: 'Supérieur à 5000€', value: [5000, 20000] }
-]
+];
+export const HomeData = [
+    { value: "Ville", description: "Partagez de bons moments sur des trajets quotidiens et simplifiez-vous des trajets longs ", image: ville },
+    { value: "VTT", description: "Vivez d'adrénaline avec de nouvelles sensations fortes et dessinez vos propres routes parmis les vastes étendues.", image: VTT },
+    { value: "Course", description: "Découvrez les plus grandes vitesses sur deux roues à la force de vos jambes, escalader les cols de légendes parcouru par tout les pros", image: course },
+    { value: "Trekking", description: "Partez parcourir les grands chemins de ce monde, et vivez d'expérience que vous n'oublierai jamais.", image: trekking },
+    { value: "mon-compte", description: "Pensez à vous inscrire gratuitement sur notre site pour vous rappelez de tout les bons vélos qui vous ont plûs et trouvez le vélo qui vous correspond.", image: profil }
+];

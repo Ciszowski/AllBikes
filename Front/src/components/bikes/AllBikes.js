@@ -20,55 +20,54 @@ const useStyles = makeStyles({
         flexFlow: 'row wrap',
         justifyContent: "center",
     },
-    card: {
-        margin: "10px 0",
+    cardSelect: {
+        margin: "45px 0",
         display: 'flex',
-        flexFlow: 'row wrap',
+        flexFlow: 'row wrap',   
+        backgroundColor: "#A2996E"
     },
     cardBike: {
-        backgroundColor: 'white',
+        margin: '15px',
+        backgroundColor: '#F6F8D3',
         position: 'relative',
-        marginTop: "5px",
-        paddingTop: '35px',
         display: 'flex',
         flexDirection: 'column',
-        border: "2px solid #01FF70",
+        border: "2px solid #4A5602",
     },
     cardHeader: {
-        position: 'absolute',
-        top: 1,
-        left: 1,
+        position:'absolute',
+        padding:'0',
+        margin: 0,
         fontWeight: 'bolder',
-        color: "#0074d9"
+        color: "#4A5602"
     },
     price: {
         position: 'absolute',
         top: 1,
         right: 1,
     },
-    cardContent: {
+    cardContentSelect: {
         display: "flex",
         flexDirection: "column",
         justifyContent: 'space-evenly',
         height: '100%',
         width: '100%',
     },
-    cardActions: {
+    cardContentBike: {
         height: "10px",
-        border: "2px solid #01FF70",
+        border: "2px solid #4A5602",
         width: '100%',
         display: "flex",
         justifyContent: "center",
         alignItems: 'center',
-        color: "#0074d9",
-        backgroundColor: '#39CCCC',
+        color: "#4A5602",
+        backgroundColor: '#A2996E',
     },
     media: {
-        display: 'flex',
-        alignSelf: "center",
-        backgroundSize: "75%",
-        width: 200,
-        height: 100
+        marginTop: "25px",
+        backgroundSize: "90%",
+        width: 250,
+        height: 150
     },
     div: {
         display: 'flex',
@@ -84,7 +83,8 @@ const useStyles = makeStyles({
         display: 'flex',
         alignSelf: 'center',
         width: '40%',
-    }
+    },
+
 });
 
 
@@ -189,8 +189,8 @@ export default function AllBikes(props) {
     return (
         <React.Fragment>
             <Container>
-                <Card className={classes.card}>
-                    <CardContent className={classes.cardContent} >
+                <Card className={classes.cardSelect}>
+                    <CardContent className={classes.cardContentSelect} >
                         <div className={classes.div}>
                             {selectItem ? Object.keys(selectItem).slice(0, -1).map((item, idx) => {
                                 return (
@@ -251,10 +251,10 @@ export default function AllBikes(props) {
                         dataBike.tempData.map((element, index) => {
                             const linkImg = props.match.path + (element.image)
                             return (
-                                <Card key={index} style={{ backgroundColor: 'inherit' }}>
+                                <Card key={index} className={classes.cardBike}>
                                     <CardActionArea
                                         variant="outlined"
-                                        className={classes.cardBike}
+                                        className={classes.cardActionsBike}
                                         onClick={() => onNavigate(element)}>
 
                                         <CardHeader
@@ -266,7 +266,7 @@ export default function AllBikes(props) {
                                             image={linkImg}
                                             title={element.model}
                                         />
-                                        <CardContent className={classes.cardActions}>
+                                        <CardContent className={classes.cardContentBike}>
                                             <Typography variant="body1" >
                                                 {element.model}
                                             </Typography>

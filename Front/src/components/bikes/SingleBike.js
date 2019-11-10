@@ -19,8 +19,8 @@ import { Container,
 
 const useStyles = makeStyles({
     rootHead: {
-        margin: '20px 0',
-        backgroundColor: "#A2A1A4",
+        width:"100%",
+        backgroundColor: "#4A5602",
         display: 'flex',
         justifyContent: 'space-between'
     },
@@ -30,14 +30,14 @@ const useStyles = makeStyles({
         justifyContent: 'space-around'
     },
     rootFoot: {
-        backgroundColor: "#A2A1A4",
+        backgroundColor: "#A2996E",
         display: "flex",
         justifyContent: 'center',
-        color: 'white',
+        color: '#262719',
     },
     iconBtn:{
-        backgroundColor: '#39CCCC', 
-        color: 'white'
+        backgroundColor: '#A2996E', 
+        color: '#F6F8D3'
     },
     cardImage:{
         alignSelf: 'center',
@@ -48,19 +48,26 @@ const useStyles = makeStyles({
         width: '850px',
         height: '100%'
     },
-    card: {
-        width: '30%',
+    card: { 
         margin: "2% 0",
-        height: "70%",
-        alignItems: "center",
+        color:'#4A5602',
+        backgroundColor: "#F6F8D3"
     },
     header: {
-        color: 'red',
+        color: '#F6F8D3',
         fontWeight: 'bolder',
-        backgroundColor: '#39CCCC'
+        backgroundColor: "#4A5602"
     },
     details: {
         margin: '55px 0',
+    },
+
+    typo:{
+        color: '#4A5602',
+    },
+    cardContent:{
+        width:'100%',
+        textAlign:"center   "
     }
 })
 
@@ -134,10 +141,8 @@ export default function SingleBike(props) {
                     <Icon>backspace</Icon>
                 </IconButton>
                 <Button
-                    style={{ backgroundColor: '#39CCCC', color: 'white' }}
+                    className={classes.iconBtn}
                     variant="contained"
-                    color="primary"
-                    className={classes.button}
                     onClick={addFavori}
                     disabled={disabled}
                 >
@@ -160,70 +165,70 @@ export default function SingleBike(props) {
                                 className={classes.header}
                                 title={element.model}
                             />
-                            <CardContent>
+                            <CardContent className={classes.cardContent}>
                                 <Typography variant="subtitle1" component="h3" 
                                 className={classes.details}>
                                     {element.details}
                                 </Typography>
                                 <hr />
                                 <Table>
-                                    <TableBody>
+                                      <TableBody>
                                         <TableRow>
                                             <TableCell component="th" scope="row">
-                                                <Typography variant="h6" component="p">
+                                                <Typography variant="h6" className={classes.typo} component="p">
                                                     Marque
                                             </Typography>
                                             </TableCell>
                                             <TableCell align="right">
-                                                <Typography variant="subtitle1" component="p">
+                                                <Typography variant="subtitle1" className={classes.typo} component="p">
                                                     {element.brand}
                                                 </Typography>
                                             </TableCell>
                                         </TableRow>
                                         <TableRow>
                                             <TableCell component="th" scope="row">
-                                                <Typography variant="h6" component="p">
+                                                <Typography variant="h6" className={classes.typo} component="p">
                                                     Matériaux
                                             </Typography>
                                             </TableCell>
                                             <TableCell align="right">
-                                                <Typography variant="subtitle1" component="p">
+                                                <Typography variant="subtitle1" className={classes.typo} component="p">
                                                     {element.material}
                                                 </Typography>
                                             </TableCell>
                                         </TableRow>
                                         <TableRow>
                                             <TableCell component="th" scope="row">
-                                                <Typography variant="h6" component="p">
+                                                <Typography variant="h6" className={classes.typo} component="p">
                                                     Année du modèle
                                             </Typography>
                                             </TableCell>
                                             <TableCell align="right">
-                                                <Typography variant="subtitle1" component="p">
+                                                <Typography variant="subtitle1" className={classes.typo} component="p">
                                                     {element.year}
                                                 </Typography>
                                             </TableCell>
                                         </TableRow>
                                         <TableRow>
                                             <TableCell component="th" scope="row">
-                                                <Typography variant="h6" component="p">
+                                                <Typography variant="h6"  className={classes.typo} component="p">
                                                     Prix du contructeur
                                             </Typography>
                                             </TableCell>
                                             <TableCell align="right">
-                                                <Typography variant="subtitle1" component="p">
+                                                <Typography variant="subtitle1" className={classes.typo} component="p">
                                                     {element.price} €
                                             </Typography>
                                             </TableCell>
                                         </TableRow>
                                         <TableRow>
                                             <TableCell component="th" scope="row">
-                                                <Typography variant="h6" component="p">
+                                                <Typography variant="h6"  className={classes.typo} component="p">
                                                     *Taille disponible
                                             </Typography>
                                             </TableCell>
                                             <TableCell align="right">
-                                                <Typography variant="subtitle1" component="p">
+                                                <Typography variant="subtitle1" className={classes.typo} component="p">
                                                     {element.size.map((size) => size + ', ')}
                                                 </Typography>
                                             </TableCell>
