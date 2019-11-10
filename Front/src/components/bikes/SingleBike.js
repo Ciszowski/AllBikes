@@ -22,12 +22,14 @@ const useStyles = makeStyles({
         width:"100%",
         backgroundColor: "#4A5602",
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     root: {
+        marginTop:'2%',
         display: 'flex',
         flexFlow: 'row wrap',
-        justifyContent: 'space-around'
+        justifyContent:'center',
+        alignItems:'center'
     },
     rootFoot: {
         backgroundColor: "#A2996E",
@@ -40,13 +42,13 @@ const useStyles = makeStyles({
         color: '#F6F8D3'
     },
     cardImage:{
-        alignSelf: 'center',
-        height: 600,
+        maxHeight:'calc(25vw + 1rem)',
+        marginRight:'10px'
     },
     image: {
-        backgroundSize: "100%",
-        width: '850px',
-        height: '100%'
+        backgroundSize:"75%",
+        width: "calc(50vw + 5rem)",
+        height: "calc(25vw + 1rem)"
     },
     card: { 
         margin: "2% 0",
@@ -61,13 +63,13 @@ const useStyles = makeStyles({
     details: {
         margin: '55px 0',
     },
-
     typo:{
         color: '#4A5602',
     },
     cardContent:{
-        width:'100%',
-        textAlign:"center   "
+        marginLeft:'10px',
+        maxWidth: "calc(25vw + 18rem)",
+        textAlign:"center",
     }
 })
 
@@ -146,7 +148,7 @@ export default function SingleBike(props) {
                     onClick={addFavori}
                     disabled={disabled}
                 >
-                     {user.login ? 'ajouter aux favoris': 'se connecter' } 
+                     {user.login ? 'ajouter aux favoris': 'se connecter'} 
                      <Icon>star</Icon>
                 </Button>   
             </Container>

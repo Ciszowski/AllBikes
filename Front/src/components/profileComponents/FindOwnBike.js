@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dialog, Card, CardMedia, CardContent, Typography, DialogContent, DialogTitle, CardActionArea, DialogActions, Button, IconButton, Icon, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { questionMark, questionPrice } from '../navData/Data';
+import { questionMark, questionPrice } from '../miscellaneous/Data';
 import ResultQuizz from './ResultQuizz';
 
 const useStyles = makeStyles(theme => ({

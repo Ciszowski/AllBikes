@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavData, characteristic } from '../navData/Data';
+import { NavData, characteristic } from '../miscellaneous/Data';
 
 import { makeStyles } from '@material-ui/core/styles';
 import DirectionsIcon from '@material-ui/icons/Directions';

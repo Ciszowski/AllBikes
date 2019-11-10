@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavData } from '../navData/Data';
+import { NavData } from '../miscellaneous/Data';
 import { Container, Card, CardActionArea, CardHeader, CardMedia, CardContent, Typography, Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 

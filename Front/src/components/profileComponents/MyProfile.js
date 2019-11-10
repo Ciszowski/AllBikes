@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+//tools
+import { objCard } from '../miscellaneous/Data'
 //component
-import { objCard } from '../navData/Data'
 import MyFavoris from './Favoris';
 import ModifProfile from './ModifProfil';
 import Admin from './Admin';
@@ -119,11 +119,11 @@ export default function MyProfile(props) {
     function handleButtonProfile(ev){
         const valueProfile = ev.target.value ? ev.target.value : ev.target.title
         if (valueProfile === 'admin' && !user.privilege) {
-            alert('Access Denied')
+            return alert('Access Denied')
         }
-        dispatch({type: 'SETVALUE', value: valueProfile})
+        return dispatch({type: 'SETVALUE', value: valueProfile})
     }
-
+    const profilCard = user.privilege? objCard: objCard.slice(0,-1)
     return (
         <React.Fragment>
             {user.value && (
@@ -159,7 +159,7 @@ export default function MyProfile(props) {
                         </Card>
                     </Container>
                     <Container className={classes.root} fixed>
-                        {objCard.map((el, idx) => {
+                        {profilCard.map((el, idx) => {
                             return (
                                 <Card className={classes.card} key={idx}>
                                     <Button value={el.value} onClick={handleButtonProfile}>
