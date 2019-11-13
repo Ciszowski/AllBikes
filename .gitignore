@@ -5,7 +5,9 @@
 /Front/node_modules
 /Back/node_modules
 /Back/routes/bikes/imagesBikes
+/Back/routes/bikes/bikes.json
 /Back/routes/quizz/Qimages
+/Back/routes/quizz/Qbikes.json
 /Front/.pnp
 /Back/.pnp
 /Back/database
