@@ -1,8 +1,8 @@
 //react
 import React, { useState } from 'react';
-import { useSelector ,useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 //tools
-import {useModifProfil, ValidationTextField} from "../miscellaneous/Style";
+import { useModifProfil, ValidationTextField } from "../miscellaneous/Style";
 //material
 import {
     Container,
@@ -10,22 +10,24 @@ import {
     Button,
     CardContent,
     CardHeader,
-    CardActions
+    CardActions,
+    Snackbar
 } from '@material-ui/core';
 
 export default function ModifProfile() {
     const classes = useModifProfil();
     const dispatch = useDispatch();
-    const data = useSelector((state) => ({
+    const user = useSelector((state) => ({
         name: state.register.name,
         surname: state.register.surname,
         email: state.register.email,
         token: state.register.token
     }))
     const [value, setValue] = useState({
-        name: data.name,
-        surname: data.surname,
-        email: data.email,
+        name: user.name,
+        surname: user.surname,
+        email: user.email,
+        open: false
     })
 
     const handleChange = props => (ev) => {
@@ -33,27 +35,34 @@ export default function ModifProfile() {
     }
 
     function onSaveModif() {
-        fetch('/auth/updateProfile',{
-            method: 'POST',
-            headers: new Headers({
-                'Content-Type':'application/json'
-            }),
-            body: JSON.stringify({value, oldEmail: data.email })
-        })
-        .then(res => res.json())
-        .then((resData)=>{
-            const payload = Object.assign(resData.resultat[0], {token: data.token})
-            dispatch({type: 'REGISTER', payload: payload})
-        })
+        const matchEmail = /\@+[a-zA-Z0-9.]+/gm
+        if (value.email.match(matchEmail)) {
+            fetch('/auth/updateProfile', {
+                method: 'POST',
+                headers: new Headers({
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer '+ user.token
+                }),
+                body: JSON.stringify({value})
+            })
+                .then(res => res.json())
+                .then((resData) => {
+                    const payload = Object.assign(resData.resultat[0],{token: resData.newToken})
+                    console.log('payload', payload)
+                    dispatch({ type: 'REGISTER', payload: payload })
+                })  
+        } else {
+            setValue({ ...value, open: true })
+        }
     }
 
     return (
         <React.Fragment>
-            <Container maxWith="sm" className={classes.root}>
+            <Container maxWidth="sm" className={classes.root}>
                 <Card color='primary' className={classes.card}>
                     <CardHeader
                         className={classes.cardHead}
-                        title='Modification de votre profil'/>
+                        title='Modification de votre profil' />
                     <CardContent className={classes.cardContent}>
                         <ValidationTextField
                             className={classes.input}
@@ -76,21 +85,31 @@ export default function ModifProfile() {
                             onChange={handleChange("surname")}
                             variant="outlined" />
                         <ValidationTextField
+                            autoComplete="email"
                             className={classes.input}
                             required
                             value={value.email}
                             type="email"
-                            autoComplete="email"
                             label="email"
                             InputLabelProps={{ required: false }}
                             onChange={handleChange("email")}
                             variant="outlined" />
                     </CardContent>
                     <CardActions className={classes.button}>
-                            <Button style={{backgroundColor: '#4A5602', color:'#F6F8D3'}}  variant="contained" onClick={onSaveModif}> Sauvegarder Modification</Button>
+                        <Button style={{ backgroundColor: '#4A5602', color: '#F6F8D3' }} variant="contained" onClick={onSaveModif}> Sauvegarder Modification</Button>
                     </CardActions>
                 </Card>
             </Container>
+            <Snackbar
+                open={value.open}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center'
+                }}
+                autoHideDuration={3000}
+                message={<span>Veuillez rentrez un email valide</span>}
+            />
+
         </React.Fragment>
     )
 }

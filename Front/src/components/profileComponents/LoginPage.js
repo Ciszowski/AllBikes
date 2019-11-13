@@ -43,6 +43,7 @@ export default function LoginPage(props) {
         })
             .then((res) => {
                 if (!res.ok) {
+                    console.log('réponse negative', res)
                     setMessage({ open: true, msg: res.statusText});
                 }
                 return res.json()
@@ -51,6 +52,7 @@ export default function LoginPage(props) {
                 if (error) {
                     console.log('error', error)
                 }
+                setMessage({ open: true, msg: data.message});
                 dispatch({type: 'REGISTER', payload: data})
             })
     }
@@ -70,9 +72,9 @@ export default function LoginPage(props) {
                     console.log('error', error)
                 }
                 setMessage({ open: true, msg:resFin.message});
-                // setTimeout(() => {
-                //     window.location.reload();
-                // }, 2000);
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
             })
     }
 

@@ -1,6 +1,6 @@
 //react
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 //tools
 import {useChangePass , ValidationTextField} from '../miscellaneous/Style';
 //material
@@ -16,20 +16,23 @@ import {
 export default function ChangePass(props) {
     const classes = useChangePass();
     const dispatch = useDispatch();
+    const user= useSelector((state)=>({
+        token: state.register.token
+    }))
     const [valuePass, setValuePass] = useState({
         password: '',
         confirmPass: '',
     })
 
     const handleChange = props => (ev) => {
-
         setValuePass({ ...valuePass, [props]: ev.target.value })
     }
     function onSaveModif(){
         fetch('/auth/modifPass',{
             method: 'POST',
             headers: new Headers({
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                'Authorization': 'Bearer '+ user.token
             }),
             body: JSON.stringify({password: valuePass.password, email: props.email})
         })
@@ -41,7 +44,7 @@ export default function ChangePass(props) {
     const isDisabled = (valuePass.password === valuePass.confirmPass) && valuePass.password.length ? true : false
     return (
         <React.Fragment>
-            <Container maxWith="sm" className={classes.root}>
+            <Container maxWidth="sm" className={classes.root}>
                 <Card color='primary' className={classes.card}>
                     <CardHeader
                         className={classes.cardHead}

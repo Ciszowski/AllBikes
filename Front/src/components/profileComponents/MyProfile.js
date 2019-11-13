@@ -40,7 +40,8 @@ export default function MyProfile(props) {
             surname: state.register.surname,
             email: state.register.email,
             privilege: state.register.privilege,
-            value : state.register.value
+            value : state.register.value,
+            token: state.register.token
         }))
     const objProfile = {
         favoris: <MyFavoris {...props}/>,
@@ -55,7 +56,12 @@ export default function MyProfile(props) {
     },[]);
     
     async function getFavoris() {
-        await fetch(`/dataBike/getFavori/${user.id_user}` )
+        await fetch(`/favori/getFavori/${user.id_user}`,{
+            method: 'GET',
+            headers: new Headers({
+                'Authorization': 'Bearer '+ user.token
+            })
+        })
             .then((res) => res.json())
             .then((data) => {
                 setProfil({...profil, nbFavori: data.results.length})

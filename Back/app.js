@@ -12,7 +12,7 @@ const port = 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended : true
+    extended : false
 }));
 app.use('/dataBike', bikeRoute);
 app.use('/:name', express.static('routes/bikes/imagesBikes'));
@@ -31,6 +31,8 @@ app.get('/', (req, err) => {
         console.log('fields', fields);
     })
 });
+//evite les intrus qui detectent les apps qui utilisent express
+app.disable('x-powered-by');
 
 app.listen(port, (err) => {
     if (err)

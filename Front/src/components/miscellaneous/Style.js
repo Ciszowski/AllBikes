@@ -195,13 +195,13 @@ export const useSingleBike = makeStyles({
         color: '#F6F8D3'
     },
     cardImage:{
-        maxHeight:'calc(25vw + 1rem)',
+        maxHeight:'calc(25vw + 2rem)',
         marginRight:'10px'
     },
-    image: {
-        backgroundSize:"75%",
+    image:{
+        backgroundSize:"73%",
         width: "calc(50vw + 5rem)",
-        height: "calc(25vw + 1rem)"
+        height: "calc(22vw + 5rem)"
     },
     card: { 
         margin: "2% 0",
@@ -604,8 +604,6 @@ export const useFindOwnBike = makeStyles(theme => ({
         color:"#F6F8D3",
         backgroundColor: '#4A5602',
         textAlign: 'center',
-        padding:'0',
-        margin:"0"
     },
     cardMedia: {
         height: '200px',

@@ -1,6 +1,6 @@
 //react
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 //tools
 import { NavData, characteristic } from '../miscellaneous/Data';
 import {useAdmin} from '../miscellaneous/Style';
@@ -22,6 +22,9 @@ import {
 export default function Admin() {
     const classes = useAdmin();
     const dispatch = useDispatch();
+    const user = useSelector((state)=> ({
+        token: state.register.token
+    }))
     const [msgServer, setMessage] = useState({
         msg: '',
         bool: false
@@ -60,7 +63,8 @@ export default function Admin() {
         fetch('/dataBike/addNewBike',{
             method:"POST",
             headers: new Headers({
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                'Authorization': 'Bearer '+ user.token
             }),
             body: JSON.stringify(data)
         })

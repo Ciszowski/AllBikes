@@ -25,7 +25,8 @@ export default function SingleBike(props) {
         id_user: state.register.id_user,
         email: state.register.email,
         login: state.register.isLogin,
-        value: state.register.value
+        value: state.register.value,
+        token: state.register.token
     }))
     const favoriList = useSelector((state)=>({
         favori: (state.listBike.favori).map((el) => el.model)
@@ -39,7 +40,7 @@ export default function SingleBike(props) {
 
     async function fetchSingleBike() {
         return await fetch('/dataBike/getSingleBike/' + props.match.params.name)
-            .then((res) => res.json ())
+            .then((res) => res.json())
             .then((data) => {
                 setData(data);
                 return data
@@ -64,7 +65,8 @@ export default function SingleBike(props) {
                 fetch('/favori/addFavori',{
                     method: 'POST',
                     headers: new Headers({
-                        'Content-Type':'application/json'   
+                        'Content-Type':'application/json',
+                        'Authorization': 'Bearer '+ user.token
                     }),
                     body: JSON.stringify({model : data[0].model, id_user: user.id_user})
                 })

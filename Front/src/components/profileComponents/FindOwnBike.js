@@ -13,6 +13,9 @@ export default function FindOwnBike(props) {
     const classes = useFindOwnBike();
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
+    const user = useSelector((state)=>({
+        token : state.register.token
+    }))
     const question = useSelector((state) => ({
         modele: state.listBike.modele,
         price: state.listBike.price,
@@ -22,7 +25,12 @@ export default function FindOwnBike(props) {
 
     async function getQuizz() {
         return (
-            await fetch('/quizz/initQuizz')
+            await fetch('/quizz/initQuizz',{
+                method:'GET',
+                headers: new Headers({
+                    'Authorization': 'Bearer '+ user.token
+                })
+            })
                 .then((res) => res.json())
                 .then((quizz) => {
                     dispatch({ type: "LOADQUIZZ", payload: quizz.objQuizz });
@@ -73,8 +81,8 @@ export default function FindOwnBike(props) {
                     maxWidth="lg"
                     className={classes.dialog}
                     open={open}>
-                    <DialogTitle className={classes.dialogTitle}>
-                        <h4> {questionMark[question.step].Q} </h4>
+                    <DialogTitle className={classes.dialogTitle} disableTypography>
+                            <Typography variant="h4" component="h4">{questionMark[question.step].Q}</Typography>
                     </DialogTitle>
                     <DialogContent className={classes.dialogContent} dividers={true}>
                         {question.quizz && (

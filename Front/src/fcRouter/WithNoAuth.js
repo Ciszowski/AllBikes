@@ -11,7 +11,6 @@ export default function WithNoAuth(props) {
     if (login.token) {
         return <MyProfile {...props}/>
     }
-    console.log('log on smthg')
     return <LoginPage />
 }
 

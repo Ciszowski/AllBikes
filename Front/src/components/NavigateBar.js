@@ -3,10 +3,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //tools
 import { useNavigBar } from "./miscellaneous/Style";
+import { NavData } from './miscellaneous/Data';
 //material
 import { Typography, Container, Icon ,AppBar, Toolbar, Button} from '@material-ui/core';
-
-const allTypesOfBikes = ['Course', 'Trekking', 'VTT', 'Ville', 'VAE'];
 
 export default function ButtonAppBar(props) {
     const classes = useNavigBar();
@@ -14,7 +13,7 @@ export default function ButtonAppBar(props) {
     const user = useSelector((state) => ({
         isLogin: state.register.isLogin
     }))
-
+    
     function onNavigate(value) {
         async function asyncall() {
             await new Promise((resolve) => {
@@ -40,7 +39,7 @@ export default function ButtonAppBar(props) {
                     </Typography>
                 </Container>
                 <Toolbar className={classes.toolbar}>
-                    {allTypesOfBikes.map((el, idx) => {
+                    {Object.keys(NavData).slice(0,-1).map((el, idx) => {
                         return (
                             <React.Fragment key={idx}>
                                 <Button className={classes.menuButton}

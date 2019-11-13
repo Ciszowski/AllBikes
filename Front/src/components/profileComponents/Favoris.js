@@ -28,7 +28,8 @@ export default function MyFavoris(props) {
     const classes = useFavori();
     const dispatch = useDispatch();
     const user = useSelector((state) => ({
-        id_user: state.register.id_user
+        id_user: state.register.id_user,
+        token: state.register.token
     }))
     const favoriList = useSelector((state) => ({
         favori: state.listBike.favori
@@ -49,7 +50,12 @@ export default function MyFavoris(props) {
     }
 
     function onDelete(model) {
-        fetch(`/favori/deleteFavori/${model}&${user.id_user}`)
+        fetch(`/favori/deleteFavori/${model}&${user.id_user}`,{
+            method: "GET",
+            headers: new Headers({
+                'Authorization': 'Bearer '+ user.token
+            })
+        })
             .then((res) => res.json())
             .then((response) => {
                 handleOpen('snack', response.message)

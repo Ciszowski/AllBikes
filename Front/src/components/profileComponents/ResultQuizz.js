@@ -11,6 +11,9 @@ export default function ResultQuizz(props) {
     const classes = useResultQuizz();
     const [resultData, setData] = useState(null)
     const dispatch = useDispatch();
+    const user = useSelector((state) => ({
+        token: state.register.token
+    }));
     const resQuizz = useSelector((state) => ({
         modele: state.listBike.modele,
         price: state.listBike.price,
@@ -24,10 +27,11 @@ export default function ResultQuizz(props) {
     }, [])
 
     function fetchResult() {
-        fetch('/dataBike/resultQuizz', {
+        fetch('/quizz/resultQuizz', {
             method: 'POST',
             headers: new Headers({
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '+ user.token
             }),
             body: JSON.stringify({ modele: modele, price: price })
         })
@@ -41,7 +45,7 @@ export default function ResultQuizz(props) {
         props.history.push('/' + element.categorie + '/' + (element.model).replace(/[' ']+/gi, '_'))
     }
     return (
-        <Container className={classes.root} maxWidth="lg">
+        <Container className={classes.root} maxWidth="xl">
 
             <h1 className={classes.title}>
                 <Icon>star</Icon>

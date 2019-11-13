@@ -8,6 +8,8 @@
 /Back/routes/quizz/Qimages
 /Front/.pnp
 /Back/.pnp
+/Back/database
+/Back/private.js
 .pnp.js
 
 # testing
