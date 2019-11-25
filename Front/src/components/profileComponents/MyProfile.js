@@ -46,7 +46,7 @@ export default function MyProfile(props) {
     const objProfile = {
         favoris: <MyFavoris {...props}/>,
         profil: <ModifProfile />,
-        password: <ChangePass email={user.email}/>,
+        password: <ChangePass />,
         findOwnBike: <FindOwnBike {...props}/>,
         admin: <Admin />
     }

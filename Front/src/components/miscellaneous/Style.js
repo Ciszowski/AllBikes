@@ -4,7 +4,7 @@ export const ValidationTextField = withStyles({
     root: {
         width: '20em',
         backgroundColor: "white",
-        '& input:valid + fieldset': {
+        '& input:valid + fieldset': {   
             borderColor: 'green',
             borderWidth: 2,
         },
@@ -40,7 +40,6 @@ export const useAcceuil = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         justifyContent:'center',
-
     },
     text:{
         padding:'25px',
@@ -488,7 +487,7 @@ export const useProfile = makeStyles((theme) => ({
         width: 490,
         textAlign: 'center',
         backgroundColor: '#A2996E',
-        borderRadius: '50% 20% / 10% 40%',
+        // borderRadius: '50% 20% / 10% 40%',
     },
     head:{
         border:"5px groove #4A5602"
@@ -497,7 +496,7 @@ export const useProfile = makeStyles((theme) => ({
         backgroundColor:"#A2996E",
         width: 250,
         margin: 25,
-        borderRadius: '50% 20% / 10% 40%',
+        // borderRadius: '50% 20% / 10% 40%',
     },
     media: {
         height: 250,

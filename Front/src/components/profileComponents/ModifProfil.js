@@ -27,7 +27,7 @@ export default function ModifProfile() {
         name: user.name,
         surname: user.surname,
         email: user.email,
-        open: false
+        open: false     
     })
 
     const handleChange = props => (ev) => {
@@ -35,7 +35,7 @@ export default function ModifProfile() {
     }
 
     function onSaveModif() {
-        const matchEmail = /\@+[a-zA-Z0-9.]+/gm
+        const matchEmail = /\@+[a-zA-Z0-9]+\.[a-z]{2,}$/gm 
         if (value.email.match(matchEmail)) {
             fetch('/auth/updateProfile', {
                 method: 'POST',
@@ -51,7 +51,7 @@ export default function ModifProfile() {
                     console.log('payload', payload)
                     dispatch({ type: 'REGISTER', payload: payload })
                 })  
-        } else {
+        } else {    
             setValue({ ...value, open: true })
         }
     }
@@ -88,7 +88,7 @@ export default function ModifProfile() {
                             autoComplete="email"
                             className={classes.input}
                             required
-                            value={value.email}
+                            value   ={value.email}
                             type="email"
                             label="email"
                             InputLabelProps={{ required: false }}

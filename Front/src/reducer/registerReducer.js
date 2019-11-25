@@ -36,7 +36,7 @@ const registerReducer = (state = initialState, action) => {
         link: action.payload,
         value: null
       }
-    case "LINK": //only for Favori.js to get back in
+    case "LINK": //only for Favori.js && RestQuizz.js to get bikeSingleView and get back in.
       return{
         ...state,
         link: action.payload

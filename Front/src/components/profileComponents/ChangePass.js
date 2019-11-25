@@ -34,7 +34,7 @@ export default function ChangePass(props) {
                 'Content-Type':'application/json',
                 'Authorization': 'Bearer '+ user.token
             }),
-            body: JSON.stringify({password: valuePass.password, email: props.email})
+            body: JSON.stringify({password: valuePass.password})
         })
         .then((res)=>res.json())
           .then((resData)=>{

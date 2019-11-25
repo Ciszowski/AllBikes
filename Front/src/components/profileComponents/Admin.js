@@ -50,6 +50,7 @@ export default function Admin() {
                 typeOfBike: Object.keys(NavData[ev.target.value]).filter((el, idx) => idx === 0).join('')
             })
         } else {
+            //props.charac qui est recu ainsi a cause du faite que sa soit un map d'un objet
             const prop = props.length ? props : props.charact
             setData({ ...data, [prop]: ev.target.value })
         }
@@ -76,7 +77,7 @@ export default function Admin() {
                     dispatch({type:'VALUE&LINK'})
                 },2000)
             }
-        })
+        });
     }
 
     const isDisabled = Object.keys(data).filter((el) =>data[el].length && el !== 'tempSize').length === 

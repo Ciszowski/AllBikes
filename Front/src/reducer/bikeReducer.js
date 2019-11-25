@@ -16,6 +16,7 @@ export const bikeReducer = (state = initialState, action) => {
       case "LOADQUIZZ":
          return{
             ...state,
+            modele:'',
             quizz: action.payload,
             step: 0
          }

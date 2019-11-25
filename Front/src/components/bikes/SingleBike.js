@@ -75,7 +75,7 @@ export default function SingleBike(props) {
                     setSnack({ message : response.message , open: true})
                 })
             }catch(error){
-                console.log('error occured' , error)
+                setSnack({message: error, open: true })
             }
         }
     }

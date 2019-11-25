@@ -9,7 +9,7 @@ import { Container, Card, CardActionArea, CardHeader, CardMedia, CardContent, Ty
 
 export default function ResultQuizz(props) {
     const classes = useResultQuizz();
-    const [resultData, setData] = useState(null)
+    const [resultData, setData] = useState(null);
     const dispatch = useDispatch();
     const user = useSelector((state) => ({
         token: state.register.token
@@ -22,7 +22,7 @@ export default function ResultQuizz(props) {
 
     useEffect(() => {
         if (modele && price.length) {
-            fetchResult()
+            fetchResult();
         }
     }, [])
 

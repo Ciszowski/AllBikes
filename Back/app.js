@@ -4,7 +4,6 @@ const app = express();
 const bodyParser = require('body-parser')
 const cors = require('cors');
 const authRoute = require('./routes/register/auth');
-const connection = require('./database/mysql');
 const favoriRoute = require('./routes/favori/favori')
 const bikeRoute = require('./routes/bikes/dataBicycle');
 const quizzRoute = require('./routes/quizz/quizz');
@@ -22,15 +21,6 @@ app.use('/auth',authRoute);
 app.use('/quizz',quizzRoute);
 app.use(cors());
 
-app.get('/', (req, err) => {
-    $query = "SELECT * from user";
-    connection.query($query, (err, results, fields) => {
-        if (err)
-            throw new Error(err)
-        console.log('resultats', results);
-        console.log('fields', fields);
-    })
-});
 //evite les intrus qui detectent les apps qui utilisent express
 app.disable('x-powered-by');
 

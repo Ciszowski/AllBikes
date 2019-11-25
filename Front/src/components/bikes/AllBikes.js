@@ -16,7 +16,7 @@ import {
     CardActionArea
 } from '@material-ui/core';
 
-const initialeState = {
+const initiateState = {
     subCategories: '',
     brand: '',
     material: '',
@@ -42,7 +42,7 @@ export default function AllBikes(props) {
     })
 
     async function fetchData() {
-        setValue({ ...initialeState });
+        setValue({ ...initiateState });
         const result = await fetch(`/dataBike/loadBikes/${link}`)
             .then((res) => res.json())
             .then((data) => {
@@ -51,6 +51,7 @@ export default function AllBikes(props) {
         setDataBike({ data: result, tempData: result });
         return result
     }
+
     useEffect(() => {
         setSelectItem({})
         fetchData().then((data) => {
@@ -79,7 +80,7 @@ export default function AllBikes(props) {
         } else {
             ev.persist()
             setValue((prevState) => {
-                return { ...prevState, [props]: ev.target.value };
+                return { ...prevState, [props]:      ev.target.value };
             });
         }
     }
@@ -98,7 +99,7 @@ export default function AllBikes(props) {
                 } else if ((el[attr[i]].toLowerCase()).includes((value[attr[i]]).toLowerCase())) {
                     continue
                 } else {
-                    isCheck = false;
+                    isCheck = false;    
                 }
             }
             return isCheck && el;
@@ -137,7 +138,7 @@ export default function AllBikes(props) {
                                                 <option value={el} key={id}>
                                                     {el}
                                                 </option>
-                                            )
+                                            )   
                                         })}
                                     </TextField>
                                 )
@@ -165,11 +166,6 @@ export default function AllBikes(props) {
                             />
                         </div>
                     </CardContent>
-
-                </Card>
-
-                <Card>
-
                 </Card>
             </Container>
             <Suspense fallback={<h1> Loading ...</h1>}>
@@ -207,6 +203,6 @@ export default function AllBikes(props) {
                     )}
                 </Container>
             </Suspense>
-        </React.Fragment>
+        </React.Fragment>   
     )
 };

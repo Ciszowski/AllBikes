@@ -37,17 +37,18 @@ export default function FindOwnBike(props) {
                     setOpen(true);
                 })
         )
-    }
+    }   
 
     useEffect(() => {
-        if (!question.modele) {
-            getQuizz();
+        if (!question.modele || !question.price.length) {
+            getQuizz(); 
         }
     }, [])
     function reInitiateQuizz() {
         dispatch({ type: "REINITQUIZZ" })
         return getQuizz()
     }
+
     function getNextQuestion(index) {
         if (question.quizz[index].next) {
             return dispatch({ type: "GETNEXT", payload: index })
@@ -56,10 +57,10 @@ export default function FindOwnBike(props) {
                 dispatch({ type: "SETPRICE", payload: question.quizz[index].value })
                 setOpen(false);
             } else {
-                return dispatch({
+                return dispatch({  
                     type: "GETPRICE", payload:
                         { quizzPrice: questionPrice, modele: question.quizz[index].modele }
-                })
+                })  
             }
         }
     }
@@ -100,7 +101,7 @@ export default function FindOwnBike(props) {
                                                 <Typography variant="h6"> {question.title} </Typography>
                                             </CardContent>
                                         </CardActionArea>
-                                    </Card>
+                                    </Card> 
                                 )
                             })
                         )}

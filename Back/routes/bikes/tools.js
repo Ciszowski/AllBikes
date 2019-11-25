@@ -24,8 +24,8 @@ async function downloadImg(url, model) {
         request(url).on('response', (res, req) => {
             const ext = getFileType(res.headers['content-type'])
             const pathImg = model.replace(/[' ']/gi, '_') + ext
-            const filename = __dirname + '/imagesBikes/' + pathImg; //create a file (= name)
-            const stream = fs.createWriteStream(filename) //write to specific file
+            const filename = __dirname + '/imagesBikes/' + pathImg; 
+            const stream = fs.createWriteStream(filename) 
             res.pipe(stream).on('close', () => {
                 resolve(stream)
             })
@@ -43,7 +43,7 @@ const getFavoris = (objBike, dataSQL) => {
 };
 const getResult = (modele, price, objBike) => {
     return objBike.filter((elBike) => {
-        return elBike.subCategories === modele && (elBike.price >= price[0] && elBike.price <= price[1])
+        return (elBike.subCategories === modele) && (elBike.price >= price[0] && elBike.price <= price[1])
     })
 }
 

@@ -78,9 +78,8 @@ export default function LoginPage(props) {
             })
     }
 
-    const isDisabled = value.email.length && value.password.length ? true : false;
-    const isDisabledIn = (value.password === value.confirmPass && value.email.length)
-                            && value.password.length ? true : false;
+    const isDisabled = value.email.length && value.password.length 
+    const isDisabledIn = (value.password === value.confirmPass && value.email.length) && (value.password.length)
     return(
         <Container className={classes.root}>
            {value.isOpen && (
@@ -112,7 +111,7 @@ export default function LoginPage(props) {
                             className={classes.input}
                             value={value.password}
                             required
-                            label="password"
+                            label="mot de passe"
                             type="password"
                             onChange={handleChange("password")}
                             InputLabelProps={{ required: false }}
@@ -145,14 +144,14 @@ export default function LoginPage(props) {
                     <ValidationTextField
                         className={classes.input}
                         value={value.name}
-                        label="name"
+                        label="Nom"
                         InputLabelProps={{ required: false }}
                         onChange={handleChange("name")}
                         variant="outlined" />
                     <ValidationTextField
                         className={classes.input}
                         value={value.surname}
-                        label="surname"
+                        label="Prénom"
                         InputLabelProps={{ required: false }}
                         onChange={handleChange("surname")}
                         variant="outlined" />
@@ -170,7 +169,7 @@ export default function LoginPage(props) {
                         className={classes.input}
                         value={value.password}
                         required
-                        label="password"
+                        label="mot de passe"
                         type="password"
                         onChange={handleChange("password")}
                         InputLabelProps={{ required: false }}
@@ -179,7 +178,7 @@ export default function LoginPage(props) {
                         className={classes.input}
                         value={value.confirmPass}
                         required
-                        label="confirmer le password"
+                        label="confirmer le mot de passe"
                         type="password"
                         onChange={handleChange("confirmPass")}
                         InputLabelProps={{ required: false }}

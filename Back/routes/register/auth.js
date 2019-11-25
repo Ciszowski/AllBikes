@@ -11,23 +11,27 @@ router.post('/loginIn', (req, res) => {
     const { email, password } = req.body.value
     const logData = `SELECT * from user where email= (` + mysql.escape(email) + `)`;
 
-    connection.query(logData,async (err, results) => {
-        if (err) {
-            return err
-            //verifie le mot de passe rentré le mot de passe haché stocké dans la database
-        } else if (bcrypt.compareSync(password, results[0].password)) {
-            const { id_user, name, surname, email, privilege } = results[0];
-            jwt.sign({payload : results[0]} , secret, {expiresIn:"2h"},(err,token)=>{
-                if(!err){
-                    return res.status(200).json
-                    ({
-                        'id_user': id_user, 'name': name, 'surname': surname, 'email': email,
-                        'token': token, 'privilege': privilege
-                    })
-                }
-            })
-        } else {
-            return res.status(401).json({ message: 'Email ou mot de passe incorrect' })
+    connection.query(logData,(err, results) => {
+        try{
+            if (err) {
+                throw new TypeError(err);
+                //verifie le mot de passe rentré le mot de passe haché stocké dans la database
+            } else if (bcrypt.compareSync(password, results[0].password)) {
+                const { id_user, name, surname, email, privilege } = results[0];
+                jwt.sign({payload : results[0]} , secret, {expiresIn:"2h"},(err,token)=>{
+                    if(!err){
+                        return res.status(200).json 
+                        ({
+                            'id_user': id_user, 'name': name, 'surname': surname, 'email': email,
+                            'token': token, 'privilege': privilege
+                        })
+                    };
+                })
+            } else {
+                return res.status(401).json({ message: 'Email ou mot de passe incorrect' });
+            }
+        }catch(error){
+            return res.sendStatus(403);
         }
     })
 })
@@ -51,15 +55,16 @@ router.post('/signIn', (req, res) => {
 router.post('/updateProfile', tools.verifyToken, (req, res) => {
     jwt.verify(req.token, secret, (err, userData) => {
         if (err) {
-            //http status : token invalid / expired
+            //http status 498: token invalid / expired
             console.log(err)
         } else {
             const { name, surname, email } = req.body.value;
-            const payload = { ...userData, name: name, surname: surname, email: email }
+            const {id_user} = userData.payload
+            const payload = { ...userData.payload ,name: name, surname: surname, email: email }
             const newToken = jwt.sign({payload} , secret, {expiresIn:"2h"});
-            
-            const updateData = `UPDATE user SET name='${name}', surname='${surname}', email='${email}' WHERE email='${userData.payload.email}'`;
-            const recupData = `SELECT * from user WHERE email='${email}'`;
+            const updateData = `UPDATE user SET name='${name}', surname='${surname}', 
+                            email='${email}' WHERE id_user='${id_user}'`;
+            const recupData = `SELECT * from user WHERE id_user='${id_user}'`;
 
             connection.query(updateData, (err, result) => {
                 if (err) { throw new Error(err) }
@@ -72,16 +77,16 @@ router.post('/updateProfile', tools.verifyToken, (req, res) => {
 });
 
 router.post('/modifPass', tools.verifyToken, (req, res) => {
-    jwt.verify(req.token, secret, (err) => {
+    jwt.verify(req.token, secret, (err,userData) => {
         if (err) {
             console.log(err)
             //http status 498: token invalid / expired
         } else {
-            const { password, email } = req.body;
+            const {id_user}= userData.payload;
+            const { password } = req.body;
             const crypt = bcrypt.hashSync(password, 10);
-            const sendData = `UPDATE user SET password='${crypt}' WHERE email='${email}'`;
-
-            connection.query(sendData, (err) => {
+            const sendData = `UPDATE user SET password='${crypt}' WHERE id_user='${id_user}'`;
+            connection.query(sendData, (err) => {   
                 if (err)
                     throw new Error(err)
                 return res.status(200).json({ message: 'Modification du mot de passe effectué' })

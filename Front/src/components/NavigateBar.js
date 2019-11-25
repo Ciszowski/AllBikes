@@ -31,11 +31,12 @@ export default function ButtonAppBar(props) {
                         Trouvez le vélo qui vous correspond !
                     </Typography>
                     <Button onClick={() => props.history.push('/home')}>
-                        <h1 className={classes.title}>Allbikes</h1>
+                        <h1 className={classes.title}>Allbikes</h1> 
                     </Button>
                     <Typography variant="subtitle1" className={classes.subtitle}>
-                        Retrouvez nous sur &nbsp;
-                        <Icon>facebook</Icon>
+                        {/* Retrouvez nous sur &nbsp; */}
+                        {/* <Icon>facebook</Icon> */}
+                        <span style={{marginLeft: "150px"}}> </span>
                     </Typography>
                 </Container>
                 <Toolbar className={classes.toolbar}>

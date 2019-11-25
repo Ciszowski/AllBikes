@@ -45,7 +45,6 @@ export default function MyFavoris(props) {
         props.history.push('/' + el.categorie + '/' + (el.model).replace(/[' ']+/gi, '_'))
     };
     function handleOpen(value, msg) {
-        console.log('handle Open', value, open)
         setOpen({ ...open, [value]: true, message: msg })
     }
 
@@ -67,10 +66,10 @@ export default function MyFavoris(props) {
         const newFavori = (favoriList.favori).filter((el) => el.model !== model)
         dispatch({ type: "LOADFAVORI", payload: newFavori })
         setOpen({ ...open, dialog: false })
-    }
+    }   
 
-    return (
-        <React.Fragment>
+    return (    
+        <React.Fragment>    
             <h1 className={classes.title}>
                 <Icon>star</Icon>
                 &nbsp;Mes Favoris&nbsp;
@@ -124,7 +123,7 @@ export default function MyFavoris(props) {
                 <DialogTitle className={classes.dialog}> {"Validation de supression du vélo"}</DialogTitle>
                 <DialogContent dividers={true}>
                     <DialogContentText>
-                        Êtes-vous sur de vouloir supprimer {open.message} de vos favoris?
+                        Êtes-vous sur de vouloir supprimer <strong>{open.message}</strong> de vos favoris?
                 </DialogContentText>
                 </DialogContent>
                 <DialogActions>
