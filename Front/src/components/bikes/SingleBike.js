@@ -39,7 +39,7 @@ export default function SingleBike(props) {
     })
 
     async function fetchSingleBike() {
-        return await fetch('/dataBike/getSingleBike/' + props.match.params.name)
+        return await fetch('/dataBike/single-bike/' + props.match.params.name)
             .then((res) => res.json())
             .then((data) => {
                 setData(data);
@@ -62,7 +62,7 @@ export default function SingleBike(props) {
             return props.history.push('/mon-compte')
         }else{
             try {
-                fetch('/favori/addFavori',{
+                fetch('/favori/add',{
                     method: 'POST',
                     headers: new Headers({
                         'Content-Type':'application/json',

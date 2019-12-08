@@ -32,9 +32,9 @@ export default function LoginPage(props) {
         setValue({ ...value, [props]: e.target.value })
     }
 
-    function loginIn(e) {
+    function login(e) {
         e.preventDefault();
-        fetch('/auth/loginIn', {
+        fetch('/auth/login', {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json' 
@@ -57,9 +57,9 @@ export default function LoginPage(props) {
             })
     }
 
-    function SignIn(e) {
+    function Sign(e) {
         e.preventDefault();
-        fetch('/auth/signIn', {
+        fetch('/auth/sign', {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json' 
@@ -96,7 +96,7 @@ export default function LoginPage(props) {
                         color="primary"
                         title="Connection"
                     />
-                    <form className={classes.textfield} onSubmit={loginIn}>
+                    <form className={classes.textfield} onSubmit={login}>
                         <ValidationTextField
                             autoComplete="email"
                             className={classes.input}
@@ -140,7 +140,7 @@ export default function LoginPage(props) {
                     color="primary"
                     title="Inscriprition" />
                     
-                <form className={classes.textfield} onSubmit={SignIn}>
+                <form className={classes.textfield} onSubmit={Sign}>
                     <ValidationTextField
                         className={classes.input}
                         value={value.name}

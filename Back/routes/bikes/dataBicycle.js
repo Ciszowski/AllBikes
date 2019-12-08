@@ -7,16 +7,16 @@ const fs = require('fs');
 const jwt = require('jsonwebtoken');
 const secret = require('../../private');
 
-router.get("/loadBikes/:name",(req,res)=>{
+router.get("/load-bikes/:name",(req,res)=>{
     const {name} = req.params;
     return res.json(objBike.filter((el)=> el.categorie == name));
 })
-router.get("/getSingleBike/:name", (req,res)=>{
+router.get("/single-bike/:name", (req,res)=>{
     const { name } = req.params;
     const modele = name.replace(/[_]+/gi, ' ')
     return res.status(200).json(objBike.filter((el)=> el.model == `${modele}`))
 })
-router.post('/addNewBike', tools.verifyToken ,(req, res) => {
+router.post('/new-bike', tools.verifyToken ,(req, res) => {
     jwt.verify(req.token, secret, (err)=>{
         if(!err){
             const{categoryBike,typeOfBike,model,img,year,price,material,brand,size,description}= req.body;

@@ -37,7 +37,7 @@ export default function ModifProfile() {
     function onSaveModif() {
         const matchEmail = /\@+[a-zA-Z0-9]+\.[a-z]{2,}$/gm 
         if (value.email.match(matchEmail)) {
-            fetch('/auth/updateProfile', {
+            fetch('/auth/update', {
                 method: 'POST',
                 headers: new Headers({
                     'Content-Type': 'application/json',

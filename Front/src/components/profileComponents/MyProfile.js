@@ -35,7 +35,6 @@ export default function MyProfile(props) {
     })
     const user = useSelector((state) => (
         {
-            id_user: state.register.id_user,
             name: state.register.name,
             surname: state.register.surname,
             email: state.register.email,
@@ -56,7 +55,7 @@ export default function MyProfile(props) {
     },[]);
     
     async function getFavoris() {
-        await fetch(`/favori/getFavori/${user.id_user}`,{
+        await fetch(`/favori`,{
             method: 'GET',
             headers: new Headers({
                 'Authorization': 'Bearer '+ user.token

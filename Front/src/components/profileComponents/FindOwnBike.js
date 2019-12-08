@@ -25,7 +25,7 @@ export default function FindOwnBike(props) {
 
     async function getQuizz() {
         return (
-            await fetch('/quizz/initQuizz',{
+            await fetch('/quizz/init',{
                 method:'GET',
                 headers: new Headers({
                     'Authorization': 'Bearer '+ user.token

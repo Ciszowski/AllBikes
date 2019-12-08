@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const secret = require('../../private');
 const objBike = require('../bikes/bikes.json')
 
-router.post('/addFavori',tools.verifyToken, (req, res) => {
+router.post('/add',tools.verifyToken, (req, res) => {
     jwt.verify(req.token,secret,(err)=>{
         if(!err){
             const { model, id_user } = req.body
@@ -28,7 +28,7 @@ router.post('/addFavori',tools.verifyToken, (req, res) => {
     })
 });
 
-router.get('/deleteFavori/:name&:id',tools.verifyToken, (req, res)=>{
+router.get('/delete/:name&:id',tools.verifyToken, (req, res)=>{
     jwt.verify(req.token, secret, (err)=>{
         if(!err){
             const { name ,id } = req.params;
@@ -49,11 +49,12 @@ router.get('/deleteFavori/:name&:id',tools.verifyToken, (req, res)=>{
     })
 });
 
-router.get('/getFavori/:id', tools.verifyToken, (req, res)=>{
-    jwt.verify(req.token, secret,(err)=>{
+
+//routes pour récupéré les favoris
+router.get('/', tools.verifyToken, (req, res)=>{
+    jwt.verify(req.token, secret,(err,tokenData)=>{
         if(!err){
-            const { id } = req.params;
-            const request = `SELECT * from favori WHERE  id_user=${id}`;
+            const request = `SELECT * from favori WHERE  id_user=${tokenData.payload.id_user}`;
         
             connection.query(request, (err, results)=>{
                 try{            

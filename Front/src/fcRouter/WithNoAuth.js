@@ -4,11 +4,11 @@ import MyProfile from '../components/profileComponents/MyProfile';
 import LoginPage from '../components/profileComponents/LoginPage';
 
 export default function WithNoAuth(props) {
-    const login = useSelector((state) => ({
+    const user = useSelector((state) => ({
         token: state.register.token
     }))
 
-    if (login.token) {
+    if (user.token) {
         return <MyProfile {...props}/>
     }
     return <LoginPage />

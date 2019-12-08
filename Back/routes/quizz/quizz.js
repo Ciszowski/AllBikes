@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const secret =require('../../private');
 const objBike = require('../bikes/bikes.json')
 
-router.get('/initQuizz',tools.verifyToken,(req, res)=>{
+router.get('/init',tools.verifyToken,(req, res)=>{
     jwt.verify(req.token, secret,(err)=>{
         if(!err){
             return res.status(200).json({objQuizz});
@@ -14,7 +14,7 @@ router.get('/initQuizz',tools.verifyToken,(req, res)=>{
     })
 });
 
-router.post('/resultQuizz',tools.verifyToken,(req,res)=>{
+router.post('/result',tools.verifyToken,(req,res)=>{
     jwt.verify(req.token, secret,(err)=>{
         if(!err){
             const { modele, price } = req.body

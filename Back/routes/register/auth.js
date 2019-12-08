@@ -7,7 +7,7 @@ const tools = require('../bikes/tools');
 const jwt = require('jsonwebtoken');
 const secret = require('../../private');
 
-router.post('/loginIn', (req, res) => {
+router.post('/login', (req, res) => {
     const { email, password } = req.body.value
     const logData = `SELECT * from user where email= (` + mysql.escape(email) + `)`;
 
@@ -36,7 +36,7 @@ router.post('/loginIn', (req, res) => {
     })
 })
 
-router.post('/signIn', (req, res) => {
+router.post('/sign', (req, res) => {
     const { name, surname, email, password } = req.body.value
     const crypt = bcrypt.hashSync(password, 10);
     const sendData = `INSERT INTO user(email,password,name,surname) VALUES (
@@ -52,7 +52,7 @@ router.post('/signIn', (req, res) => {
 });
 
 
-router.post('/updateProfile', tools.verifyToken, (req, res) => {
+router.post('/update', tools.verifyToken, (req, res) => {
     jwt.verify(req.token, secret, (err, userData) => {
         if (err) {
             //http status 498: token invalid / expired
@@ -76,7 +76,7 @@ router.post('/updateProfile', tools.verifyToken, (req, res) => {
     })
 });
 
-router.post('/modifPass', tools.verifyToken, (req, res) => {
+router.post('/password', tools.verifyToken, (req, res) => {
     jwt.verify(req.token, secret, (err,userData) => {
         if (err) {
             console.log(err)

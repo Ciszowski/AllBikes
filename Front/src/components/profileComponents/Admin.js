@@ -61,7 +61,7 @@ export default function Admin() {
         setData({...data, tempSize: ""});
     }
     function onRegisterBike(){
-        fetch('/dataBike/addNewBike',{
+        fetch('/dataBike/new-bike',{
             method:"POST",
             headers: new Headers({
                 "Content-Type":"application/json",
@@ -84,7 +84,7 @@ export default function Admin() {
                         Object.keys(data).filter((el)=> el !== 'tempSize').length ? true : false
     return (
         <React.Fragment>
-            <Container maxWith="lg" className={classes.root}>
+            <Container maxWidth="lg" className={classes.root}>
                 <Card color='primary' className={classes.card}>
                     <CardHeader
                         className={classes.cardHead}

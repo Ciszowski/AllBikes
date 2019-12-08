@@ -43,7 +43,7 @@ export default function AllBikes(props) {
 
     async function fetchData() {
         setValue({ ...initiateState });
-        const result = await fetch(`/dataBike/loadBikes/${link}`)
+        const result = await fetch(`/dataBike/load-bikes/${link}`)
             .then((res) => res.json())
             .then((data) => {
                 return data

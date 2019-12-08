@@ -27,7 +27,7 @@ export default function ResultQuizz(props) {
     }, [])
 
     function fetchResult() {
-        fetch('/quizz/resultQuizz', {
+        fetch('/quizz/result', {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json',

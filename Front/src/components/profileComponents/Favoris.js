@@ -49,7 +49,7 @@ export default function MyFavoris(props) {
     }
 
     function onDelete(model) {
-        fetch(`/favori/deleteFavori/${model}&${user.id_user}`,{
+        fetch(`/favori/delete/${model}&${user.id_user}`,{
             method: "GET",
             headers: new Headers({
                 'Authorization': 'Bearer '+ user.token
